@@ -7,6 +7,82 @@ const base = import.meta.env.BASE_URL;
 
 <BaseLayout title="The Presentation" activeSection="presentation">
 
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+  <!-- Sticky Table of Contents — Desktop -->
+  <aside class="toc-rail" id="toc-rail" aria-label="Presentation sections">
+    <nav>
+      <a href="#opening" class="toc-link active" data-section="opening">
+        <span class="toc-dot"></span>
+        <span class="toc-label">Opening</span>
+      </a>
+      <a href="#act-i" class="toc-link" data-section="act-i">
+        <span class="toc-dot"></span>
+        <span class="toc-label">I · Creation</span>
+      </a>
+      <a href="#act-ii" class="toc-link" data-section="act-ii">
+        <span class="toc-dot"></span>
+        <span class="toc-label">II · Buddhist Response</span>
+      </a>
+      <a href="#act-iii" class="toc-link" data-section="act-iii">
+        <span class="toc-dot"></span>
+        <span class="toc-label">III · The Person</span>
+      </a>
+      <a href="#act-iv" class="toc-link" data-section="act-iv">
+        <span class="toc-dot"></span>
+        <span class="toc-label">IV · Limits</span>
+      </a>
+      <a href="#act-v" class="toc-link" data-section="act-v">
+        <span class="toc-dot"></span>
+        <span class="toc-label">V · Mystery</span>
+      </a>
+      <a href="#closing" class="toc-link" data-section="closing">
+        <span class="toc-dot"></span>
+        <span class="toc-label">Closing</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Mobile ToC toggle -->
+  <button class="toc-toggle" id="toc-toggle" aria-label="Table of contents" aria-expanded="false">§</button>
+  <div class="toc-overlay" id="toc-overlay">
+    <nav>
+      <a href="#opening" class="toc-link" data-section="opening">
+        <span class="toc-dot"></span>
+        <span class="toc-label">Opening</span>
+      </a>
+      <a href="#act-i" class="toc-link" data-section="act-i">
+        <span class="toc-dot"></span>
+        <span class="toc-label">I · Creation</span>
+      </a>
+      <a href="#act-ii" class="toc-link" data-section="act-ii">
+        <span class="toc-dot"></span>
+        <span class="toc-label">II · Buddhist Response</span>
+      </a>
+      <a href="#act-iii" class="toc-link" data-section="act-iii">
+        <span class="toc-dot"></span>
+        <span class="toc-label">III · The Person</span>
+      </a>
+      <a href="#act-iv" class="toc-link" data-section="act-iv">
+        <span class="toc-dot"></span>
+        <span class="toc-label">IV · Limits</span>
+      </a>
+      <a href="#act-v" class="toc-link" data-section="act-v">
+        <span class="toc-dot"></span>
+        <span class="toc-label">V · Mystery</span>
+      </a>
+      <a href="#closing" class="toc-link" data-section="closing">
+        <span class="toc-dot"></span>
+        <span class="toc-label">Closing</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Back-to-Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+
   <!-- Title Header -->
   <section style="background: #0f1419; padding: 4rem 1rem 3rem;">
     <div style="max-width: 48rem; margin: 0 auto; text-align: center;">
@@ -547,5 +623,83 @@ const base = import.meta.env.BASE_URL;
       <a href={`${base}about`} style="color: #c9a84c; font-family: sans-serif; font-size: 0.9rem; text-decoration: none;">About the Project →</a>
     </div>
   </section>
+
+
+  <!-- Navigation Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Reading Progress Bar
+      const progressBar = document.getElementById('reading-progress');
+      if (progressBar) {
+        const updateProgress = () => {
+          const scrollTop = window.scrollY;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          progressBar.style.width = progress + '%';
+        };
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+      }
+
+      // Back-to-Top Button
+      const backToTop = document.getElementById('back-to-top');
+      if (backToTop) {
+        const toggleBackToTop = () => {
+          backToTop.classList.toggle('visible', window.scrollY > 500);
+        };
+        window.addEventListener('scroll', toggleBackToTop, { passive: true });
+        backToTop.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        toggleBackToTop();
+      }
+
+      // ToC — Intersection Observer for active section
+      const tocLinks = document.querySelectorAll('.toc-link');
+      const sections = document.querySelectorAll('section[id]');
+      
+      if (sections.length > 0 && tocLinks.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const id = entry.target.id;
+              tocLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('data-section') === id);
+              });
+            }
+          });
+        }, {
+          rootMargin: '-20% 0px -60% 0px',
+          threshold: 0
+        });
+
+        sections.forEach(section => observer.observe(section));
+      }
+
+      // Mobile ToC toggle
+      const tocToggle = document.getElementById('toc-toggle');
+      const tocOverlay = document.getElementById('toc-overlay');
+      if (tocToggle && tocOverlay) {
+        tocToggle.addEventListener('click', () => {
+          const isOpen = tocOverlay.classList.toggle('open');
+          tocToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+        // Close on link click
+        tocOverlay.querySelectorAll('.toc-link').forEach(link => {
+          link.addEventListener('click', () => {
+            tocOverlay.classList.remove('open');
+            tocToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+          if (!tocOverlay.contains(e.target) && e.target !== tocToggle) {
+            tocOverlay.classList.remove('open');
+            tocToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    });
+  </script>
 
 </BaseLayout>
