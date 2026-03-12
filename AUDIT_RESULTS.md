@@ -17,9 +17,9 @@
 | GitHub Actions workflow | ✅ Correct: Node 22, `npm ci`, `astro build`, Pages deploy |
 | Base path config | ✅ `base: '/science-faith-dialogue/'` in `astro.config.mjs` |
 | TypeScript | ✅ Strict config, JSX set to `react-jsx` |
-| Dependency versions | ✅ Astro 5.17 + React 19.2 + Tailwind 4.2 — all compatible |
+| Dependency versions | ✅ Astro 5.17.1 + React 19.2.4 + Tailwind 4.2.0 — all compatible |
 
-**Note:** `astro check` was removed from CI (commit `8ffc236`) because DN II types still referenced in components would cause TS errors. This is tracked below.
+**Note:** `astro check` is currently disabled in CI (see `.github/workflows/deploy.yml`) because DN II types still referenced in components would cause TS errors. This is tracked below.
 
 ---
 
@@ -156,8 +156,7 @@
 5. **Remove unused type imports from `presentation.ts` line 4–7** — `ConceptNode`, `ConceptConnection`
 6. **Remove inline `style="font-family: 'Lora', serif;"` from `<body>` in `BaseLayout.astro`** — redundant with CSS
 7. **Change `<h5>` to `<h4>` in fork diagram** (presentation.astro lines 217, 226) for heading hierarchy
-8. **Add `<link rel="icon">` to BaseLayout head**
-9. **Remove dead CSS selectors** for `[data-accordion-content]` and `[data-expandable]` in global.css
+8. **Remove dead CSS selectors** for `[data-accordion-content]` and `[data-expandable]` in global.css
 
 ---
 
