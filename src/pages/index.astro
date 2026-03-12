@@ -92,32 +92,180 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <!-- Six Acts Overview -->
-  <section style="max-width: 48rem; margin: 0 auto; padding: 4rem 1rem;">
+  <section style="max-width: 52rem; margin: 0 auto; padding: 4rem 1rem;">
     <div style="text-align: center; margin-bottom: 2.5rem;">
       <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 600; color: #1c1917;">The Argument in Six Acts</h2>
       <p style="color: #78716c; max-width: 32rem; margin: 0.75rem auto 0; font-size: 0.95rem;">
         A journey from the foundations of science through the encounter with Buddhist thought
-        to the limits of human knowledge — and what lies beyond.
+        to the limits of human knowledge — and what lies beyond. Click any act to explore its argument.
       </p>
     </div>
 
-    <div style="display: flex; flex-direction: column; gap: 1rem;">
-      {[
-        { num: 'I', title: 'Creation & Contingency', desc: 'Why is there something rather than nothing? The doctrine of creation as the foundation of scientific inquiry.' },
-        { num: 'II', title: 'The Buddhist Response', desc: 'Dependent origination as an alternative account of why things exist. Convergences and the fork in the road.' },
-        { num: 'III', title: 'The Person Who Knows', desc: 'What is the human person? Four understandings of the imago Dei meet the Buddhist no-self.' },
-        { num: 'IV', title: 'The Limits of Science', desc: 'Can science establish values? The three impulses of scientism and the metaquestions science cannot answer.' },
-        { num: 'V', title: 'Mystery & the Trans-Rational', desc: 'When models fail. The apophatic tradition, the numinous, and the emptiness of emptiness.' },
-        { num: '♥', title: 'What Happens to Love?', desc: 'If the self is relational, what grounds the reality of love? The deepest question between our two traditions.' },
-      ].map((act) => (
-        <div style="display: flex; gap: 1rem; align-items: flex-start; padding: 1rem; border-radius: 0.5rem; border: 1px solid #e7e5e4;">
-          <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: #c9a84c; min-width: 2.5rem; text-align: center;">{act.num}</div>
-          <div>
-            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: #1c1917; margin-bottom: 0.25rem;">{act.title}</h3>
-            <p style="font-size: 0.85rem; color: #78716c; line-height: 1.5;">{act.desc}</p>
+    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+
+      <!-- Act I -->
+      <details class="act-card">
+        <summary class="act-card__summary">
+          <div class="act-card__header">
+            <span class="act-card__num" style="color: #c9a84c;">I</span>
+            <div>
+              <h3 class="act-card__title">Creation, Intelligibility, and Contingency</h3>
+              <p class="act-card__desc">Why is the universe intelligible? The doctrine of creation as the foundation of scientific inquiry.</p>
+            </div>
           </div>
+          <span class="act-card__chevron">+</span>
+        </summary>
+        <div class="act-card__content">
+          <p class="act-card__thesis" style="border-left-color: #c9a84c;">
+            Science became possible when nature was understood not as divine but as <em>created</em> — magnificent, yet not to be worshipped. This freed inquiry: if the Nile is a god, you pray to it; if it is a creature, you can study it.
+          </p>
+          <ul class="act-card__points">
+            <li><strong>Logos and the grammar of being:</strong> The rational structure of the world reflects divine wisdom. The universe has a "grammar" grounded in divine reason, not accident (John 1:1).</li>
+            <li><strong>Inner logic doctrine:</strong> Each domain of reality must be engaged <em>according to its own nature</em> — the object determines the method, not vice versa (T. F. Torrance).</li>
+            <li><strong>Contingency demands observation:</strong> Because the world is created freely, it <em>could have been otherwise</em>. We must look and observe rather than deduce from pure reason alone.</li>
+            <li><strong>Order + Contingency = Science:</strong> Order makes science rational; contingency makes it empirical. Together they give us the intellectual conditions for modern natural science.</li>
+          </ul>
+          <p class="act-card__thinkers"><strong>Key voices:</strong> Thomas F. Torrance, Stanley Jaki, Peter Harrison, Steven Rose</p>
+          <a href={`${base}presentation#act-creation`} class="act-card__link">Read Act I in full &rarr;</a>
         </div>
-      ))}
+      </details>
+
+      <!-- Act II -->
+      <details class="act-card">
+        <summary class="act-card__summary">
+          <div class="act-card__header">
+            <span class="act-card__num" style="color: #3d8b8b;">II</span>
+            <div>
+              <h3 class="act-card__title">A Genuine Conversation with Dependent Origination</h3>
+              <p class="act-card__desc">Dependent origination as an alternative account of why things exist. Convergences and the fork in the road.</p>
+            </div>
+          </div>
+          <span class="act-card__chevron">+</span>
+        </summary>
+        <div class="act-card__content">
+          <p class="act-card__thesis" style="border-left-color: #3d8b8b;">
+            All phenomena arise through mutual conditioning; nothing stands alone. Compositionality + impermanence = emptiness (<em>śūnyatā</em>) — the absence of fixed, independent essence. But does the web of dependent origination explain <em>why there is a web at all</em>?
+          </p>
+          <ul class="act-card__points">
+            <li><strong>Rejecting the "Buddhism Problem":</strong> Western scholarship wrongly forces Buddhism into theistic categories. "Religion" is a Western construct, not a natural kind.</li>
+            <li><strong>Dependent origination as relational ontology:</strong> Nguyen Hoang Hai demonstrates compositionality and impermanence from subatomic particles to consciousness, proving emptiness at every level.</li>
+            <li><strong>Convergence — both reject the autonomous self:</strong> Christianity insists persons are relational by nature (Trinitarian being); Buddhism insists on radical interdependence.</li>
+            <li><strong>The fork in the road:</strong> Buddhism: the web <em>is</em> fundamental reality, no transcendent ground needed. Christianity: the web itself is grounded in a transcendent Source. The web does not explain why there is a web.</li>
+            <li><strong>Colligation, not syncretism:</strong> The traditions are brought together to see a larger pattern, not merged. Each retains its distinctive voice.</li>
+          </ul>
+          <p class="act-card__thinkers"><strong>Key voices:</strong> Nāgārjuna, Nguyen Hoang Hai, Alasdair MacIntyre, Alister McGrath</p>
+          <a href={`${base}presentation#act-buddhism`} class="act-card__link">Read Act II in full &rarr;</a>
+        </div>
+      </details>
+
+      <!-- Act III -->
+      <details class="act-card">
+        <summary class="act-card__summary">
+          <div class="act-card__header">
+            <span class="act-card__num" style="color: #c9a84c;">III</span>
+            <div>
+              <h3 class="act-card__title">The Person Who Knows</h3>
+              <p class="act-card__desc">What is the human person? Four understandings of the <em>imago Dei</em> meet the Buddhist no-self.</p>
+            </div>
+          </div>
+          <span class="act-card__chevron">+</span>
+        </summary>
+        <div class="act-card__content">
+          <p class="act-card__thesis" style="border-left-color: #c9a84c;">
+            Science is not a neutral method but a practice of <em>persons</em>. If the knower is merely an adaptive algorithm optimized for survival, then what grounds scientific <em>truthfulness</em>? The capacity for rational inquiry, self-transcendence, and moral responsibility are constitutive of personhood.
+          </p>
+          <ul class="act-card__points">
+            <li><strong>Imago Dei — four understandings:</strong> Sovereignty (the king's representative), correspondence (rational soul reflecting the Creator), relationality (created for communion), and story-telling (co-creators with God).</li>
+            <li><strong>Relational but irreducible:</strong> If the self has no enduring center, who is the moral agent? Who repents? Who is responsible? The person is relational but retains an irreducible <em>ipseity</em> — a gift of being called into existence.</li>
+            <li><strong>The AI test:</strong> If science is only pattern-matching, AI can replace humans. But if science requires <em>understanding</em> — a person capable of truth, self-correction, asking "why?" — then the knower is irreducible.</li>
+            <li><strong>Knowledge as ethical vocation:</strong> Inquiry is a moral calling ordered toward the good, not merely a technique for power (Luther's <em>coram Deo</em>).</li>
+          </ul>
+          <p class="act-card__thinkers"><strong>Key voices:</strong> Blaise Pascal, Martin Luther, Nguyen Hoang Hai, Richard Dawkins, Alister McGrath</p>
+          <a href={`${base}presentation#act-person`} class="act-card__link">Read Act III in full &rarr;</a>
+        </div>
+      </details>
+
+      <!-- Act IV -->
+      <details class="act-card">
+        <summary class="act-card__summary">
+          <div class="act-card__header">
+            <span class="act-card__num" style="color: #a85c32;">IV</span>
+            <div>
+              <h3 class="act-card__title">The Limits of Science</h3>
+              <p class="act-card__desc">Can science establish values? The three impulses of scientism and the metaquestions science cannot answer.</p>
+            </div>
+          </div>
+          <span class="act-card__chevron">+</span>
+        </summary>
+        <div class="act-card__content">
+          <p class="act-card__thesis" style="border-left-color: #a85c32;">
+            Science excels at measurable patterns, causal regularities, repeatable phenomena. But it cannot answer why something rather than nothing exists, whether humans have intrinsic dignity, what knowledge is <em>for</em>, or what we ought to do. These are not irrational questions — they are trans-scientific.
+          </p>
+          <ul class="act-card__points">
+            <li><strong>The three impulses of scientism (Ian Kidd):</strong> The imperialist urge (extending science into ethics and metaphysics), the salvific urge (expecting science to satisfy existential needs), and the absolutist urge (claiming totalizing completeness).</li>
+            <li><strong>The vicious circle:</strong> Scientism makes philosophical claims <em>about</em> science that cannot be verified <em>by</em> science. It must assume its own authority to confirm itself (Feser).</li>
+            <li><strong>A tension in Nguyen's work:</strong> If consciousness evolved for "appropriateness, not truthfulness," what distinguishes genuine wisdom from a convincing illusion? Is the book itself an "appropriate" model — or actually <em>true</em>?</li>
+            <li><strong>The "bizarrely restrictive view":</strong> A single perspective allowed to become normative produces a restrictive view of meaning (Mary Midgley). Both traditions resist this narrowing.</li>
+          </ul>
+          <p class="act-card__thinkers"><strong>Key voices:</strong> Ian James Kidd, Edward Feser, Mary Midgley, T. F. Torrance, Kurt Gödel</p>
+          <a href={`${base}presentation#act-limits`} class="act-card__link">Read Act IV in full &rarr;</a>
+        </div>
+      </details>
+
+      <!-- Act V -->
+      <details class="act-card">
+        <summary class="act-card__summary">
+          <div class="act-card__header">
+            <span class="act-card__num" style="color: #c9a84c;">V</span>
+            <div>
+              <h3 class="act-card__title">Mystery: The Trans-Rational</h3>
+              <p class="act-card__desc">When models fail. The apophatic tradition, the numinous, and the emptiness of emptiness.</p>
+            </div>
+          </div>
+          <span class="act-card__chevron">+</span>
+        </summary>
+        <div class="act-card__content">
+          <p class="act-card__thesis" style="border-left-color: #c9a84c;">
+            Mystery is not irrationality but the <em>trans-rational</em> — what overwhelms and saturates rational capacity precisely because it is <em>more</em> than we can think. Both the Christian apophatic tradition and Buddhist śūnyatā cultivate resistance to reducing reality to our current concepts.
+          </p>
+          <ul class="act-card__points">
+            <li><strong>The numinous (Rudolf Otto):</strong> The <em>mysterium tremendum et fascinans</em> — awe, terror, and fascination before the "wholly other." Trans-rational, not irrational.</li>
+            <li><strong>The iron cage (Max Weber):</strong> Rationalism's <em>stahlhartes Gehäuse</em> confines existence to efficiency and control. Mystery cracks that shell open.</li>
+            <li><strong>Apophatic and śūnyatā as convergent:</strong> The Christian <em>via negativa</em> (Gregory of Nyssa, Meister Eckhart) and Buddhist prajñāpāramitā share epistemic humility. Both resist idolizing concepts. But the apophatic says God <em>exceeds</em> categories (superabundant being); Buddhism says phenomena <em>lack</em> inherent nature.</li>
+            <li><strong>The verum-factum principle (Vico):</strong> We fully grasp only what we construct. Nature and God are realities we did not make and cannot fully master.</li>
+          </ul>
+          <p class="act-card__thinkers"><strong>Key voices:</strong> Rudolf Otto, Max Weber, Gregory of Nyssa, Nāgārjuna, Giambattista Vico, Richard Feynman</p>
+          <a href={`${base}presentation#act-mystery`} class="act-card__link">Read Act V in full &rarr;</a>
+        </div>
+      </details>
+
+      <!-- Closing -->
+      <details class="act-card act-card--closing">
+        <summary class="act-card__summary">
+          <div class="act-card__header">
+            <span class="act-card__num" style="color: #a85c32;">&hearts;</span>
+            <div>
+              <h3 class="act-card__title">What Happens to Love?</h3>
+              <p class="act-card__desc">If the self is relational, what grounds the reality of love? The deepest question between our two traditions.</p>
+            </div>
+          </div>
+          <span class="act-card__chevron">+</span>
+        </summary>
+        <div class="act-card__content">
+          <p class="act-card__thesis" style="border-left-color: #a85c32;">
+            If the self is an illusion crafted by DNA, then love is too — just another adaptive strategy. But if love is <em>real</em>, if a mother's love is not merely a dopamine-mediated survival mechanism but a genuine participation in something transcendent, then reality cannot be exhausted by compositionality and impermanence.
+          </p>
+          <ul class="act-card__points">
+            <li><strong>Four pillars of the argument:</strong> The world is <em>created</em> (real, intelligible), <em>contingent</em> (requiring observation and humility), <em>personal</em> (the knower is a moral agent), and <em>limited yet open</em> (science must converse with philosophy and theology).</li>
+            <li><strong>From information to wisdom:</strong> We drown in information while starving for wisdom (E. O. Wilson). Wisdom is colligation — deeper rationality, integration of insights and their application to life.</li>
+            <li><strong>The pressing question:</strong> If consciousness models reality for <em>adaptive survival</em> rather than <em>truth</em>, what grounds scientific responsibility for truthfulness? What sustains the moral continuity of inquiry?</li>
+            <li><strong>Love as irreducible:</strong> Love points to a dimension that is relational <em>and</em> personal, temporal <em>and</em> eternal, vulnerable <em>and</em> unconditional. The Christian claim grounds this in the triune God as eternal communion of persons.</li>
+          </ul>
+          <p class="act-card__thinkers"><strong>Key voices:</strong> E. O. Wilson, Aristotle (<em>phronesis</em>), Nguyen Hoang Hai, Alister McGrath</p>
+          <a href={`${base}presentation#closing`} class="act-card__link">Read the Closing in full &rarr;</a>
+        </div>
+      </details>
+
     </div>
   </section>
 
