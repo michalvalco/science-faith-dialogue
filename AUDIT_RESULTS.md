@@ -199,29 +199,70 @@ Components to **port** (keep structure, update palette + language):
 
 ## 8. Content Integrity — Cross-Reference with Sources
 
-### Presentation vs. Manuscript
+### Source Documents Reviewed
 
-The presentation content (`presentation.astro`) is well-grounded in the manuscript (`Valco_Science_Creation_Contingency_Human_Person_TNTI_Manuscript.md`). Key alignment:
+| Document | Focus | Used in |
+|----------|-------|---------|
+| `Valco_Science_Creation_Contingency_Human_Person_TNTI_Manuscript.md` | Full manuscript — master source for all Acts | Acts I–V, Closing |
+| `McGrath_Science_Religion_2020_Reading_Notes.md` | McGrath's methodology, models, historical analysis | Opening (colligation), Act I (contingency), Act IV (limits) |
+| `Nguyen_Emptiness_of_Everything_Reading_Notes.md` | Buddhist śūnyatā, dependent origination, no-self | Act II (Buddhist response), Act III (anattā), Act V (apophatic) |
+| `McGrath_Territories_Reading_Notes.md` | Epistemological territories, multiple rationalities | Opening (colligation), Act IV (scientism critique) |
+
+### Presentation vs. Manuscript — Detailed Alignment
 
 - **Act I (Creation & Contingency):** Faithfully presents the Logos argument, de-divinization thesis, contingency-demands-observation argument, Torrance's "object determines method" principle, and the Jaki/Harrison historical thesis. All well-sourced.
 - **Act II (Buddhist Response):** Engages Nguyen's *Emptiness of Everything* accurately (compositionality + impermanence = emptiness). The fork diagram captures the genuine divergence. Colligation concept properly attributed to Whewell/McGrath.
 - **Act III (The Person Who Knows):** Imago Dei four-fold analysis (sovereignty, correspondence, relationality, storytelling) matches the manuscript. Engagement with Nguyen's eliminativism is fair and substantive.
 - **Act IV (Limits of Science):** Kidd's three impulses of scientism properly presented. Feser's circularity argument correctly summarized. Midgley reference accurate.
 - **Act V (Mystery & Trans-Rational):** Otto's numinous, Weber's *stahlhartes Gehäuse*, Vico's epistemic humility, Gregory of Nyssa, Pseudo-Dionysius — all properly sourced.
-- **Closing:** Four pillars summary is accurate. "What Happens to Love?" section is original to the presentation (not in the v4 HTML or reading notes) — a genuine extension of the argument.
+- **Closing:** Four pillars summary is accurate. "What Happens to Love?" section is original to the presentation (not in the v4 HTML or reading notes) — a genuine extension.
 
-### Glossary vs. Sources
+### Arguments in Sources NOT Used in Presentation
 
-All 12 key terms in `presentation.ts` are well-defined and consistent with the reading notes. The `originalScript` values for Sanskrit/Pali/Greek/German terms are accurate.
+| # | Argument | Source | Potential Use |
+|---|----------|--------|---------------|
+| 1 | McGrath's 5 science-religion models (conflict, independence, dialogue, integration, partial overlap) | McGrath Reading Notes | Could strengthen Opening as a framing device |
+| 2 | Galileo affair as *intra-Christian* debate, not science-vs-religion | McGrath Reading Notes | Would nuance Act I's historical claims |
+| 3 | Darwin's complex personal faith journey | McGrath Reading Notes | Could enrich Act IV's science-faith boundary discussion |
+| 4 | McGrath's critique of Dawkins' "God of the gaps" misrepresentation | McGrath Reading Notes | Relevant to Act IV on scientism |
+| 5 | Nguyen's analysis of *saṅkhāra* (volitional formations) as karma mechanism | Nguyen Reading Notes | Could deepen Act II's dependent origination discussion |
+| 6 | Nguyen's detailed *paṭicca-samuppāda* 12-link chain | Nguyen Reading Notes | Fork diagram could reference specific links |
+| 7 | McGrath's "empirical fit" criterion for theology | Territories Reading Notes | Strengthens the colligation methodology argument |
+| 8 | Polkinghorne's critical realism as bridge methodology | McGrath Reading Notes | Supports the Opening's epistemological pluralism |
+| 9 | Nguyen's distinction between conventional and ultimate truth (*saṃvṛti-satya* / *paramārtha-satya*) | Nguyen Reading Notes | Could add depth to Act V's apophatic/śūnyatā comparison |
+| 10 | McGrath's analysis of "natural theology" vs "theology of nature" | Territories Reading Notes | Could clarify Act I's theological framing |
 
-### Further Reading vs. Sources
+### Original Extensions (Presentation Goes Beyond Sources)
 
-Bibliography is accurate but could be expanded:
-- Missing: Kidd, Ian James (the scientism analysis is cited in the presentation but his work isn't in Further Reading)
-- Missing: Gregory of Nyssa and Pseudo-Dionysius (primary sources for the apophatic tradition discussed in Act V)
-- Missing: Weber's *stahlhartes Gehäuse* source
-- Missing: Vico's *New Science* (referenced in Act V)
-- Missing: Rose, Steven *Lifelines* is listed but should be verified against the frog fable source (Rose tells this in the book)
+1. **"What Happens to Love?" closing section** — Not in manuscript, v4 HTML, or reading notes. A genuine original extension of the argument from imago Dei to love as ontological category.
+2. **Slovakia anecdote** (Opening) — Personal narrative not found in any academic source. Serves as rhetorical hook.
+3. **AI Test insight box** (Act III) — The Turing Test framing for imago Dei is original to the presentation; sources discuss AI only in passing.
+
+### Tension Points Needing Clarification
+
+1. **Colligation attribution:** The presentation attributes colligation primarily to Whewell via McGrath, but the McGrath reading notes show McGrath develops it substantially beyond Whewell. The presentation could be clearer that this is McGrath's *retrieval and extension* of Whewell.
+2. **Nguyen's position on consciousness:** The presentation frames Nguyen as "eliminativist" about the self, but the reading notes show Nguyen is more nuanced — he distinguishes between *conventional* self (accepted) and *ultimate* self (denied). The fork diagram could acknowledge this nuance.
+3. **Fine-tuning argument strength:** The presentation presents fine-tuning as evidence for creation, but the McGrath reading notes show McGrath himself is cautious about fine-tuning as a "proof" — he prefers it as "consonance" or "empirical fit." The presentation's enthusiasm may slightly overstate McGrath's position.
+
+### Glossary Cross-Check
+
+All 12 key terms in `presentation.ts` are well-defined and consistent with the reading notes. The `originalScript` values are accurate with one note:
+
+- **Anattā:** The glossary uses Pali script `අනත්ත` which is actually **Sinhala** script, not Pali (which uses Roman transliteration or Devanāgarī). This is not incorrect per se (Sinhala is used for Theravāda texts) but could be noted or changed to Devanāgarī `अनात्मन्` (anātman, Sanskrit equivalent).
+
+### Further Reading — Gaps Analysis
+
+| Author/Work | Cited in Presentation | In Further Reading | Action |
+|-------------|----------------------|-------------------|--------|
+| Kidd, Ian James (scientism analysis) | Act IV | ❌ Missing | **Add** — his work is central to the scientism framework |
+| Gregory of Nyssa (*Life of Moses*) | Act V | ❌ Missing | **Add** — primary source for apophatic tradition |
+| Pseudo-Dionysius (*Mystical Theology*) | Act V | ❌ Missing | **Add** — primary source for apophatic theology |
+| Weber, Max (*stahlhartes Gehäuse*) | Act V | ❌ Missing | **Add** — *The Protestant Ethic and the Spirit of Capitalism* |
+| Vico, Giambattista (*New Science*) | Act V | ❌ Missing | **Add** — epistemic humility argument source |
+| Whitehead, A.N. (referenced in manuscript) | Manuscript | ❌ Missing | **Consider** — *Science and the Modern World* |
+| Whewell, William (colligation originator) | Opening, methodology | ❌ Missing | **Add** — *Philosophy of the Inductive Sciences* |
+| Rose, Steven (*Lifelines*) | Act III (frog fable) | ✅ Present | Verified — Rose tells the frog fable in this book |
+| Midgley, Mary (*Science as Salvation*) | Act IV | ✅ Present | Verified |
 
 ---
 
