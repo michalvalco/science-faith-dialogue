@@ -19,7 +19,7 @@
 | TypeScript | ✅ Strict config, JSX set to `react-jsx` |
 | Dependency versions | ✅ Astro 5.17.1 + React 19.2.4 + Tailwind 4.2.0 — all compatible |
 
-**Note:** `astro check` is currently disabled in CI (see `.github/workflows/deploy.yml`) because DN II types still referenced in components would cause TS errors. This is tracked below.
+**Note:** `astro check` is currently disabled in CI (see `.github/workflows/deploy.yml`) due to outstanding TypeScript errors in components (see B1 and related issues below). These must be resolved before re-enabling it.
 
 ---
 
