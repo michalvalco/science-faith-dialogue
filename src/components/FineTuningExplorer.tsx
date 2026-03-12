@@ -13,72 +13,91 @@ export default function FineTuningExplorer({ constants }: Props) {
   return (
     <div style={{
       margin: '2.5rem 0',
-      border: '1px solid rgba(201,168,76,0.2)',
+      border: '1px solid color-mix(in srgb, var(--color-gold-400) 20%, transparent)',
       borderRadius: '0.5rem',
       overflow: 'hidden',
-      background: 'rgba(201,168,76,0.03)',
+      background: 'color-mix(in srgb, var(--color-gold-400) 3%, transparent)',
     }}>
       <div style={{
         padding: '1.25rem 1.25rem 0.75rem',
-        borderBottom: '1px solid rgba(201,168,76,0.15)',
+        borderBottom: '1px solid color-mix(in srgb, var(--color-gold-400) 15%, transparent)',
       }}>
         <p style={{
-          fontFamily: "'JetBrains Mono', monospace",
+          fontFamily: 'var(--font-mono)',
           fontSize: '0.7rem',
           letterSpacing: '2px',
-          color: '#c9a84c',
+          color: 'var(--color-gold-400)',
           textTransform: 'uppercase',
           marginBottom: '0.5rem',
         }}>
           Cosmological Fine-Tuning
         </p>
-        <p style={{ fontSize: '0.85rem', color: '#a8a29e', lineHeight: 1.6 }}>
+        <p style={{ fontSize: '0.85rem', color: 'var(--color-dark-200)', lineHeight: 1.6 }}>
           Adjust the fundamental constants of nature. What happens if they are even slightly different?
         </p>
       </div>
 
       {/* Constant selector tabs */}
-      <div style={{
-        display: 'flex',
-        gap: '0',
-        borderBottom: '1px solid rgba(201,168,76,0.15)',
-        overflowX: 'auto',
-      }}>
-        {constants.map((c) => (
-          <button
-            key={c.id}
-            onClick={() => setActiveId(c.id)}
-            style={{
-              padding: '0.75rem 1rem',
-              fontFamily: 'sans-serif',
-              fontSize: '0.75rem',
-              color: c.id === activeId ? '#c9a84c' : '#78716c',
-              background: c.id === activeId ? 'rgba(201,168,76,0.08)' : 'transparent',
-              border: 'none',
-              borderBottom: c.id === activeId ? '2px solid #c9a84c' : '2px solid transparent',
-              cursor: 'pointer',
-              whiteSpace: 'nowrap',
-              transition: 'all 0.2s',
-            }}
-          >
-            {c.name}
-          </button>
-        ))}
+      <div
+        role="tablist"
+        aria-label="Cosmological constants"
+        style={{
+          display: 'flex',
+          gap: '0',
+          borderBottom: '1px solid color-mix(in srgb, var(--color-gold-400) 15%, transparent)',
+          overflowX: 'auto',
+        }}
+      >
+        {constants.map((c) => {
+          const isActive = c.id === activeId;
+          const tabId = `ft-tab-${c.id}`;
+          const panelId = `ft-panel-${c.id}`;
+          return (
+            <button
+              key={c.id}
+              id={tabId}
+              role="tab"
+              aria-selected={isActive}
+              aria-controls={panelId}
+              tabIndex={isActive ? 0 : -1}
+              onClick={() => setActiveId(c.id)}
+              style={{
+                padding: '0.75rem 1rem',
+                fontFamily: 'var(--font-sans)',
+                fontSize: '0.75rem',
+                color: isActive ? 'var(--color-gold-400)' : 'var(--color-dark-300)',
+                background: isActive ? 'color-mix(in srgb, var(--color-gold-400) 8%, transparent)' : 'transparent',
+                border: 'none',
+                borderBottom: isActive ? '2px solid var(--color-gold-400)' : '2px solid transparent',
+                cursor: 'pointer',
+                whiteSpace: 'nowrap',
+                transition: 'all 0.2s',
+              }}
+            >
+              {c.name}
+            </button>
+          );
+        })}
       </div>
 
       {/* Active constant detail */}
       {active && (
-        <div style={{ padding: '1.25rem' }}>
+        <div
+          role="tabpanel"
+          id={`ft-panel-${active.id}`}
+          aria-labelledby={`ft-tab-${active.id}`}
+          style={{ padding: '1.25rem' }}
+        >
           <p style={{
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: 'var(--font-display)',
             fontSize: '1.1rem',
             fontWeight: 600,
-            color: '#faf5ee',
+            color: 'var(--color-warm-200)',
             marginBottom: '0.5rem',
           }}>
             {active.name}
           </p>
-          <p style={{ fontSize: '0.85rem', color: '#a8a29e', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+          <p style={{ fontSize: '0.85rem', color: 'var(--color-dark-200)', lineHeight: 1.6, marginBottom: '1.25rem' }}>
             {active.description}
           </p>
 
@@ -87,20 +106,20 @@ export default function FineTuningExplorer({ constants }: Props) {
             <div style={{
               padding: '1rem',
               borderRadius: '0.375rem',
-              background: 'rgba(168,92,50,0.08)',
-              borderLeft: '3px solid #a85c32',
+              background: 'color-mix(in srgb, var(--color-rust-500) 8%, transparent)',
+              borderLeft: '3px solid var(--color-rust-500)',
             }}>
               <p style={{
-                fontFamily: 'sans-serif',
+                fontFamily: 'var(--font-sans)',
                 fontSize: '0.65rem',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                color: '#a85c32',
+                color: 'var(--color-rust-500)',
                 marginBottom: '0.5rem',
               }}>
                 Too small
               </p>
-              <p style={{ fontSize: '0.8rem', color: '#d6d3d1', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '0.8rem', color: 'var(--color-dark-100)', lineHeight: 1.6 }}>
                 {active.tooSmall}
               </p>
             </div>
@@ -109,20 +128,20 @@ export default function FineTuningExplorer({ constants }: Props) {
             <div style={{
               padding: '1rem',
               borderRadius: '0.375rem',
-              background: 'rgba(61,139,139,0.08)',
-              borderLeft: '3px solid #3d8b8b',
+              background: 'color-mix(in srgb, var(--color-teal-500) 8%, transparent)',
+              borderLeft: '3px solid var(--color-teal-500)',
             }}>
               <p style={{
-                fontFamily: 'sans-serif',
+                fontFamily: 'var(--font-sans)',
                 fontSize: '0.65rem',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                color: '#3d8b8b',
+                color: 'var(--color-teal-500)',
                 marginBottom: '0.5rem',
               }}>
                 Too large
               </p>
-              <p style={{ fontSize: '0.8rem', color: '#d6d3d1', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '0.8rem', color: 'var(--color-dark-100)', lineHeight: 1.6 }}>
                 {active.tooLarge}
               </p>
             </div>
@@ -130,7 +149,7 @@ export default function FineTuningExplorer({ constants }: Props) {
 
           <p style={{
             fontSize: '0.75rem',
-            color: '#78716c',
+            color: 'var(--color-dark-300)',
             fontStyle: 'italic',
             textAlign: 'center',
             marginTop: '1rem',

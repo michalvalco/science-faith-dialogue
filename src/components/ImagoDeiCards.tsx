@@ -18,10 +18,10 @@ export default function ImagoDeiCards({ understandings }: Props) {
   return (
     <div style={{ margin: '2.5rem 0' }}>
       <p style={{
-        fontFamily: "'JetBrains Mono', monospace",
+        fontFamily: 'var(--font-mono)',
         fontSize: '0.7rem',
         letterSpacing: '2px',
-        color: '#c9a84c',
+        color: 'var(--color-gold-400)',
         textTransform: 'uppercase',
         marginBottom: '1rem',
         textAlign: 'center',
@@ -35,13 +35,20 @@ export default function ImagoDeiCards({ understandings }: Props) {
       }}>
         {understandings.map((u) => {
           const isActive = activeId === u.id;
+          const detailsId = `imago-details-${u.id}`;
           return (
             <button
               key={u.id}
               onClick={() => setActiveId(isActive ? null : u.id)}
+              aria-expanded={isActive}
+              aria-controls={detailsId}
               style={{
-                background: isActive ? 'rgba(201,168,76,0.1)' : 'rgba(201,168,76,0.03)',
-                border: `1px solid ${isActive ? 'rgba(201,168,76,0.4)' : 'rgba(201,168,76,0.15)'}`,
+                background: isActive
+                  ? 'color-mix(in srgb, var(--color-gold-400) 10%, transparent)'
+                  : 'color-mix(in srgb, var(--color-gold-400) 3%, transparent)',
+                border: `1px solid ${isActive
+                  ? 'color-mix(in srgb, var(--color-gold-400) 40%, transparent)'
+                  : 'color-mix(in srgb, var(--color-gold-400) 15%, transparent)'}`,
                 borderRadius: '0.5rem',
                 padding: '1.25rem',
                 textAlign: 'left',
@@ -50,22 +57,22 @@ export default function ImagoDeiCards({ understandings }: Props) {
                 width: '100%',
               }}
             >
-              <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>
+              <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }} aria-hidden="true">
                 {icons[u.id] || '\u2728'}
               </div>
               <h4 style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: 'var(--font-display)',
                 fontSize: '1.15rem',
                 fontWeight: 600,
-                color: '#faf5ee',
+                color: 'var(--color-warm-200)',
                 marginBottom: '0.25rem',
               }}>
                 {u.title}
               </h4>
               <p style={{
-                fontFamily: 'sans-serif',
+                fontFamily: 'var(--font-sans)',
                 fontSize: '0.7rem',
-                color: '#c9a84c',
+                color: 'var(--color-gold-400)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
                 marginBottom: '0.75rem',
@@ -74,18 +81,25 @@ export default function ImagoDeiCards({ understandings }: Props) {
               </p>
               <p style={{
                 fontSize: '0.85rem',
-                color: '#a8a29e',
+                color: 'var(--color-dark-200)',
                 lineHeight: 1.6,
                 marginBottom: isActive ? '0.75rem' : 0,
               }}>
                 {u.description}
               </p>
               {isActive && (
-                <div style={{ borderTop: '1px solid rgba(201,168,76,0.2)', paddingTop: '0.75rem', marginTop: '0.25rem' }}>
-                  <p style={{ fontSize: '0.8rem', color: '#d6d3d1', lineHeight: 1.6, marginBottom: '0.5rem' }}>
-                    <strong style={{ color: '#c9a84c' }}>Key thinker:</strong> {u.keyThinker}
+                <div
+                  id={detailsId}
+                  style={{
+                    borderTop: '1px solid color-mix(in srgb, var(--color-gold-400) 20%, transparent)',
+                    paddingTop: '0.75rem',
+                    marginTop: '0.25rem',
+                  }}
+                >
+                  <p style={{ fontSize: '0.8rem', color: 'var(--color-dark-100)', lineHeight: 1.6, marginBottom: '0.5rem' }}>
+                    <strong style={{ color: 'var(--color-gold-400)' }}>Key thinker:</strong> {u.keyThinker}
                   </p>
-                  <p style={{ fontSize: '0.8rem', color: '#a8a29e', lineHeight: 1.6, fontStyle: 'italic' }}>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--color-dark-200)', lineHeight: 1.6, fontStyle: 'italic' }}>
                     {u.implication}
                   </p>
                 </div>
