@@ -12,18 +12,9 @@ const base = import.meta.env.BASE_URL;
       This page could not be found. Perhaps you were looking for the presentation or the glossary?
     </p>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
-      <a href={base}
-         style="padding: 0.75rem 1.5rem; background: #c9a84c; color: #0f1419; font-family: sans-serif; font-weight: 600; border-radius: 0.5rem; text-decoration: none; font-size: 0.9rem;">
-        Home
-      </a>
-      <a href={`${base}presentation`}
-         style="padding: 0.75rem 1.5rem; border: 1px solid #e7e5e4; color: #57534e; font-family: sans-serif; border-radius: 0.5rem; text-decoration: none; font-size: 0.9rem;">
-        Read the Presentation
-      </a>
-      <a href={`${base}glossary`}
-         style="padding: 0.75rem 1.5rem; border: 1px solid #e7e5e4; color: #57534e; font-family: sans-serif; border-radius: 0.5rem; text-decoration: none; font-size: 0.9rem;">
-        Glossary
-      </a>
+      <a href={base} class="hero-btn hero-btn--primary">Home</a>
+      <a href={`${base}presentation`} class="hero-btn hero-btn--outline">Read the Presentation</a>
+      <a href={`${base}glossary`} class="hero-btn hero-btn--outline">Glossary</a>
     </div>
   </div>
 </BaseLayout>
