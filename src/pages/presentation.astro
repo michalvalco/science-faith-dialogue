@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import InsightBox from '../components/InsightBox.astro';
+import FineTuningExplorer from '../components/FineTuningExplorer';
+import FrogFable from '../components/FrogFable';
+import ImagoDeiCards from '../components/ImagoDeiCards';
+import ScientismRadar from '../components/ScientismRadar';
 import { keyTerms, persons, fineTuningConstants, imagoDeiUnderstandings } from '../data/presentation';
 
 const base = import.meta.env.BASE_URL;
@@ -231,7 +235,8 @@ const base = import.meta.env.BASE_URL;
           I raise this because I know that from within the Buddhist tradition — and I have Professor Nguyen's remarkable book <em>The Emptiness of Everything</em> very much in mind — the question of a "first point" is itself suspect. Dependent origination holds that the chain of causes and conditions has no beginning and no end; that "creation theory as a discussion about the beginning of existence is a wrong view." The Christian philosopher hears that and does not flinch, but does want to press: the question is not whether the causal web extends indefinitely backward in time. The question is <em>why there is a causal web at all</em>. Contingency, in the Christian sense, is not about temporal beginnings. It is about ontological dependence. Why is there <em>something</em> rather than nothing? The doctrine of creation is not a competing scientific hypothesis about the first microsecond. It is a claim that the entire web of dependent origination — however far it extends — does not contain within itself the reason for its own existence.
         </p>
         <aside class="margin-note margin-note--dark">Nguyen Manh Hung, <em>The Emptiness of Everything</em> (2024). The primary Buddhist interlocutor throughout this lecture.</aside>
-        
+
+        <FineTuningExplorer client:visible constants={fineTuningConstants} />
 
         <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #c9a84c; margin-top: 2.5rem; margin-bottom: 1rem;">The Frog and the Five Biologists</h3>
 
@@ -239,7 +244,9 @@ const base = import.meta.env.BASE_URL;
           Let me illustrate this with a fable I borrow from the biologist Steven Rose. Five biologists are having a picnic when a frog jumps into a pond. Why did it jump? The <em>physiologist</em> explains that impulses from its brain stimulated its leg muscles. The <em>biochemist</em> says the fibrous proteins slid past each other, activated by ATP. The <em>developmental biologist</em> points to the ontogenetic processes that gave rise to the frog's nervous system. The <em>animal behaviourist</em> says the frog was escaping a lurking snake. The <em>evolutionary biologist</em> says natural selection ensured only those ancestors that could detect and evade predators survived to breed.
         </p>
         <aside class="margin-note margin-note--dark">Rose, <em>Lifelines</em>, pp. 6–7. The five-biologists fable is Rose's most cited illustration of explanatory pluralism.</aside>
-        
+
+        <FrogFable client:visible />
+
         <p style="margin-bottom: 1rem;">
           All five are right. They are also different. None refutes the others. Together they offer something no single perspective could provide: <em>explanatory depth</em>. And this is what I want to suggest for our own gathering: the Christian philosopher and the Buddhist philosopher and the natural scientist are not offering competing answers to the same question. They may well be offering complementary perspectives on the same inexhaustibly rich reality.
         </p>
@@ -369,7 +376,8 @@ const base = import.meta.env.BASE_URL;
           The human person is marked both by glory and fragility. Capable of reason, but finite. Endowed with dignity, yet prone to distortion. Called to truth, but vulnerable to falsehood. This double character — what Pascal called the grandeur and misery of the human condition — is not a problem to be solved. It is a condition to be understood.
         </p>
         <aside class="margin-note margin-note--dark">Blaise Pascal, <em>Pensées</em> (1670), §§ 397–416 — the "disproportion of man."</aside>
-        
+
+        <ImagoDeiCards client:visible understandings={imagoDeiUnderstandings} />
 
         <p style="margin-bottom: 1rem;">
           Now, I know that Professor Nguyen has argued powerfully that the self is <em>relationships</em> — that personal identity is not a fixed essence but the totality of one's connections with nature, society, and one's own thinking. He invokes Yoneda's Lemma from category theory: two entities are isomorphic if and only if all their relationships are isomorphic. He even suggests — and this is his most provocative move — that human desires may not truly be "ours" at all, but the disguised imperatives of DNA pursuing its own replication, like bacteria manipulating a mouse into the jaws of a cat. Consciousness, on this view, is something like The Matrix: a subjective illusion crafted by genes to keep the living machine compliant.
@@ -460,6 +468,8 @@ const base = import.meta.env.BASE_URL;
         </p>
         <aside class="margin-note">Ian James Kidd, "What Is Scientism?" in de Ridder et al. (eds.), <em>Scientism: Prospects and Problems</em> (2018).</aside>
         
+
+        <ScientismRadar client:visible />
 
         <!-- Imperialist, Salvific, Absolutist -->
         <InsightBox title="Imperialist, Salvific, Absolutist" color="teal">
