@@ -9,7 +9,7 @@ export interface KeyTerm {
   language?: string;              // 'Greek' | 'Latin' | 'Sanskrit' | 'Pali' | 'German'
   definition: string;
   tradition: 'Christian' | 'Buddhist' | 'Philosophical' | 'Scientific' | 'Shared';
-  relatedAct?: string;           // Which Act it appears in
+  sourceRef?: string;            // Location reference: Act (e.g. 'Act I'), chapter (e.g. 'Ch. 1'), or section (e.g. 'Preface')
 }
 
 export interface Person {
