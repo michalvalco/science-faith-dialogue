@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { keyTerms } from '../data/presentation';
+import { keyTerms, nguyenTerms } from '../data/presentation';
 ---
 
 <BaseLayout title="Glossary" activeSection="glossary">
@@ -14,7 +14,14 @@ import { keyTerms } from '../data/presentation';
     </div>
   </section>
 
-  <section style="max-width: 56rem; margin: 0 auto; padding: 3rem 1rem;">
+  <!-- General Glossary -->
+  <section style="max-width: 56rem; margin: 0 auto; padding: 3rem 1rem 1.5rem;">
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: #1c1917; margin-bottom: 0.5rem;">
+      General Terms
+    </h2>
+    <p style="font-size: 0.85rem; color: #78716c; margin-bottom: 1.5rem;">
+      Core vocabulary from Christian theology, Buddhist philosophy, philosophy of science, and shared traditions
+    </p>
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
       {keyTerms.map((term) => {
         const borderColor = term.tradition === 'Christian' ? '#c9a84c'
@@ -22,7 +29,7 @@ import { keyTerms } from '../data/presentation';
           : term.tradition === 'Shared' ? '#a85c32'
           : '#78716c';
         return (
-          <div style={`background: white; border-radius: 0.75rem; padding: 1.25rem; border: 1px solid #e7e5e4; border-left: 3px solid ${borderColor};`}>
+          <div id={term.id} style={`background: white; border-radius: 0.75rem; padding: 1.25rem; border: 1px solid #e7e5e4; border-left: 3px solid ${borderColor};`}>
             <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
               <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: #1c1917;">{term.term}</h3>
               {term.originalScript && (
@@ -34,6 +41,55 @@ import { keyTerms } from '../data/presentation';
                 {term.language} · {term.tradition} · {term.relatedAct}
               </p>
             )}
+            <p style="font-size: 0.85rem; color: #57534e; line-height: 1.6;">{term.definition}</p>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div style="max-width: 56rem; margin: 0 auto; padding: 0 1rem;">
+    <hr style="border: none; border-top: 2px solid #3d8b8b; opacity: 0.3;" />
+  </div>
+
+  <!-- Nguyen Hoang Hai Section -->
+  <section style="max-width: 56rem; margin: 0 auto; padding: 1.5rem 1rem 3rem;">
+    <div style="margin-bottom: 1.5rem;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: #1c1917; margin-bottom: 0.25rem;">
+        Nguyen Hoang Hai — <em>The Emptiness of Everything</em> (2025)
+      </h2>
+      <p style="font-size: 0.85rem; color: #78716c; margin-bottom: 0.75rem;">
+        Terms extracted from Nguyen Hoang Hai, <em>The Emptiness of Everything: Contemplating Modern Sciences through Buddhist Principles</em>, 2nd ed. (Hanoi: VNU Press, 2025). These reflect Nguyen's distinctive usage and the specific Buddhist–scientific vocabulary that structures his argument.
+      </p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.7rem; font-family: sans-serif; text-transform: uppercase; letter-spacing: 0.1em; color: #a8a29e;">
+        <span><span style="display: inline-block; width: 10px; height: 10px; border-radius: 2px; background: #3d8b8b; margin-right: 4px; vertical-align: middle;"></span> Buddhist</span>
+        <span><span style="display: inline-block; width: 10px; height: 10px; border-radius: 2px; background: #78716c; margin-right: 4px; vertical-align: middle;"></span> Scientific / Philosophical</span>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
+      {nguyenTerms.map((term) => {
+        const borderColor = term.tradition === 'Buddhist' ? '#3d8b8b'
+          : term.tradition === 'Scientific' ? '#78716c'
+          : '#78716c';
+        return (
+          <div id={term.id} style={`background: white; border-radius: 0.75rem; padding: 1.25rem; border: 1px solid #e7e5e4; border-left: 3px solid ${borderColor};`}>
+            <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: #1c1917;">{term.term}</h3>
+              {term.originalScript && (
+                <span style="font-size: 0.85rem; color: #a8a29e;">{term.originalScript}</span>
+              )}
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+              {term.language && (
+                <span style="font-size: 0.7rem; color: #a8a29e; font-family: sans-serif; text-transform: uppercase; letter-spacing: 0.1em;">
+                  {term.language}
+                </span>
+              )}
+              <span style="font-size: 0.65rem; color: white; background: #3d8b8b; padding: 0.1rem 0.4rem; border-radius: 9999px; font-family: sans-serif;">
+                {term.relatedAct}
+              </span>
+            </div>
             <p style="font-size: 0.85rem; color: #57534e; line-height: 1.6;">{term.definition}</p>
           </div>
         );
