@@ -16,7 +16,7 @@ interface Props {
 
 const { term, showTradition = false, showRefBadge = false } = Astro.props;
 
-const traditionColors: Record<string, string> = {
+const traditionColors: Record<KeyTerm['tradition'], string> = {
   Christian: '#c9a84c',
   Buddhist: '#3d8b8b',
   Shared: '#a85c32',
@@ -42,13 +42,15 @@ const borderColor = traditionColors[term.tradition] ?? '#78716c';
   </div>
 
   <!-- Metadata line: language, tradition, source reference -->
-  {(term.language || showRefBadge) && (
+  {(term.language || showTradition || showRefBadge) && (
     <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
-      {term.language && (
+      {(term.language || showTradition) && (
         <span style="font-size: 0.7rem; color: #a8a29e; font-family: sans-serif; text-transform: uppercase; letter-spacing: 0.1em;">
-          {term.language}
-          {showTradition && term.tradition ? ` · ${term.tradition}` : ''}
-          {showTradition && term.sourceRef ? ` · ${term.sourceRef}` : ''}
+          {[
+            term.language,
+            showTradition && term.tradition,
+            showTradition && term.sourceRef,
+          ].filter(Boolean).join(' · ')}
         </span>
       )}
       {showRefBadge && term.sourceRef && (

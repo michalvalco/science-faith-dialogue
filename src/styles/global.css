@@ -811,6 +811,7 @@
   min-width: 2.5rem;
   text-align: center;
   flex-shrink: 0;
+  color: var(--act-accent, var(--color-gold-400));
 }
 
 .act-card__title {
@@ -858,7 +859,7 @@
   line-height: 1.65;
   font-style: italic;
   color: var(--color-dark-500);
-  border-left: 3px solid var(--color-gold-400);
+  border-left: 3px solid var(--act-accent, var(--color-gold-400));
   padding-left: 1rem;
   margin-bottom: 1rem;
 }
@@ -920,6 +921,47 @@
   .act-card__content {
     padding-left: 1.25rem;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .act-card__content { animation: none; }
+  .act-card__chevron { transition: none; }
+}
+
+/* ============================================
+   Hero buttons — landing page CTA
+   ============================================ */
+
+.hero-btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.hero-btn--primary {
+  background: var(--color-gold-400);
+  color: var(--color-dark-900);
+  font-weight: 600;
+}
+
+.hero-btn--primary:hover,
+.hero-btn--primary:focus-visible {
+  background: var(--color-gold-300);
+}
+
+.hero-btn--secondary {
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--color-dark-100);
+}
+
+.hero-btn--secondary:hover,
+.hero-btn--secondary:focus-visible {
+  background: rgba(255,255,255,0.05);
 }
 
 /* ============================================
