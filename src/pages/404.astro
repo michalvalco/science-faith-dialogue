@@ -4,21 +4,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout title="Stránka nenájdená">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-    <p class="text-8xl mb-6 opacity-30">☸</p>
-    <h1 class="font-display text-4xl font-semibold text-ink-950 mb-4">404</h1>
-    <p class="text-ink-500 text-lg mb-8 max-w-md mx-auto">
-      Táto stránka nebola nájdená. Možno hľadáte niektorý z modulov alebo hlavnú stránku kurzu.
+<BaseLayout title="Page Not Found">
+  <div style="max-width: 36rem; margin: 0 auto; padding: 5rem 1rem; text-align: center;">
+    <p style="font-size: 5rem; opacity: 0.25; margin-bottom: 1.5rem;">✝ ☸</p>
+    <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; color: #1c1917; margin-bottom: 1rem;">404</h1>
+    <p style="color: #78716c; font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.6;">
+      This page could not be found. Perhaps you were looking for the presentation or the glossary?
     </p>
-    <div class="flex flex-wrap justify-center gap-4">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
       <a href={base}
-         class="px-6 py-3 bg-sacred-500 text-cosmos-950 font-sans font-semibold rounded-lg hover:bg-sacred-400 transition-colors">
-        Úvodná stránka
+         style="padding: 0.75rem 1.5rem; background: #c9a84c; color: #0f1419; font-family: sans-serif; font-weight: 600; border-radius: 0.5rem; text-decoration: none; font-size: 0.9rem;">
+        Home
       </a>
-      <a href={`${base}sylabus`}
-         class="px-6 py-3 border border-sandstone-300 text-ink-600 font-sans rounded-lg hover:bg-sandstone-100 transition-colors">
-        Sylabus kurzu
+      <a href={`${base}presentation`}
+         style="padding: 0.75rem 1.5rem; border: 1px solid #e7e5e4; color: #57534e; font-family: sans-serif; border-radius: 0.5rem; text-decoration: none; font-size: 0.9rem;">
+        Read the Presentation
+      </a>
+      <a href={`${base}glossary`}
+         style="padding: 0.75rem 1.5rem; border: 1px solid #e7e5e4; color: #57534e; font-family: sans-serif; border-radius: 0.5rem; text-decoration: none; font-size: 0.9rem;">
+        Glossary
       </a>
     </div>
   </div>

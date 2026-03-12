@@ -30,15 +30,11 @@ const base = import.meta.env.BASE_URL;
 
       <div style="margin-top: 2.5rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
         <a href={`${base}presentation`}
-           style="padding: 0.75rem 1.75rem; background: #c9a84c; color: #0f1419; font-family: sans-serif; font-weight: 600; border-radius: 0.5rem; text-decoration: none; font-size: 0.95rem; transition: background 0.2s;"
-           onmouseover="this.style.background='#d4b86a'"
-           onmouseout="this.style.background='#c9a84c'">
+           class="hero-btn hero-btn--primary">
           Read the Presentation
         </a>
         <a href={`${base}about`}
-           style="padding: 0.75rem 1.75rem; border: 1px solid rgba(201,168,76,0.3); color: #d6d3d1; font-family: sans-serif; border-radius: 0.5rem; text-decoration: none; font-size: 0.95rem; transition: background 0.2s;"
-           onmouseover="this.style.background='rgba(255,255,255,0.05)'"
-           onmouseout="this.style.background='transparent'">
+           class="hero-btn hero-btn--secondary">
           About the Project
         </a>
       </div>
@@ -104,10 +100,10 @@ const base = import.meta.env.BASE_URL;
     <div style="display: flex; flex-direction: column; gap: 0.75rem;">
 
       <!-- Act I -->
-      <details class="act-card">
+      <details class="act-card act-creation">
         <summary class="act-card__summary">
           <div class="act-card__header">
-            <span class="act-card__num" style="color: #c9a84c;">I</span>
+            <span class="act-card__num">I</span>
             <div>
               <h3 class="act-card__title">Creation, Intelligibility, and Contingency</h3>
               <p class="act-card__desc">Why is the universe intelligible? The doctrine of creation as the foundation of scientific inquiry.</p>
@@ -116,7 +112,7 @@ const base = import.meta.env.BASE_URL;
           <span class="act-card__chevron">+</span>
         </summary>
         <div class="act-card__content">
-          <p class="act-card__thesis" style="border-left-color: #c9a84c;">
+          <p class="act-card__thesis">
             Science became possible when nature was understood not as divine but as <em>created</em> — magnificent, yet not to be worshipped. This freed inquiry: if the Nile is a god, you pray to it; if it is a creature, you can study it.
           </p>
           <ul class="act-card__points">
@@ -126,15 +122,15 @@ const base = import.meta.env.BASE_URL;
             <li><strong>Order + Contingency = Science:</strong> Order makes science rational; contingency makes it empirical. Together they give us the intellectual conditions for modern natural science.</li>
           </ul>
           <p class="act-card__thinkers"><strong>Key voices:</strong> Thomas F. Torrance, Stanley Jaki, Peter Harrison, Steven Rose</p>
-          <a href={`${base}presentation#act-creation`} class="act-card__link">Read Act I in full &rarr;</a>
+          <a href={`${base}presentation#act-i`} class="act-card__link">Read Act I in full &rarr;</a>
         </div>
       </details>
 
       <!-- Act II -->
-      <details class="act-card">
+      <details class="act-card act-buddhism">
         <summary class="act-card__summary">
           <div class="act-card__header">
-            <span class="act-card__num" style="color: #3d8b8b;">II</span>
+            <span class="act-card__num">II</span>
             <div>
               <h3 class="act-card__title">A Genuine Conversation with Dependent Origination</h3>
               <p class="act-card__desc">Dependent origination as an alternative account of why things exist. Convergences and the fork in the road.</p>
@@ -143,7 +139,7 @@ const base = import.meta.env.BASE_URL;
           <span class="act-card__chevron">+</span>
         </summary>
         <div class="act-card__content">
-          <p class="act-card__thesis" style="border-left-color: #3d8b8b;">
+          <p class="act-card__thesis">
             All phenomena arise through mutual conditioning; nothing stands alone. Compositionality + impermanence = emptiness (<em>śūnyatā</em>) — the absence of fixed, independent essence. But does the web of dependent origination explain <em>why there is a web at all</em>?
           </p>
           <ul class="act-card__points">
@@ -154,15 +150,15 @@ const base = import.meta.env.BASE_URL;
             <li><strong>Colligation, not syncretism:</strong> The traditions are brought together to see a larger pattern, not merged. Each retains its distinctive voice.</li>
           </ul>
           <p class="act-card__thinkers"><strong>Key voices:</strong> Nāgārjuna, Nguyen Hoang Hai, Alasdair MacIntyre, Alister McGrath</p>
-          <a href={`${base}presentation#act-buddhism`} class="act-card__link">Read Act II in full &rarr;</a>
+          <a href={`${base}presentation#act-ii`} class="act-card__link">Read Act II in full &rarr;</a>
         </div>
       </details>
 
       <!-- Act III -->
-      <details class="act-card">
+      <details class="act-card act-person">
         <summary class="act-card__summary">
           <div class="act-card__header">
-            <span class="act-card__num" style="color: #c9a84c;">III</span>
+            <span class="act-card__num">III</span>
             <div>
               <h3 class="act-card__title">The Person Who Knows</h3>
               <p class="act-card__desc">What is the human person? Four understandings of the <em>imago Dei</em> meet the Buddhist no-self.</p>
@@ -171,7 +167,7 @@ const base = import.meta.env.BASE_URL;
           <span class="act-card__chevron">+</span>
         </summary>
         <div class="act-card__content">
-          <p class="act-card__thesis" style="border-left-color: #c9a84c;">
+          <p class="act-card__thesis">
             Science is not a neutral method but a practice of <em>persons</em>. If the knower is merely an adaptive algorithm optimized for survival, then what grounds scientific <em>truthfulness</em>? The capacity for rational inquiry, self-transcendence, and moral responsibility are constitutive of personhood.
           </p>
           <ul class="act-card__points">
@@ -181,15 +177,15 @@ const base = import.meta.env.BASE_URL;
             <li><strong>Knowledge as ethical vocation:</strong> Inquiry is a moral calling ordered toward the good, not merely a technique for power (Luther's <em>coram Deo</em>).</li>
           </ul>
           <p class="act-card__thinkers"><strong>Key voices:</strong> Blaise Pascal, Martin Luther, Nguyen Hoang Hai, Richard Dawkins, Alister McGrath</p>
-          <a href={`${base}presentation#act-person`} class="act-card__link">Read Act III in full &rarr;</a>
+          <a href={`${base}presentation#act-iii`} class="act-card__link">Read Act III in full &rarr;</a>
         </div>
       </details>
 
       <!-- Act IV -->
-      <details class="act-card">
+      <details class="act-card act-limits">
         <summary class="act-card__summary">
           <div class="act-card__header">
-            <span class="act-card__num" style="color: #a85c32;">IV</span>
+            <span class="act-card__num">IV</span>
             <div>
               <h3 class="act-card__title">The Limits of Science</h3>
               <p class="act-card__desc">Can science establish values? The three impulses of scientism and the metaquestions science cannot answer.</p>
@@ -198,7 +194,7 @@ const base = import.meta.env.BASE_URL;
           <span class="act-card__chevron">+</span>
         </summary>
         <div class="act-card__content">
-          <p class="act-card__thesis" style="border-left-color: #a85c32;">
+          <p class="act-card__thesis">
             Science excels at measurable patterns, causal regularities, repeatable phenomena. But it cannot answer why something rather than nothing exists, whether humans have intrinsic dignity, what knowledge is <em>for</em>, or what we ought to do. These are not irrational questions — they are trans-scientific.
           </p>
           <ul class="act-card__points">
@@ -208,15 +204,15 @@ const base = import.meta.env.BASE_URL;
             <li><strong>The "bizarrely restrictive view":</strong> A single perspective allowed to become normative produces a restrictive view of meaning (Mary Midgley). Both traditions resist this narrowing.</li>
           </ul>
           <p class="act-card__thinkers"><strong>Key voices:</strong> Ian James Kidd, Edward Feser, Mary Midgley, T. F. Torrance, Kurt Gödel</p>
-          <a href={`${base}presentation#act-limits`} class="act-card__link">Read Act IV in full &rarr;</a>
+          <a href={`${base}presentation#act-iv`} class="act-card__link">Read Act IV in full &rarr;</a>
         </div>
       </details>
 
       <!-- Act V -->
-      <details class="act-card">
+      <details class="act-card act-mystery">
         <summary class="act-card__summary">
           <div class="act-card__header">
-            <span class="act-card__num" style="color: #c9a84c;">V</span>
+            <span class="act-card__num">V</span>
             <div>
               <h3 class="act-card__title">Mystery: The Trans-Rational</h3>
               <p class="act-card__desc">When models fail. The apophatic tradition, the numinous, and the emptiness of emptiness.</p>
@@ -225,7 +221,7 @@ const base = import.meta.env.BASE_URL;
           <span class="act-card__chevron">+</span>
         </summary>
         <div class="act-card__content">
-          <p class="act-card__thesis" style="border-left-color: #c9a84c;">
+          <p class="act-card__thesis">
             Mystery is not irrationality but the <em>trans-rational</em> — what overwhelms and saturates rational capacity precisely because it is <em>more</em> than we can think. Both the Christian apophatic tradition and Buddhist śūnyatā cultivate resistance to reducing reality to our current concepts.
           </p>
           <ul class="act-card__points">
@@ -235,15 +231,15 @@ const base = import.meta.env.BASE_URL;
             <li><strong>The verum-factum principle (Vico):</strong> We fully grasp only what we construct. Nature and God are realities we did not make and cannot fully master.</li>
           </ul>
           <p class="act-card__thinkers"><strong>Key voices:</strong> Rudolf Otto, Max Weber, Gregory of Nyssa, Nāgārjuna, Giambattista Vico, Richard Feynman</p>
-          <a href={`${base}presentation#act-mystery`} class="act-card__link">Read Act V in full &rarr;</a>
+          <a href={`${base}presentation#act-v`} class="act-card__link">Read Act V in full &rarr;</a>
         </div>
       </details>
 
       <!-- Closing -->
-      <details class="act-card act-card--closing">
+      <details class="act-card act-closing">
         <summary class="act-card__summary">
           <div class="act-card__header">
-            <span class="act-card__num" style="color: #a85c32;">&hearts;</span>
+            <span class="act-card__num">&hearts;</span>
             <div>
               <h3 class="act-card__title">What Happens to Love?</h3>
               <p class="act-card__desc">If the self is relational, what grounds the reality of love? The deepest question between our two traditions.</p>
@@ -252,7 +248,7 @@ const base = import.meta.env.BASE_URL;
           <span class="act-card__chevron">+</span>
         </summary>
         <div class="act-card__content">
-          <p class="act-card__thesis" style="border-left-color: #a85c32;">
+          <p class="act-card__thesis">
             If the self is an illusion crafted by DNA, then love is too — just another adaptive strategy. But if love is <em>real</em>, if a mother's love is not merely a dopamine-mediated survival mechanism but a genuine participation in something transcendent, then reality cannot be exhausted by compositionality and impermanence.
           </p>
           <ul class="act-card__points">
