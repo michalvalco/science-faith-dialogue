@@ -1,0 +1,64 @@
+---
+/**
+ * GlossaryCard — shared card component for glossary terms.
+ * Used in both General Terms and Nguyen sections to ensure
+ * consistent rendering, styling, and a11y across all glossary entries.
+ */
+import type { KeyTerm } from '../data/types';
+
+interface Props {
+  term: KeyTerm;
+  /** Show tradition and sourceRef in the metadata line (general glossary style) */
+  showTradition?: boolean;
+  /** Show sourceRef as a pill badge (Nguyen section style) */
+  showRefBadge?: boolean;
+}
+
+const { term, showTradition = false, showRefBadge = false } = Astro.props;
+
+const traditionColors: Record<string, string> = {
+  Christian: '#c9a84c',
+  Buddhist: '#3d8b8b',
+  Shared: '#a85c32',
+  Philosophical: '#78716c',
+  Scientific: '#78716c',
+};
+
+const borderColor = traditionColors[term.tradition] ?? '#78716c';
+---
+
+<div
+  id={term.id}
+  style={`background: white; border-radius: 0.75rem; padding: 1.25rem; border: 1px solid #e7e5e4; border-left: 3px solid ${borderColor};`}
+>
+  <!-- Term name + original script -->
+  <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
+    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: #1c1917;">
+      {term.term}
+    </h3>
+    {term.originalScript && (
+      <span style="font-size: 0.85rem; color: #a8a29e;">{term.originalScript}</span>
+    )}
+  </div>
+
+  <!-- Metadata line: language, tradition, source reference -->
+  {(term.language || showRefBadge) && (
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
+      {term.language && (
+        <span style="font-size: 0.7rem; color: #a8a29e; font-family: sans-serif; text-transform: uppercase; letter-spacing: 0.1em;">
+          {term.language}
+          {showTradition && term.tradition ? ` · ${term.tradition}` : ''}
+          {showTradition && term.sourceRef ? ` · ${term.sourceRef}` : ''}
+        </span>
+      )}
+      {showRefBadge && term.sourceRef && (
+        <span style="font-size: 0.65rem; color: white; background: #3d8b8b; padding: 0.1rem 0.4rem; border-radius: 9999px; font-family: sans-serif;">
+          {term.sourceRef}
+        </span>
+      )}
+    </div>
+  )}
+
+  <!-- Definition -->
+  <p style="font-size: 0.85rem; color: #57534e; line-height: 1.6;">{term.definition}</p>
+</div>
