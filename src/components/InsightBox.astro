@@ -1,0 +1,11 @@
+---
+interface Props {
+  title: string;
+  color?: 'gold' | 'teal' | 'rust';
+}
+const { title, color = 'teal' } = Astro.props;
+---
+<details class={`insight-box insight-box--${color}`}>
+  <summary>{title}<span class="insight-explore">Explore</span></summary>
+  <div class="insight-content"><slot /></div>
+</details>

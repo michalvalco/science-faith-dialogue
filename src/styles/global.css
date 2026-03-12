@@ -600,18 +600,33 @@
   line-height: 1.5;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1280px) {
   .margin-note {
     float: right;
     clear: right;
-    margin-right: -18.5rem;
-    width: 15rem;
+    margin-right: -16rem;
+    width: 13rem;
     margin-top: 0;
     margin-bottom: 1rem;
     margin-left: 1.5rem;
     background: transparent;
     border-left-color: var(--color-gold-300);
     padding-left: 0.75rem;
+  }
+}
+
+/* Margin notes on dark backgrounds */
+.margin-note--dark {
+  color: var(--color-dark-200);
+  background: rgba(201,168,76,0.05);
+  border-left-color: rgba(201,168,76,0.3);
+}
+
+@media (min-width: 1280px) {
+  .margin-note--dark {
+    background: transparent;
+    border-left-color: rgba(201,168,76,0.3);
+    color: var(--color-dark-200);
   }
 }
 
@@ -653,6 +668,118 @@
 
 .breadcrumb a:hover { color: var(--color-gold-400); }
 .breadcrumb .separator { color: var(--color-dark-400); }
+
+/* ============================================
+   InsightBox — expandable details component
+   ============================================ */
+
+.insight-box {
+  margin: 2rem 0;
+  border-radius: 4px;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+}
+
+.insight-box--teal {
+  background: rgba(61,139,139,0.06);
+  border-left: 3px solid #3d8b8b;
+}
+
+.insight-box--gold {
+  background: rgba(201,168,76,0.06);
+  border-left: 3px solid #c9a84c;
+}
+
+.insight-box--rust {
+  background: rgba(168,92,50,0.06);
+  border-left: 3px solid #a85c32;
+}
+
+.insight-box > summary {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.insight-box--teal > summary { color: #3d8b8b; }
+.insight-box--gold > summary { color: #c9a84c; }
+.insight-box--rust > summary { color: #a85c32; }
+
+.insight-box > summary::-webkit-details-marker { display: none; }
+
+.insight-explore {
+  font-family: sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.insight-box--teal .insight-explore,
+.insight-box--rust .insight-explore { color: #78716c; }
+.insight-box--gold .insight-explore { color: #a8a29e; }
+
+.insight-content {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  opacity: 0.85;
+}
+
+.insight-content p {
+  margin-bottom: 0.75rem;
+}
+
+.insight-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   Section Dividers — visual act transitions
+   ============================================ */
+
+.act-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0;
+  user-select: none;
+}
+
+.act-divider::before,
+.act-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  max-width: 6rem;
+}
+
+.act-divider__number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+/* Divider on light backgrounds */
+.act-divider--light::before,
+.act-divider--light::after {
+  background: linear-gradient(to var(--dir, right), transparent, rgba(201,168,76,0.3));
+}
+.act-divider--light .act-divider__number { color: #c9a84c; }
+
+/* Divider on dark backgrounds */
+.act-divider--dark::before,
+.act-divider--dark::after {
+  background: linear-gradient(to var(--dir, right), transparent, rgba(201,168,76,0.2));
+}
+.act-divider--dark .act-divider__number { color: rgba(201,168,76,0.6); }
+
+.act-divider::after { --dir: left; }
 
 /* ============================================
    Print styles — clean study-sheet output

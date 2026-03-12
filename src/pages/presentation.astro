@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import InsightBox from '../components/InsightBox.astro';
 import { keyTerms, persons, fineTuningConstants, imagoDeiUnderstandings } from '../data/presentation';
 
 const base = import.meta.env.BASE_URL;
@@ -141,22 +142,18 @@ const base = import.meta.env.BASE_URL;
       </p>
 
       <!-- Five Questions -->
-      <details style="margin: 2rem 0; border-radius: 4px; padding: 1.5rem 2rem; background: rgba(61,139,139,0.06); border-left: 3px solid #3d8b8b; cursor: pointer;">
-        <summary style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #3d8b8b; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-          The Five Questions
-          <span style="font-family: sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #78716c;">Explore</span>
-        </summary>
-        <div style="margin-top: 1rem; font-size: 1.05rem; line-height: 1.85; opacity: 0.85;">
-          <p style="margin-bottom: 0.75rem;"><strong>First:</strong> What kind of world makes science possible at all?</p>
+      <InsightBox title="The Five Questions" color="teal">
+<p style="margin-bottom: 0.75rem;"><strong>First:</strong> What kind of world makes science possible at all?</p>
           <p style="margin-bottom: 0.75rem;"><strong>Second:</strong> How does Christianity understand creation, order, and contingency?</p>
           <p style="margin-bottom: 0.75rem;"><strong>Third:</strong> Where do our traditions converge — and where do they honestly diverge?</p>
           <p style="margin-bottom: 0.75rem;"><strong>Fourth:</strong> Who is the knower — the scientist, the scholar, the person doing the knowing?</p>
           <p><strong>Fifth:</strong> Where do we find the limits of science — and what lies beyond them that is not irrational, but <em>trans-</em>rational?</p>
-        </div>
-      </details>
+</InsightBox>
 
     </div>
   </section>
+
+  <div class="act-divider act-divider--light" aria-hidden="true"><span class="act-divider__number">I</span></div>
 
   <!-- ========== ACT I: Creation & Contingency ========== -->
   <section id="act-i" style="background: #0f1419; color: rgba(232,224,212,0.88);">
@@ -220,22 +217,15 @@ const base = import.meta.env.BASE_URL;
         </p>
 
         <!-- Order + Contingency = Science -->
-        <details style="margin: 2rem 0; border-radius: 4px; padding: 1.5rem 2rem; background: rgba(201,168,76,0.06); border-left: 3px solid #c9a84c; cursor: pointer;">
-          <summary style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #c9a84c; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-            Order + Contingency = Science
-            <span style="font-family: sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #a8a29e;">Explore</span>
-          </summary>
-          <div style="margin-top: 1rem; font-size: 1.05rem; line-height: 1.85; opacity: 0.85;">
-            <p style="margin-bottom: 0.75rem;">The doctrine of creation gives us two things at once: <strong style="color: #faf5ee;">order</strong>, which makes science rational, and <strong style="color: #faf5ee;">contingency</strong>, which makes science empirical. Both are necessary.</p>
+        <InsightBox title="Order + Contingency = Science" color="gold">
+<p style="margin-bottom: 0.75rem;">The doctrine of creation gives us two things at once: <strong style="color: #faf5ee;">order</strong>, which makes science rational, and <strong style="color: #faf5ee;">contingency</strong>, which makes science empirical. Both are necessary.</p>
             <p style="margin-bottom: 0.75rem;">Without order, investigation would be pointless — there would be nothing coherent to find. Without contingency, investigation would be unnecessary — we could simply deduce everything from first principles.</p>
             <p style="margin-bottom: 0.75rem;">Historians like Stanley Jaki and Peter Harrison have argued convincingly that the contingency of creation was one of the intellectual preconditions for the emergence of modern empirical science. The scientific revolution did not fall from the sky. It grew in a particular intellectual soil — and that soil was, at least in part, theological.</p>
         <aside class="margin-note margin-note--dark">Jaki, <em>The Road of Science and the Ways to God</em> (1978); Harrison, <em>The Territories of Science and Religion</em> (2015).</aside>
         
             <p>Werner Heisenberg saw a related point from within physics itself: what we observe is not nature in itself, but nature as it is disclosed by our methods of investigation. If so, then a multiplicity of methods gives us a multiplicity of genuine perspectives on a single reality. No method exhausts the whole. And that recognition — the refusal to let any single perspective totalize reality — is itself a deeply rational stance.</p>
         <aside class="margin-note margin-note--dark">Heisenberg, <em>Physics and Philosophy</em> (1958). Cf. the Copenhagen interpretation of quantum mechanics.</aside>
-        
-          </div>
-        </details>
+</InsightBox>
 
         <p style="margin-bottom: 1rem;">
           I raise this because I know that from within the Buddhist tradition — and I have Professor Nguyen's remarkable book <em>The Emptiness of Everything</em> very much in mind — the question of a "first point" is itself suspect. Dependent origination holds that the chain of causes and conditions has no beginning and no end; that "creation theory as a discussion about the beginning of existence is a wrong view." The Christian philosopher hears that and does not flinch, but does want to press: the question is not whether the causal web extends indefinitely backward in time. The question is <em>why there is a causal web at all</em>. Contingency, in the Christian sense, is not about temporal beginnings. It is about ontological dependence. Why is there <em>something</em> rather than nothing? The doctrine of creation is not a competing scientific hypothesis about the first microsecond. It is a claim that the entire web of dependent origination — however far it extends — does not contain within itself the reason for its own existence.
@@ -262,6 +252,8 @@ const base = import.meta.env.BASE_URL;
       </div>
     </div>
   </section>
+
+  <div class="act-divider act-divider--dark" aria-hidden="true"><span class="act-divider__number">II</span></div>
 
   <!-- ========== ACT II: The Buddhist Response ========== -->
   <section id="act-ii" style="background: #faf5ee; border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15);">
@@ -334,17 +326,11 @@ const base = import.meta.env.BASE_URL;
         </p>
 
         <!-- Colligation, Not Syncretism -->
-        <details style="margin: 2rem 0; border-radius: 4px; padding: 1.5rem 2rem; background: rgba(61,139,139,0.06); border-left: 3px solid #3d8b8b; cursor: pointer;">
-          <summary style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #3d8b8b; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-            Colligation, Not Syncretism
-            <span style="font-family: sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #78716c;">Explore</span>
-          </summary>
-          <div style="margin-top: 1rem; font-size: 1.05rem; line-height: 1.85; opacity: 0.85;">
-            <p style="margin-bottom: 0.75rem;">Let me be precise about what I think we are doing when we bring these traditions into conversation. We are not <em>integrating</em> them — that would imply merging their distinct identities. We are not merely setting them side by side in polite multidisciplinary coexistence. What I propose is <strong>colligation</strong>: the principled bringing-together of genuinely different insights to see what larger pattern emerges.</p>
+        <InsightBox title="Colligation, Not Syncretism" color="teal">
+<p style="margin-bottom: 0.75rem;">Let me be precise about what I think we are doing when we bring these traditions into conversation. We are not <em>integrating</em> them — that would imply merging their distinct identities. We are not merely setting them side by side in polite multidisciplinary coexistence. What I propose is <strong>colligation</strong>: the principled bringing-together of genuinely different insights to see what larger pattern emerges.</p>
             <p style="margin-bottom: 0.75rem;">Colligation preserves the distinctiveness of each tradition. It does not resolve the methodological asymmetry between disciplines. It recognizes that each pearl on the string retains its own identity — and that the string reveals a coherence none could produce alone.</p>
             <p>And critically, colligation is <em>a matter of choice</em>. It reflects the personal or communal epistemic conclusions of thinkers who find the larger picture compelling — not a publicly unassailable proof. Both of us are standing within our traditions, making a wager on coherence. That is not a weakness. It is the condition of all deep thought.</p>
-          </div>
-        </details>
+</InsightBox>
 
         <p style="margin-bottom: 1rem;">
           The Christian account gives very strong weight to the reality and integrity of created beings. Not isolated substances sealed off from one another — no. But real beings nonetheless, with given natures, genuine causal powers, and — in the case of human persons — a distinctive vocation and dignity.
@@ -355,6 +341,8 @@ const base = import.meta.env.BASE_URL;
       </div>
     </div>
   </section>
+
+  <div class="act-divider act-divider--light" aria-hidden="true"><span class="act-divider__number">III</span></div>
 
   <!-- ========== ACT III: The Person Who Knows ========== -->
   <section id="act-iii" style="background: #1a2332; color: rgba(232,224,212,0.85);">
@@ -396,20 +384,14 @@ const base = import.meta.env.BASE_URL;
         </p>
 
         <!-- Three Perspectives on Human Nature -->
-        <details style="margin: 2rem 0; border-radius: 4px; padding: 1.5rem 2rem; background: rgba(201,168,76,0.06); border-left: 3px solid #c9a84c; cursor: pointer;">
-          <summary style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #c9a84c; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-            Three Perspectives on Human Nature
-            <span style="font-family: sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #a8a29e;">Explore</span>
-          </summary>
-          <div style="margin-top: 1rem; font-size: 1.05rem; line-height: 1.85; opacity: 0.85;">
-            <p style="margin-bottom: 0.75rem;">McGrath suggests a striking exercise in colligation. Consider three insights about human beings, drawn from three different epistemic communities:</p>
+        <InsightBox title="Three Perspectives on Human Nature" color="gold">
+<p style="margin-bottom: 0.75rem;">McGrath suggests a striking exercise in colligation. Consider three insights about human beings, drawn from three different epistemic communities:</p>
             <p style="margin-bottom: 0.75rem;"><strong style="color: #faf5ee;">From evolutionary biology:</strong> Human beings are genetically predisposed to act in selfish ways, even if that occasionally expresses itself in seemingly altruistic modes of behaviour.</p>
             <p style="margin-bottom: 0.75rem;"><strong style="color: #faf5ee;">From cultural anthropology:</strong> Human beings are predisposed to use narratives to recall the past, preserve identity, and construct systems of meaning.</p>
             <p style="margin-bottom: 0.75rem;"><strong style="color: #faf5ee;">From Christian theology:</strong> Human beings are sinful, alienated from God and their true destiny, and stand in need of salvation.</p>
             <p style="margin-bottom: 0.75rem;">These three can be placed in isolated compartments — or they can be woven together. The scientific narrative of selfish genes and the theological narrative of sin are not the same thing. But they rhyme. They describe different levels of the same complex creature. And the anthropological insight about narrative explains <em>how</em> we hold such complexity together — through the stories we tell about who we are.</p>
             <p>Now imagine adding a fourth voice: <strong style="color: #faf5ee;">From Buddhist philosophy:</strong> Human beings are trapped in <em>saṃsāra</em>, driven by <em>taṇhā</em> (craving), and in need of <em>nibbāna</em> (liberation). This, too, rhymes — without being identical. The colligation expands. The picture deepens.</p>
-          </div>
-        </details>
+</InsightBox>
 
         <figure class="pull-quote--thesis">
           Knowledge is not only power. It is vocation.
@@ -428,18 +410,12 @@ const base = import.meta.env.BASE_URL;
         </p>
 
         <!-- The AI Test -->
-        <details style="margin: 2rem 0; border-radius: 4px; padding: 1.5rem 2rem; background: rgba(201,168,76,0.06); border-left: 3px solid #c9a84c; cursor: pointer;">
-          <summary style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #c9a84c; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-            The AI Test
-            <span style="font-family: sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #a8a29e;">Explore</span>
-          </summary>
-          <div style="margin-top: 1rem; font-size: 1.05rem; line-height: 1.85; opacity: 0.85;">
-            <p style="margin-bottom: 0.75rem;">If science is just very sophisticated pattern-matching, then AI can do science. Perhaps better than we can. And the human knower becomes a quaint historical predecessor — the horse before the automobile.</p>
+        <InsightBox title="The AI Test" color="gold">
+<p style="margin-bottom: 0.75rem;">If science is just very sophisticated pattern-matching, then AI can do science. Perhaps better than we can. And the human knower becomes a quaint historical predecessor — the horse before the automobile.</p>
             <p style="margin-bottom: 0.75rem;">But if science requires not only computation but <strong style="color: #faf5ee;">understanding</strong> — if it presupposes a <em>knower</em>, a person capable of truth, of self-correction, of asking "why?" and meaning it — then we are dealing with something irreducible.</p>
             <p style="margin-bottom: 0.75rem;">A calculator does not know mathematics. A chatbot does not know language. A diagnostic algorithm does not know the patient. Processing, no matter how rapid or complex, is not the same as understanding. As Richard Dawkins himself conceded — with uncharacteristic humility — the human mind is an instrument evolved to cope with medium-sized objects at medium speeds in Africa. It was not designed to investigate the deep structure of reality. And yet it does. That fact alone should give us pause.</p>
             <p>The Buddhist tradition insists that the person is not a fixed, isolated substance to be replicated. The Christian tradition insists that the person is not a biological machine to be surpassed. Both insights are needed now — perhaps more than ever — in a world increasingly tempted to believe that anything computable can be replaced.</p>
-          </div>
-        </details>
+</InsightBox>
 
         <p style="margin-bottom: 1rem;">
           A Christian anthropology says: the knower is not an algorithm. The knower is a person — finite, embodied, morally accountable, oriented toward truth as a good, capable of wonder and guilt and sacrifice and love. None of these are computable. And that is why the rise of AI does not make the question of human nature less important. It makes it the most urgent question of our time.
@@ -447,6 +423,8 @@ const base = import.meta.env.BASE_URL;
       </div>
     </div>
   </section>
+
+  <div class="act-divider act-divider--dark" aria-hidden="true"><span class="act-divider__number">IV</span></div>
 
   <!-- ========== ACT IV: The Limits of Science ========== -->
   <section id="act-iv" style="background: #faf5ee; border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15);">
@@ -484,19 +462,13 @@ const base = import.meta.env.BASE_URL;
         
 
         <!-- Imperialist, Salvific, Absolutist -->
-        <details style="margin: 2rem 0; border-radius: 4px; padding: 1.5rem 2rem; background: rgba(61,139,139,0.06); border-left: 3px solid #3d8b8b; cursor: pointer;">
-          <summary style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #3d8b8b; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-            Imperialist, Salvific, Absolutist
-            <span style="font-family: sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #78716c;">Explore</span>
-          </summary>
-          <div style="margin-top: 1rem; font-size: 1.05rem; line-height: 1.85; opacity: 0.85;">
-            <p style="margin-bottom: 0.75rem;"><strong>The imperialist urge</strong> — a compulsion to extend scientific concepts and methods into areas where their competency is uncalibrated and almost certainly problematic. Ethics, aesthetics, metaphysics, theology all become "pre-scientific" rather than <em>differently rational</em>.</p>
+        <InsightBox title="Imperialist, Salvific, Absolutist" color="teal">
+<p style="margin-bottom: 0.75rem;"><strong>The imperialist urge</strong> — a compulsion to extend scientific concepts and methods into areas where their competency is uncalibrated and almost certainly problematic. Ethics, aesthetics, metaphysics, theology all become "pre-scientific" rather than <em>differently rational</em>.</p>
             <p style="margin-bottom: 0.75rem;"><strong>The salvific urge</strong> — an insistence that science, or what certain people take to be science, can satisfy our ethical, spiritual, and existential needs. The white coat replaces the cassock; the laboratory becomes the temple.</p>
             <p style="margin-bottom: 0.75rem;"><strong>The absolutist urge</strong> — a compulsion to assign to science the exclusive task of providing complete, totalizing accounts of life, the universe, and everything.</p>
             <p style="margin-bottom: 0.75rem;">All three impulses share a common flaw: they make <em>philosophical claims about science</em> that cannot themselves be verified scientifically. Scientism is trapped in a vicious circle — it must assume its own authority in order to confirm it. As Edward Feser puts it: to break out of this circle you would need to get <em>outside</em> science altogether — and the very existence of that extra-scientific vantage point would falsify the claim that science alone gives us rational access to reality.</p>
             <p>The philosopher Mary Midgley cuts to the heart of it: most of the important questions in human life demand multiple conceptual toolboxes used together. If a single perspective on reality is allowed to become normative, the outcome is inevitably a "bizarrely restrictive view of meaning."</p>
-          </div>
-        </details>
+</InsightBox>
 
         <p style="margin-bottom: 1rem;">
           This matters very directly for our conversation. Professor Nguyen argues, as a working hypothesis, that the brain is a Turing machine and consciousness is the body's "operating system." He is careful to call this an approximation. And in a genuinely illuminating passage, he acknowledges Gödel's incompleteness theorem — that "wanting to explain everything by reason is impossible" — and appeals to meditation and emotion as complements to rational inquiry. But a deep tension runs through his argument: if consciousness evolved not for <em>truth</em> but for <em>appropriateness</em> — not to reflect reality faithfully, but to model it adaptively — then what is the epistemic status of the Buddhist claim to <em>wisdom</em>? If the brain's model of reality "need not be truthful, only appropriate," then how do we distinguish genuine insight from useful illusion? Scientism says: only the measurable is real. But a thoroughgoing neural constructivism may end up saying something equally restrictive: only the adaptive is knowable. Both risk closing the door on truth — on the possibility that the human mind can reach beyond survival toward something worth knowing for its own sake.
@@ -512,6 +484,8 @@ const base = import.meta.env.BASE_URL;
       </div>
     </div>
   </section>
+
+  <div class="act-divider act-divider--light" aria-hidden="true"><span class="act-divider__number">V</span></div>
 
   <!-- ========== ACT V: Mystery & the Trans-Rational ========== -->
   <section id="act-v" style="background: #0f1419; color: rgba(250,245,238,0.85);">
@@ -554,19 +528,13 @@ const base = import.meta.env.BASE_URL;
         
 
         <!-- Shared Territory: The Apophatic and Śūnyatā -->
-        <details style="margin: 2rem 0; border-radius: 4px; padding: 1.5rem 2rem; background: rgba(201,168,76,0.06); border-left: 3px solid #c9a84c; cursor: pointer;">
-          <summary style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #c9a84c; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-            Shared Territory: The Apophatic and Śūnyatā
-            <span style="font-family: sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #a8a29e;">Explore</span>
-          </summary>
-          <div style="margin-top: 1rem; font-size: 1.05rem; line-height: 1.85; opacity: 0.85;">
-            <p style="margin-bottom: 0.75rem;">Here is where I think our traditions meet on genuinely shared ground. Christianity has a profound <em>apophatic</em> tradition — the <em>via negativa</em> — which insists that God is ultimately beyond all human categories, that our most truthful speech about God must be disciplined by the awareness that God exceeds every concept. Gregory of Nyssa, writing in the fourth century, argued that the soul's journey toward God is an ever-deepening entry into divine darkness — not the darkness of ignorance, but the darkness of superabundant light that overwhelms our creaturely capacity for sight. Pseudo-Dionysius pushed this further: God is beyond being, beyond goodness, beyond every name we can give. Meister Eckhart spoke of "the God beyond God." The <em>theologia negativa</em> is not theological laziness. It is the discipline of refusing to let our concepts become idols.</p>
+        <InsightBox title="Shared Territory: The Apophatic and Śūnyatā" color="gold">
+<p style="margin-bottom: 0.75rem;">Here is where I think our traditions meet on genuinely shared ground. Christianity has a profound <em>apophatic</em> tradition — the <em>via negativa</em> — which insists that God is ultimately beyond all human categories, that our most truthful speech about God must be disciplined by the awareness that God exceeds every concept. Gregory of Nyssa, writing in the fourth century, argued that the soul's journey toward God is an ever-deepening entry into divine darkness — not the darkness of ignorance, but the darkness of superabundant light that overwhelms our creaturely capacity for sight. Pseudo-Dionysius pushed this further: God is beyond being, beyond goodness, beyond every name we can give. Meister Eckhart spoke of "the God beyond God." The <em>theologia negativa</em> is not theological laziness. It is the discipline of refusing to let our concepts become idols.</p>
             <p style="margin-bottom: 0.75rem;">Buddhism's analysis of <em>śūnyatā</em> — emptiness — and the <em>prajñāpāramitā</em> literature's insistence that ultimate reality is beyond conceptual grasping represent, if I may say so, a structurally parallel recognition. Both traditions say: be careful with your categories. Reality is always more than your concepts. Cling too tightly to your formulations, and they become idols rather than windows.</p>
             <p style="margin-bottom: 0.75rem;">This is not the same claim. The Christian apophatic tradition says God <em>exceeds</em> our categories; the Buddhist tradition is making a different metaphysical point about the nature of all phenomena. But the <em>epistemic humility</em> they cultivate is remarkably convergent. Both resist the reduction of reality to whatever the current conceptual apparatus can handle.</p>
             <p style="margin-bottom: 0.75rem;">Professor Nguyen's treatment of the <em>emptiness of emptiness</em> — <em>śūnyatā-śūnyatā</em> — is particularly striking here. He presents Nagarjuna as refusing both ontology <em>and</em> epistemology: emptiness is not a thing that exists, nor a theory about knowing, but a "method of contemplation that is meta-ontological and meta-epistemological." This is philosophically sophisticated — and it invites a question: if emptiness dissolves both the knower and the known, what remains? The Christian answer is not "nothing" but <em>superabundant being</em> — a God who exceeds our categories not because God is <em>less</em> than what we can think, but because God is <em>more</em>. That is a genuine and deep difference. But both traditions are, in their very different ways, pointing toward the same boundary of human conceptual capacity.</p>
             <p>And both, I would suggest, offer a powerful corrective to the scientific hubris of our age.</p>
-          </div>
-        </details>
+</InsightBox>
 
         <p style="margin-bottom: 1rem;">
           Mystery, then, is not the enemy of reason. It is its horizon. It is where reason becomes aware of its own finitude — and, in that very awareness, grows. The scientist who feels awe before the complexity of a living cell, the mystic who feels overwhelmed in prayer, the philosopher who discovers that every answer generates new questions — all of them are touching the same boundary. And the appropriate response to that boundary is not embarrassment, but receptivity.
@@ -574,6 +542,8 @@ const base = import.meta.env.BASE_URL;
       </div>
     </div>
   </section>
+
+  <div class="act-divider act-divider--dark" aria-hidden="true"><span class="act-divider__number">✦</span></div>
 
   <!-- ========== CLOSING ========== -->
   <section id="closing" style="background: #0f1419; color: rgba(232,224,212,0.88);">
