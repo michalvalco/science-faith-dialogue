@@ -224,6 +224,145 @@
 ::-webkit-scrollbar-thumb:hover { background: var(--color-dark-400); }
 
 /* ============================================
+   Pull quote variants
+   ============================================ */
+
+/* Prose quote — border-left, gradient background */
+.pull-quote--prose {
+  position: relative;
+  margin: 2.5rem 0;
+  padding: 1.5rem 2rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-style: italic;
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+
+.pull-quote--prose.pull-quote--gold {
+  color: var(--color-dark-500);
+  background: linear-gradient(135deg, var(--color-warm-200), var(--color-gold-50));
+  border-left: 4px solid var(--color-gold-400);
+}
+
+.pull-quote--prose.pull-quote--rust {
+  color: var(--color-rust-500);
+  background: linear-gradient(135deg, var(--color-warm-200), var(--color-rust-50));
+  border-left: 4px solid var(--color-rust-500);
+}
+
+.pull-quote--prose.pull-quote--teal {
+  color: var(--color-teal-600);
+  background: linear-gradient(135deg, var(--color-warm-200), var(--color-teal-50));
+  border-left: 4px solid var(--color-teal-500);
+}
+
+/* Thesis statement — centered, border-top/bottom */
+.pull-quote--thesis {
+  margin: 2.5rem 0;
+  padding: 1.5rem 0;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--color-gold-400);
+  text-align: center;
+  border-top: 1px solid rgba(201,168,76,0.3);
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+}
+
+/* On dark backgrounds */
+.pull-quote--thesis-dark {
+  margin: 2.5rem 0;
+  padding: 1.5rem 0;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--color-gold-400);
+  text-align: center;
+  border-top: 1px solid rgba(201,168,76,0.3);
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+}
+
+/* Final closing quote — no bottom border */
+.pull-quote--thesis-final {
+  margin: 2.5rem 0;
+  padding: 1.5rem 0;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--color-gold-400);
+  text-align: center;
+  border-top: 1px solid rgba(201,168,76,0.3);
+  border-bottom: none;
+}
+
+/* ============================================
+   Fork Diagram — responsive
+   ============================================ */
+
+.fork-diagram {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+.fork-diagram__connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1.5rem;
+  gap: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .fork-diagram {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .fork-diagram__left {
+    text-align: left !important;
+    padding: 1.5rem;
+    border-left: 3px solid var(--color-teal-500);
+    border-radius: 0 0.5rem 0.5rem 0;
+    background: rgba(61,139,139,0.04);
+  }
+
+  .fork-diagram__right {
+    padding: 1.5rem;
+    border-left: 3px solid var(--color-gold-400);
+    border-radius: 0 0.5rem 0.5rem 0;
+    background: rgba(201,168,76,0.04);
+  }
+
+  .fork-diagram__connector {
+    display: none;
+  }
+}
+
+/* ============================================
+   Four Pillars Grid — responsive
+   ============================================ */
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 2.5rem 0;
+}
+
+@media (max-width: 640px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
    Act accent colors — each Act gets a subtle
    identity within the unified palette
    ============================================ */
