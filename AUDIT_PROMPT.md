@@ -72,9 +72,44 @@ Systematically examine every file in the repo. For each issue found, classify it
 - Check `src/pages/moduly/` — does this directory still exist? Should it be removed?
 - Check `src/templates/` — is anything in here still needed?
 
+### 1.9 Resources Folder — `resources/`
+The repo contains a `resources/` folder with source materials for the presentation:
+- `McGrath_Science_Religion_2020_Reading_Notes.md` — annotated reading notes
+- `McGrath_Territories_Reading_Notes.md` — methodology source notes
+- `Nguyen_Emptiness_of_Everything_Reading_Notes.md` — Buddhist source notes
+- `Nguyen Hoang Hai - The Emptiness of Everything 2025 reduced.pdf` — full book (text)
+- `Valco_Science_Creation_Contingency_Human_Person_TNTI_Manuscript.md` — full manuscript
+
+Check whether the presentation content is consistent with and well-supported by these
+source materials. Flag any claims in `presentation.astro` that lack grounding in the
+sources, or where stronger textual support exists in the resources but was not used.
+Also check whether `further-reading.astro` and `glossary.astro` are consistent with
+the reading notes and manuscript.
+
 ## Phase 2: Enhancement Suggestions
 
 After completing the audit, propose enhancements organized by priority.
+
+### 2.0 Literature Enrichment (via Web Search)
+Use web search to identify relevant **peer-reviewed academic sources** that could
+strengthen the presentation's arguments or fill gaps found during the audit.
+Focus areas:
+- Science-religion dialogue (especially post-2020 publications)
+- Buddhist-Christian comparative philosophy
+- AI ethics from theological/philosophical perspectives
+- Fine-tuning argument and anthropic principle (recent data or critiques)
+- Dependent origination as philosophy of science
+- Christian personalism and transhumanism
+- Apophatic theology in dialogue with Buddhist emptiness
+
+For each relevant source found:
+1. Create a concise `.md` file in `resources/` with: full citation, key arguments,
+   relevant quotes (with page numbers where available), and a note on how it connects
+   to the presentation content.
+2. If the source suggests a correction or strengthening of an argument in the
+   presentation, flag it in the audit results.
+
+Do NOT fabricate citations. Only add sources you can verify via web search.
 
 ### 2.1 Structural Enhancements
 - Should `presentation.astro` be broken into Astro components (one per Act)?
