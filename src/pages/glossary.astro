@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { keyTerms } from '../data/presentation';
+---
+
+<BaseLayout title="Glossary" activeSection="glossary">
+
+  <section style="background: #0f1419; padding: 3rem 1rem;">
+    <div style="max-width: 48rem; margin: 0 auto; text-align: center;">
+      <h1 style="font-family: 'Cormorant Garamond', serif; color: #faf5ee; font-size: 2rem; font-weight: 600;">Key Terms</h1>
+      <p style="color: #a8a29e; font-size: 0.95rem; margin-top: 0.5rem;">
+        Essential vocabulary across Christian theology, Buddhist philosophy, and the philosophy of science
+      </p>
+    </div>
+  </section>
+
+  <section style="max-width: 56rem; margin: 0 auto; padding: 3rem 1rem;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
+      {keyTerms.map((term) => {
+        const borderColor = term.tradition === 'Christian' ? '#c9a84c'
+          : term.tradition === 'Buddhist' ? '#3d8b8b'
+          : term.tradition === 'Shared' ? '#a85c32'
+          : '#78716c';
+        return (
+          <div style={`background: white; border-radius: 0.75rem; padding: 1.25rem; border: 1px solid #e7e5e4; border-left: 3px solid ${borderColor};`}>
+            <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: #1c1917;">{term.term}</h3>
+              {term.originalScript && (
+                <span style="font-size: 0.85rem; color: #a8a29e;">{term.originalScript}</span>
+              )}
+            </div>
+            {term.language && (
+              <p style="font-size: 0.7rem; color: #a8a29e; font-family: sans-serif; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">
+                {term.language} · {term.tradition} · {term.relatedAct}
+              </p>
+            )}
+            <p style="font-size: 0.85rem; color: #57534e; line-height: 1.6;">{term.definition}</p>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+</BaseLayout>

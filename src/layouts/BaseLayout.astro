@@ -1,0 +1,143 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  activeSection?: string;
+}
+
+const {
+  title,
+  description = "An interactive scholarly resource exploring intersections of Christian philosophy, Buddhist philosophy, and natural science.",
+  activeSection = ""
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title} | Science, Faith & Dialogue</title>
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={`${title} | Science, Faith & Dialogue`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Google Fonts: Cormorant Garamond + Lora + JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body class="min-h-screen flex flex-col" style="font-family: 'Lora', serif;">
+    <!-- Skip to content -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-amber-600 focus:text-white focus:rounded">Skip to content</a>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 backdrop-blur-sm border-b print:hidden" style="background: rgba(15,20,25,0.95); border-color: rgba(201,168,76,0.2);">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href={base} class="flex items-center gap-3 group">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition-colors" style="background: #c9a84c; color: #0f1419;">
+              ✦
+            </div>
+            <div class="hidden sm:block">
+              <span style="font-family: 'Cormorant Garamond', serif; color: #faf5ee; font-size: 1.1rem; letter-spacing: 0.02em;">Science, Faith</span>
+              <span style="font-family: sans-serif; color: #c9a84c; font-size: 0.65rem; margin-left: 0.5rem; letter-spacing: 0.15em; text-transform: uppercase;">& Dialogue</span>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center gap-6">
+            <a href={base}
+               class:list={["text-sm transition-colors", activeSection === "home" ? "text-amber-400" : "text-stone-300 hover:text-amber-400"]}
+               style="font-family: sans-serif; letter-spacing: 0.03em;">
+              Home
+            </a>
+            <a href={`${base}presentation`}
+               class:list={["text-sm transition-colors", activeSection === "presentation" ? "text-amber-400" : "text-stone-300 hover:text-amber-400"]}
+               style="font-family: sans-serif; letter-spacing: 0.03em;">
+              Presentation
+            </a>
+            <a href={`${base}glossary`}
+               class:list={["text-sm transition-colors", activeSection === "glossary" ? "text-amber-400" : "text-stone-300 hover:text-amber-400"]}
+               style="font-family: sans-serif; letter-spacing: 0.03em;">
+              Glossary
+            </a>
+            <a href={`${base}further-reading`}
+               class:list={["text-sm transition-colors", activeSection === "further-reading" ? "text-amber-400" : "text-stone-300 hover:text-amber-400"]}
+               style="font-family: sans-serif; letter-spacing: 0.03em;">
+              Reading
+            </a>
+            <a href={`${base}about`}
+               class:list={["text-sm transition-colors", activeSection === "about" ? "text-amber-400" : "text-stone-300 hover:text-amber-400"]}
+               style="font-family: sans-serif; letter-spacing: 0.03em;">
+              About
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" class="md:hidden transition-colors" style="color: #d6d3d1;" aria-label="Menu" aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4" style="background: #0f1419; border-top: 1px solid rgba(201,168,76,0.2);">
+        <div class="px-4 pt-2 space-y-1">
+          <a href={base} class="block px-3 py-2 text-sm rounded" style="color: #d6d3d1; font-family: sans-serif;">Home</a>
+          <a href={`${base}presentation`} class="block px-3 py-2 text-sm rounded" style="color: #d6d3d1; font-family: sans-serif;">Presentation</a>
+          <a href={`${base}glossary`} class="block px-3 py-2 text-sm rounded" style="color: #d6d3d1; font-family: sans-serif;">Glossary</a>
+          <a href={`${base}further-reading`} class="block px-3 py-2 text-sm rounded" style="color: #d6d3d1; font-family: sans-serif;">Further Reading</a>
+          <a href={`${base}about`} class="block px-3 py-2 text-sm rounded" style="color: #d6d3d1; font-family: sans-serif;">About the Project</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main" class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="print:hidden py-8 px-4 text-center" style="background: #0f1419; border-top: 1px solid rgba(201,168,76,0.15);">
+      <p style="font-family: 'Cormorant Garamond', serif; color: #c9a84c; font-size: 0.95rem; letter-spacing: 0.03em;">
+        Science, Faith &amp; Dialogue
+      </p>
+      <p style="font-family: sans-serif; color: #78716c; font-size: 0.75rem; margin-top: 0.5rem;">
+        An Erasmus+ KA171 Project · Evangelical Theological Faculty, Comenius University &amp; Tran Nhan Tong Institute, VNU Hanoi
+      </p>
+      <p style="font-family: sans-serif; color: #57534e; font-size: 0.7rem; margin-top: 0.25rem;">
+        © {new Date().getFullYear()} Prof. Michal Valčo · Built with Astro
+      </p>
+    </footer>
+
+    <!-- Mobile menu toggle script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+          btn.addEventListener('click', () => {
+            const isOpen = !menu.classList.contains('hidden');
+            menu.classList.toggle('hidden');
+            btn.setAttribute('aria-expanded', String(!isOpen));
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

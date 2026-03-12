@@ -1,0 +1,443 @@
+@import "tailwindcss";
+
+/* ============================================
+   Science, Faith & Dialogue
+   Design System — v4 Identity
+   
+   Color philosophy:
+   Dark (#0f1419)   = depth, mystery, the trans-rational
+   Warm (#faf5ee)   = light, warmth, incarnation
+   Gold (#c9a84c)   = sacred, wisdom, Christian tradition
+   Teal (#3d8b8b)   = Buddhist tradition, dependent origination
+   Rust (#a85c32)   = earth, limit, creatureliness
+   ============================================ */
+
+@theme {
+  /* Dark palette — for headers, hero sections, Act V */
+  --color-dark-50: #f5f5f4;
+  --color-dark-100: #d6d3d1;
+  --color-dark-200: #a8a29e;
+  --color-dark-300: #78716c;
+  --color-dark-400: #57534e;
+  --color-dark-500: #44403c;
+  --color-dark-600: #292524;
+  --color-dark-700: #1c1917;
+  --color-dark-800: #141110;
+  --color-dark-900: #0f1419;
+  --color-dark-950: #0a0d11;
+
+  /* Warm palette — backgrounds, reading surfaces */
+  --color-warm-50: #fdfcfa;
+  --color-warm-100: #faf8f3;
+  --color-warm-200: #faf5ee;
+  --color-warm-300: #f3efe6;
+  --color-warm-400: #e8e0d2;
+  --color-warm-500: #d9ccb5;
+
+  /* Gold palette — Christian tradition, sacred, wisdom */
+  --color-gold-50: #faf6ee;
+  --color-gold-100: #f2ead5;
+  --color-gold-200: #e5d4a8;
+  --color-gold-300: #d4b96e;
+  --color-gold-400: #c9a84c;
+  --color-gold-500: #b8923c;
+  --color-gold-600: #9d7430;
+  --color-gold-700: #7e5729;
+  --color-gold-800: #6a4928;
+  --color-gold-900: #5b3e26;
+
+  /* Teal palette — Buddhist tradition, dialogue */
+  --color-teal-50: #f0f7f7;
+  --color-teal-100: #dcedec;
+  --color-teal-200: #bbdcda;
+  --color-teal-300: #8ec4c1;
+  --color-teal-400: #5fa8a5;
+  --color-teal-500: #3d8b8b;
+  --color-teal-600: #2f7170;
+  --color-teal-700: #275b5a;
+  --color-teal-800: #224948;
+  --color-teal-900: #1d3d3c;
+
+  /* Rust palette — earth, creatureliness, limits of science */
+  --color-rust-50: #fdf5f0;
+  --color-rust-100: #fae8dc;
+  --color-rust-200: #f4cdb5;
+  --color-rust-300: #ecab84;
+  --color-rust-400: #c47a4a;
+  --color-rust-500: #a85c32;
+  --color-rust-600: #8e4a28;
+  --color-rust-700: #743c22;
+  --color-rust-800: #5f321e;
+  --color-rust-900: #4f2a1b;
+
+  /* Typography */
+  --font-serif: 'Lora', 'Georgia', serif;
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-sans: system-ui, -apple-system, sans-serif;
+}
+
+/* ============================================
+   Base styles
+   ============================================ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-serif);
+    color: var(--color-dark-700);
+    background-color: var(--color-warm-50);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-dark-700);
+    line-height: 1.25;
+  }
+}
+
+/* ============================================
+   Prose — optimized for narrative essays
+   ============================================ */
+
+.prose {
+  max-width: 72ch;
+  font-size: 1.125rem;
+  line-height: 1.85;
+}
+
+.prose p {
+  margin-bottom: 1.25em;
+}
+
+.prose h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+  color: var(--color-dark-800);
+}
+
+.prose h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-top: 3rem;
+  margin-bottom: 0.75em;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-warm-400);
+  color: var(--color-dark-600);
+}
+
+.prose h3:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* Emphasis — subtle distinction for key terms */
+.prose em {
+  color: var(--color-dark-800);
+  font-style: italic;
+}
+
+/* Pull quote — visually elevated citation within essay */
+.pull-quote {
+  position: relative;
+  margin: 2.5rem 0;
+  padding: 1.5rem 2rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--color-dark-600);
+  background: linear-gradient(135deg, var(--color-warm-200), var(--color-gold-50));
+  border-left: 4px solid var(--color-gold-400);
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+
+.pull-quote::before {
+  content: '\201E';
+  position: absolute;
+  top: -0.25rem;
+  left: 0.5rem;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--color-gold-300);
+  font-family: var(--font-display);
+}
+
+.pull-quote blockquote {
+  border-left: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border-radius: 0;
+}
+
+.pull-quote figcaption {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  font-style: normal;
+  font-family: var(--font-sans);
+  color: var(--color-dark-300);
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--color-gold-400);
+  padding: 1rem 1.5rem;
+  margin: 1.5em 0;
+  font-style: italic;
+  color: var(--color-dark-500);
+  background-color: var(--color-gold-50);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.prose a {
+  color: var(--color-teal-600);
+  text-decoration: underline;
+  text-decoration-color: var(--color-teal-300);
+  text-underline-offset: 3px;
+  transition: all 0.2s;
+}
+
+.prose a:hover {
+  color: var(--color-teal-800);
+  text-decoration-color: var(--color-teal-600);
+}
+
+/* Text selection */
+::selection {
+  background-color: var(--color-gold-200);
+  color: var(--color-dark-700);
+}
+
+/* Scrollbar (Webkit) */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-warm-100); }
+::-webkit-scrollbar-thumb { background: var(--color-dark-200); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-dark-400); }
+
+/* ============================================
+   Act accent colors — each Act gets a subtle
+   identity within the unified palette
+   ============================================ */
+
+.act-opening   { --act-accent: var(--color-gold-400);  --act-accent-light: var(--color-gold-50); }
+.act-creation  { --act-accent: var(--color-gold-500);  --act-accent-light: var(--color-warm-200); }
+.act-buddhism  { --act-accent: var(--color-teal-500);  --act-accent-light: var(--color-teal-50); }
+.act-person    { --act-accent: var(--color-gold-400);  --act-accent-light: var(--color-gold-50); }
+.act-limits    { --act-accent: var(--color-rust-500);  --act-accent-light: var(--color-rust-50); }
+.act-mystery   { --act-accent: var(--color-gold-400);  --act-accent-light: var(--color-dark-900); }
+.act-closing   { --act-accent: var(--color-rust-400);  --act-accent-light: var(--color-warm-200); }
+
+/* ============================================
+   Accessibility
+   ============================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-gold-400);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-gold-400);
+  color: var(--color-dark-900);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0 0 0.5rem 0;
+  text-decoration: none;
+}
+
+.skip-to-content:focus { left: 0; }
+
+/* ============================================
+   Margin notes (Tufte-style)
+   ============================================ */
+
+.margin-note {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--color-dark-400);
+  background: var(--color-warm-100);
+  border-left: 2px solid var(--color-gold-300);
+  padding: 0.625rem 0.75rem;
+  margin: 1rem 0;
+  border-radius: 0 0.375rem 0.375rem 0;
+  line-height: 1.5;
+}
+
+@media (min-width: 1440px) {
+  .margin-note {
+    float: right;
+    clear: right;
+    margin-right: -18.5rem;
+    width: 15rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: 1.5rem;
+    background: transparent;
+    border-left-color: var(--color-gold-300);
+    padding-left: 0.75rem;
+  }
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(1.5rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-section {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-section { animation: none; }
+}
+
+/* ============================================
+   Breadcrumb
+   ============================================ */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+}
+
+.breadcrumb a {
+  color: var(--color-dark-300);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover { color: var(--color-gold-400); }
+.breadcrumb .separator { color: var(--color-dark-400); }
+
+/* ============================================
+   Print styles — clean study-sheet output
+   ============================================ */
+
+.print-only { display: none !important; }
+
+@media print {
+  body {
+    background: white;
+    color: black;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  .prose {
+    max-width: 100%;
+    font-size: 11pt;
+  }
+
+  h1, h2, h3 {
+    break-after: avoid;
+    color: black;
+  }
+
+  h3 {
+    border-top: 1pt solid #999;
+    padding-top: 0.5em;
+    margin-top: 1.5em;
+  }
+
+  p, blockquote, figure, .margin-note {
+    orphans: 3;
+    widows: 3;
+  }
+
+  a { color: black; text-decoration: none; }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #666;
+  }
+
+  a[href^="#"]::after,
+  a[href^="/"]::after { content: none; }
+
+  .prose em { color: inherit; }
+
+  .pull-quote {
+    background: none;
+    border-left: 2pt solid black;
+    color: black;
+    border-radius: 0;
+    break-inside: avoid;
+  }
+
+  .pull-quote::before { color: #666; }
+  .pull-quote figcaption { color: #666; }
+
+  .margin-note {
+    float: none !important;
+    width: 100% !important;
+    margin: 0.75em 0 !important;
+    padding: 0.5em 0.75em;
+    background: #f5f5f5;
+    border-left: 2pt solid #999;
+    border-radius: 0;
+    font-size: 0.85em;
+    color: #333;
+    break-inside: avoid;
+  }
+
+  details { display: block !important; }
+  details > summary { list-style: none; font-weight: 600; }
+  details > summary::-webkit-details-marker { display: none; }
+
+  [data-accordion-content],
+  [data-expandable] {
+    display: block !important;
+    max-height: none !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+  }
+
+  button:not(.print-keep),
+  .sticky, .video-embed, [data-play-btn], .no-print {
+    display: none !important;
+  }
+
+  .print-only { display: block !important; }
+
+  .essay-figure { break-inside: avoid; }
+
+  @page {
+    margin: 2cm 2.5cm;
+
+    @top-center {
+      content: var(--print-header, "Science, Faith & Dialogue");
+      font-size: 8pt;
+      color: #999;
+    }
+  }
+
+  @page :first {
+    @top-center { content: none; }
+  }
+}

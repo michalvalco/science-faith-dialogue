@@ -1,0 +1,551 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { keyTerms, persons, fineTuningConstants, imagoDeiUnderstandings } from '../data/presentation';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="The Presentation" activeSection="presentation">
+
+  <!-- Title Header -->
+  <section style="background: #0f1419; padding: 4rem 1rem 3rem;">
+    <div style="max-width: 48rem; margin: 0 auto; text-align: center;">
+      <p style="font-family: sans-serif; color: #c9a84c; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">
+        Guest Lecture · Tran Nhan Tong Institute · March 12, 2026
+      </p>
+      <h1 style="font-family: 'Cormorant Garamond', serif; color: #faf5ee; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 600; line-height: 1.3;">
+        Science, Creation, Contingency, and the Human Person
+      </h1>
+      <p style="color: #a8a29e; font-size: 0.95rem; margin-top: 1rem; font-style: italic;">
+        A Christian Conversation After Dependent Origination
+      </p>
+      <p style="color: #78716c; font-size: 0.85rem; margin-top: 0.5rem;">
+        prof. PhDr. Michal Valčo, PhD. · Evangelical Theological Faculty, Comenius University
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== OPENING ========== -->
+  <section id="opening" style="max-width: 48rem; margin: 0 auto; padding: 3rem 1rem;">
+    <div style="font-family: 'Lora', serif; color: #44403c; font-size: 1rem; line-height: 1.9;">
+      <p style="font-family: sans-serif; color: #a85c32; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem;">Opening</p>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 600; color: #1c1917; margin-bottom: 1.5rem;">A Lutheran in a Buddhist Institute</h2>
+
+      <p style="margin-bottom: 1rem;">
+        Thank you very much for this kind invitation. It is a real pleasure to be here at the Tran Nhan Tong Institute in Hanoi, and an honor to speak in a setting where serious intellectual traditions are not treated as museum pieces, but as <strong>living ways of asking what reality is</strong>… and what kind of beings we are within it.
+      </p>
+      <p style="margin-bottom: 1rem;">
+        And that matters. More than we sometimes admit.
+      </p>
+      <p style="margin-bottom: 1rem;">
+        We live in an age that can build astonishing machines, predict behavior, edit genes, generate text, automate judgment — and still remain strangely unsure about what a human being is <em>for</em>. So when we gather to speak about philosophy of science, we are not really gathering only to discuss method. We are also asking… What kind of world makes knowledge possible? What kind of truth are we looking for? And what kind of person do we become while looking for it?
+      </p>
+      <p style="margin-bottom: 1rem;">
+        I should confess something. When I told my colleagues in Slovakia that I was flying to Hanoi to present a Christian philosophy of science at a Buddhist academic institute, there was a certain… silence. The kind of silence that usually means someone is trying to decide whether you need encouragement or an intervention. But here I am. And I am especially grateful to speak after a presentation on dependent origination as a Buddhist philosophy of science. That is a rich and serious theme. And, honestly, a helpful one — because it reminds us, right from the beginning, that things do not exist in splendid isolation. Reality is not a pile of self-enclosed atoms pretending not to need each other. That is not only bad philosophy. It is also, I suspect, bad manners.
+      </p>
+      <p style="margin-bottom: 1rem;">
+        The Oxford philosopher Alister McGrath has recently argued that we live in an age of <em>multiple situated rationalities</em> — that the Enlightenment dream of a single, universal, culturally invariant Reason has collapsed. What we actually find, across cultures and disciplines, is a plurality of domain-specific, historically embedded ways of reasoning, each genuine, each with its own integrity, none reducible to any other. The biologist Steven Rose put it with an elegant formula: we live in a world that is an <strong>ontological unity</strong>, but it demands an <strong>epistemological pluralism</strong>.
+      </p>
+
+      <figure class="pull-quote" style="position: relative; margin: 2.5rem 0; padding: 1.5rem 2rem; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; line-height: 1.6; font-style: italic; color: #44403c; background: linear-gradient(135deg, #faf5ee, #faf6ee); border-left: 4px solid #c9a84c; border-radius: 0 0.75rem 0.75rem 0;">
+        The world is one. Our methods for knowing it are — and must be — many.
+      </figure>
+
+      <p style="margin-bottom: 1rem;">
+        That insight shapes everything I want to say today. If rationality were truly universal and singular, then a conversation between a Lutheran theologian and Buddhist philosophers could only be a contest — whose rationality wins? But if the world itself is too rich, too deep, too layered for any single method to exhaust, then our meeting here is not a competition. It is something like what the nineteenth-century philosopher William Whewell called <em>colligation</em> — the act of bringing together insights from genuinely different sources, the way a string holds together pearls of a necklace. Each pearl is real. The string does not destroy them. It reveals a pattern none of them could show alone.
+      </p>
+      <p style="margin-bottom: 1rem;">
+        I want to offer you a view from the other side of the same mountain. We may be climbing from different faces, and we may never fully agree on what is at the summit. But I suspect we see further when we occasionally call out to each other across the ridge.
+      </p>
+
+      <!-- Five Questions -->
+      <details style="margin: 2rem 0; border-radius: 4px; padding: 1.5rem 2rem; background: rgba(61,139,139,0.06); border-left: 3px solid #3d8b8b; cursor: pointer;">
+        <summary style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #3d8b8b; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          The Five Questions
+          <span style="font-family: sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #78716c;">Explore</span>
+        </summary>
+        <div style="margin-top: 1rem; font-size: 1.05rem; line-height: 1.85; opacity: 0.85;">
+          <p style="margin-bottom: 0.75rem;"><strong>First:</strong> What kind of world makes science possible at all?</p>
+          <p style="margin-bottom: 0.75rem;"><strong>Second:</strong> How does Christianity understand creation, order, and contingency?</p>
+          <p style="margin-bottom: 0.75rem;"><strong>Third:</strong> Where do our traditions converge — and where do they honestly diverge?</p>
+          <p style="margin-bottom: 0.75rem;"><strong>Fourth:</strong> Who is the knower — the scientist, the scholar, the person doing the knowing?</p>
+          <p><strong>Fifth:</strong> Where do we find the limits of science — and what lies beyond them that is not irrational, but <em>trans-</em>rational?</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- ========== ACT I: Creation & Contingency ========== -->
+  <section id="act-i" style="background: #0f1419; color: rgba(232,224,212,0.88);">
+    <div style="max-width: 48rem; margin: 0 auto; padding: 3rem 1rem;">
+      <div style="font-family: 'Lora', serif; font-size: 1rem; line-height: 1.9;">
+        <p style="font-family: sans-serif; color: #c9a84c; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem;">Act I</p>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 600; color: #faf5ee; margin-bottom: 1.5rem;">Creation, Intelligibility, and Contingency</h2>
+
+        <p style="margin-bottom: 1rem;">
+          Let me begin with a question so simple that we often forget to ask it. <strong style="color: #faf5ee;">Why is the world intelligible?</strong>
+        </p>
+        <p style="margin-bottom: 1rem;">
+          Why is it that the universe is not merely there, but available to disciplined inquiry? Why does it exhibit patterns, regularities, structures, mathematical elegance, lawful relations? Why can a human mind — which is itself a tiny fragment of this vast cosmos — somehow come to understand so much of it?
+        </p>
+        <p style="margin-bottom: 1rem;">
+          One can say, "Well, the world is intelligible because it is intelligible." Fine. But that is not yet a philosophy of science. That is a shrug wearing academic clothing.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          The Christian tradition begins from a different intuition. It sees the world as <em>creation</em>. And that one word changes a great deal.
+        </p>
+
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #c9a84c; margin-top: 2.5rem; margin-bottom: 1rem;">The De-divinization of Nature</h3>
+
+        <p style="margin-bottom: 1rem;">
+          If nature is not divine, then it may be studied, observed, questioned. One does not commit sacrilege by analyzing a tree, a stone, a cell, a star. The world becomes available to inquiry precisely because it is not ultimate. Imagine you are a scholar in the ancient world and you want to understand why the Nile floods each year. If the Nile is a god, the appropriate response is prayer, not measurement. But if the Nile is a creature — magnificent but not divine — then you are free to ask: <em>what causes this?</em>
+        </p>
+        <p style="margin-bottom: 1rem;">
+          The de-divinization of nature is, paradoxically, what made the scientific study of nature possible. The world is no longer divine, but it is still wondrous. No longer to be worshiped, but still to be loved, cared for, and understood.
+        </p>
+
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #c9a84c; margin-top: 2.5rem; margin-bottom: 1rem;">Logos and the Grammar of Being</h3>
+
+        <p style="margin-bottom: 1rem;">
+          If the world is created, then it is <strong style="color: #faf5ee;">ordered</strong>. Not chaotic in the ultimate sense. It bears intelligibility because it comes from divine wisdom. Christian thinkers from Augustine to Aquinas saw the rational structure of the world as grounded in the <em>Logos</em> — in divine reason, in the meaningfulness of reality as such.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          The Gospel of John opens with those remarkable words: <em>"In the beginning was the Logos."</em> That is a metaphysical claim before it is a devotional one. It says that rationality, meaning, intelligibility are not accidental features of the universe. They are woven into its very origin. The universe has what we might call a grammar — and that grammar is not arbitrary. It is a reflection of the creative intelligence that underlies all things.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          The Scottish theologian Thomas F. Torrance argued a profound methodological consequence from this: every domain of reality must be engaged <em>according to its own distinct nature</em>. The object determines the method, not the other way around. You cannot study a poem with a thermometer, or a star with a stethoscope, or God with a particle accelerator. Not because any of these realities are less real, but because each makes itself known on its own terms. Science, at its best, already understands this — physics does not use the same methods as ecology, which does not use the same methods as developmental psychology. Each discipline develops what Torrance called an <em>inner logic</em> appropriate to its subject.
+        </p>
+
+        <figure class="pull-quote" style="margin: 2.5rem 0; padding: 1.5rem 0; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; line-height: 1.6; font-style: italic; color: #c9a84c; text-align: center; border-top: 1px solid rgba(201,168,76,0.3); border-bottom: 1px solid rgba(201,168,76,0.3);">
+          The created world is not only ordered. It is also contingent. And this, for the philosophy of science, is hugely important.
+        </figure>
+
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #c9a84c; margin-top: 2.5rem; margin-bottom: 1rem;">Why Contingency Demands Observation</h3>
+
+        <p style="margin-bottom: 1rem;">
+          If the world could be deduced from pure reason alone, then observation would become secondary. Philosophers have often been tempted by this dream. Aristotle himself, for all his empirical gifts, occasionally assumed he could determine how many teeth a horse has without bothering to open a horse's mouth. Sit in a room long enough, frown at the ceiling with sufficient intensity, and the universe will surrender its secrets.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          Sadly, the universe has not cooperated.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          Because the world is created <em>freely</em>, it could have been otherwise. God could have made a universe with different constants, different laws, different structures. If you want to know how this particular created world actually works — you must look. You must observe. You must attend to what is there rather than what your metaphysical ego wishes to be there.
+        </p>
+
+        <!-- Order + Contingency = Science -->
+        <details style="margin: 2rem 0; border-radius: 4px; padding: 1.5rem 2rem; background: rgba(201,168,76,0.06); border-left: 3px solid #c9a84c; cursor: pointer;">
+          <summary style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #c9a84c; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            Order + Contingency = Science
+            <span style="font-family: sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #a8a29e;">Explore</span>
+          </summary>
+          <div style="margin-top: 1rem; font-size: 1.05rem; line-height: 1.85; opacity: 0.85;">
+            <p style="margin-bottom: 0.75rem;">The doctrine of creation gives us two things at once: <strong style="color: #faf5ee;">order</strong>, which makes science rational, and <strong style="color: #faf5ee;">contingency</strong>, which makes science empirical. Both are necessary.</p>
+            <p style="margin-bottom: 0.75rem;">Without order, investigation would be pointless — there would be nothing coherent to find. Without contingency, investigation would be unnecessary — we could simply deduce everything from first principles.</p>
+            <p style="margin-bottom: 0.75rem;">Historians like Stanley Jaki and Peter Harrison have argued convincingly that the contingency of creation was one of the intellectual preconditions for the emergence of modern empirical science. The scientific revolution did not fall from the sky. It grew in a particular intellectual soil — and that soil was, at least in part, theological.</p>
+            <p>Werner Heisenberg saw a related point from within physics itself: what we observe is not nature in itself, but nature as it is disclosed by our methods of investigation. If so, then a multiplicity of methods gives us a multiplicity of genuine perspectives on a single reality. No method exhausts the whole. And that recognition — the refusal to let any single perspective totalize reality — is itself a deeply rational stance.</p>
+          </div>
+        </details>
+
+        <p style="margin-bottom: 1rem;">
+          I raise this because I know that from within the Buddhist tradition — and I have Professor Nguyen's remarkable book <em>The Emptiness of Everything</em> very much in mind — the question of a "first point" is itself suspect. Dependent origination holds that the chain of causes and conditions has no beginning and no end; that "creation theory as a discussion about the beginning of existence is a wrong view." The Christian philosopher hears that and does not flinch, but does want to press: the question is not whether the causal web extends indefinitely backward in time. The question is <em>why there is a causal web at all</em>. Contingency, in the Christian sense, is not about temporal beginnings. It is about ontological dependence. Why is there <em>something</em> rather than nothing? The doctrine of creation is not a competing scientific hypothesis about the first microsecond. It is a claim that the entire web of dependent origination — however far it extends — does not contain within itself the reason for its own existence.
+        </p>
+
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #c9a84c; margin-top: 2.5rem; margin-bottom: 1rem;">The Frog and the Five Biologists</h3>
+
+        <p style="margin-bottom: 1rem;">
+          Let me illustrate this with a fable I borrow from the biologist Steven Rose. Five biologists are having a picnic when a frog jumps into a pond. Why did it jump? The <em>physiologist</em> explains that impulses from its brain stimulated its leg muscles. The <em>biochemist</em> says the fibrous proteins slid past each other, activated by ATP. The <em>developmental biologist</em> points to the ontogenetic processes that gave rise to the frog's nervous system. The <em>animal behaviourist</em> says the frog was escaping a lurking snake. The <em>evolutionary biologist</em> says natural selection ensured only those ancestors that could detect and evade predators survived to breed.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          All five are right. They are also different. None refutes the others. Together they offer something no single perspective could provide: <em>explanatory depth</em>. And this is what I want to suggest for our own gathering: the Christian philosopher and the Buddhist philosopher and the natural scientist are not offering competing answers to the same question. They may well be offering complementary perspectives on the same inexhaustibly rich reality.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          And that introduces a beautiful intellectual virtue: <strong style="color: #faf5ee;">humility</strong>. Science, at its best, is disciplined humility before reality. The willingness to say: I was wrong. My theory was elegant, but the data were rude. Reality did not consult my preferences.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          That, from a Christian point of view, is not a humiliation. It is almost a spiritual discipline.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ACT II: The Buddhist Response ========== -->
+  <section id="act-ii" style="background: #faf5ee; border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15);">
+    <div style="max-width: 48rem; margin: 0 auto; padding: 3rem 1rem;">
+      <div style="font-family: 'Lora', serif; color: #44403c; font-size: 1rem; line-height: 1.9;">
+        <p style="font-family: sans-serif; color: #3d8b8b; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem;">Act II</p>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 600; color: #1c1917; margin-bottom: 1.5rem;">A Genuine Conversation with Dependent Origination</h2>
+
+        <p style="margin-bottom: 1rem;">
+          Before we speak about what Christianity and Buddhism share, I want to say something about what Western scholarship often gets wrong about Buddhism. McGrath notes that Western definitions of religion have been haunted by what the philosopher of religion Jonathan Jong calls the <em>Buddhism Problem</em>. If you define religion as "belief in God or gods," then Buddhism stubbornly refuses to cooperate. Daniel Dennett once declared that a religion without God is like a vertebrate without a backbone. The philosopher of science in me wants to say: then perhaps your definition of "vertebrate" needs work.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          The real lesson is that "religion" is a Western social construction, not a natural kind. We should not force Buddhism into categories built for European theism. And this means I must approach this conversation with the full awareness that my own philosophical vocabulary — creation, transcendence, personhood, <em>imago Dei</em> — belongs to a specific tradition. I speak <em>from</em> it, not <em>above</em> it. There is no neutral, tradition-independent standpoint from which to adjudicate. As Alasdair MacIntyre has shown, we always reason <em>from within</em> a tradition.
+        </p>
+
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #3d8b8b; margin-top: 2.5rem; margin-bottom: 1rem;">What Dependent Origination Teaches</h3>
+
+        <p style="margin-bottom: 1rem;">
+          What strikes me about <em>pratītyasamutpāda</em> — dependent origination — is that it offers a powerful critique of isolated self-sufficiency. Things arise in relation. Phenomena do not stand alone. Existence is conditioned, interwoven, dynamic. That is philosophically rich, and also existentially unsettling… which is usually a sign that one is near something important.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          Professor Nguyen has given this principle a strikingly operational form: if any thing exhibits <strong>compositionality</strong> (it is made of parts whose interactions produce its properties) and <strong>impermanence</strong> (those interactions are constantly changing), then that thing possesses <em>emptiness</em> — it has no fixed, independent, self-existent essence. And he demonstrates this systematically — from quarks to quantum fields, from DNA to the microbiome, from neural circuits to the dopamine systems of suffering and pleasure. The sheer range of the demonstration is impressive. A Christian reading it honestly must ask: is this just describing contingency in Buddhist vocabulary? Or is it making a deeper, more radical claim — one that dissolves not only self-sufficiency but the very notion of a <em>given</em> nature?
+        </p>
+
+        <p style="margin-bottom: 1rem;">
+          And if I understand the tradition correctly, dependent origination is not merely a philosophical observation. It has ethical and soteriological force — connected to the diagnosis of suffering, to the analysis of craving, to the possibility of liberation. It is a living insight that shapes how one practices and relates to the world.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          Christianity shares a deep suspicion of fantasies of self-sufficient independence. The Christian tradition — especially in its personalist and Trinitarian strands — insists that to be a person <em>is</em> to be in relation. The very being of God, in Christian theology, is relational: Father, Son, and Spirit in eternal communion. If the ultimate reality is relational, then it should not surprise us that the created order is also woven through with interdependence.
+        </p>
+
+        <figure class="pull-quote" style="margin: 2.5rem 0; padding: 1.5rem 2rem; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; line-height: 1.6; font-style: italic; color: #a85c32; background: linear-gradient(135deg, #faf5ee, #faf6ee); border-left: 4px solid #a85c32; border-radius: 0 0.75rem 0.75rem 0;">
+          Both traditions tell the modern autonomous ego that it is living in a fantasy. Both say: you did not produce yourself, and you will not save yourself by pretending otherwise.
+        </figure>
+
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #3d8b8b; margin-top: 2.5rem; margin-bottom: 1rem;">The Fork in the Road</h3>
+
+        <p style="margin-bottom: 1rem;">
+          But here, I think, a real and important difference emerges. And I want to name it honestly, because real dialogue is built on candor, not on polite evasions.
+        </p>
+
+        <!-- Fork Diagram -->
+        <div style="margin: 2.5rem 0; padding: 2rem 0; text-align: center;">
+          <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; color: #78716c; margin-bottom: 1.5rem;">Both traditions reject self-sufficient independence. But they diverge on what grounds interdependence…</p>
+          <div style="display: grid; grid-template-columns: 1fr 60px 1fr; gap: 0; align-items: start;">
+            <div style="text-align: right; padding: 1.5rem;">
+              <h5 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #3d8b8b; margin-bottom: 0.75rem;">Dependent Origination</h5>
+              <p style="font-size: 1rem; line-height: 1.75; color: #78716c;">Phenomena arise in mutual conditioning. The network of interdependence is itself the fundamental reality. Nothing stands outside the web. No transcendent ground is posited. The question "Why is there a web at all?" is dissolved, not answered.</p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 1.5rem; gap: 0.5rem;">
+              <div style="width: 9px; height: 9px; border-radius: 50%; background: #3d8b8b; border: 1px solid rgba(61,139,139,0.4);"></div>
+              <div style="width: 1px; height: 90px; background: linear-gradient(to bottom, #3d8b8b, #d6d3d1, #c9a84c);"></div>
+              <div style="width: 9px; height: 9px; border-radius: 50%; background: #c9a84c; border: 1px solid rgba(201,168,76,0.4);"></div>
+            </div>
+            <div style="text-align: left; padding: 1.5rem;">
+              <h5 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #c9a84c; margin-bottom: 0.75rem;">Creation</h5>
+              <p style="font-size: 1rem; line-height: 1.75; color: #78716c;">Creatures are genuinely interdependent, but the web itself is grounded in a transcendent Source beyond the web. The web does not explain why there is a web at all. And persons within the web possess a given nature and vocation that are not reducible to the web's processes.</p>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-bottom: 1rem;">
+          That is not a refutation. It is a genuine fork in the road. And I think both paths deserve to be walked honestly, without either side pretending the fork is not there.
+        </p>
+
+        <!-- Colligation, Not Syncretism -->
+        <details style="margin: 2rem 0; border-radius: 4px; padding: 1.5rem 2rem; background: rgba(61,139,139,0.06); border-left: 3px solid #3d8b8b; cursor: pointer;">
+          <summary style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #3d8b8b; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            Colligation, Not Syncretism
+            <span style="font-family: sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #78716c;">Explore</span>
+          </summary>
+          <div style="margin-top: 1rem; font-size: 1.05rem; line-height: 1.85; opacity: 0.85;">
+            <p style="margin-bottom: 0.75rem;">Let me be precise about what I think we are doing when we bring these traditions into conversation. We are not <em>integrating</em> them — that would imply merging their distinct identities. We are not merely setting them side by side in polite multidisciplinary coexistence. What I propose is <strong>colligation</strong>: the principled bringing-together of genuinely different insights to see what larger pattern emerges.</p>
+            <p style="margin-bottom: 0.75rem;">Colligation preserves the distinctiveness of each tradition. It does not resolve the methodological asymmetry between disciplines. It recognizes that each pearl on the string retains its own identity — and that the string reveals a coherence none could produce alone.</p>
+            <p>And critically, colligation is <em>a matter of choice</em>. It reflects the personal or communal epistemic conclusions of thinkers who find the larger picture compelling — not a publicly unassailable proof. Both of us are standing within our traditions, making a wager on coherence. That is not a weakness. It is the condition of all deep thought.</p>
+          </div>
+        </details>
+
+        <p style="margin-bottom: 1rem;">
+          The Christian account gives very strong weight to the reality and integrity of created beings. Not isolated substances sealed off from one another — no. But real beings nonetheless, with given natures, genuine causal powers, and — in the case of human persons — a distinctive vocation and dignity.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          And this leads us to what I consider the most important question of all.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ACT III: The Person Who Knows ========== -->
+  <section id="act-iii" style="background: #1a2332; color: rgba(232,224,212,0.85);">
+    <div style="max-width: 48rem; margin: 0 auto; padding: 3rem 1rem;">
+      <div style="font-family: 'Lora', serif; font-size: 1rem; line-height: 1.9;">
+        <p style="font-family: sans-serif; color: #c9a84c; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem;">Act III</p>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 600; color: #faf5ee; margin-bottom: 1.5rem;">The Person Who Knows</h2>
+
+        <p style="margin-bottom: 1rem;">
+          Science is often described as if it were just a method. Collect data, form hypotheses, test them, revise. That is fine as far as it goes. But science is always practiced by <em>persons</em>. And persons are not neutral instruments.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          We bring desires, fears, ambitions, loyalties, blind spots, habits of attention, moral failures, and sometimes vanity disguised as objectivity. The human person is not an unfortunate contamination of pure knowledge. The human person is the <em>bearer</em> of knowledge. Which means that epistemology — our theory of knowing — can never be fully separated from anthropology and ethics.
+        </p>
+
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #c9a84c; margin-top: 2.5rem; margin-bottom: 1rem;">Imago Dei and the Structure of Personhood</h3>
+
+        <p style="margin-bottom: 1rem;">
+          The human being, in Christian thought, is a creature made in the image of God — what the tradition calls the <em>imago Dei</em>. That is not a decorative title. It is a claim about the structure of personhood itself. Our capacity for rational inquiry, for self-transcendence, for asking questions that go beyond immediate survival — these are not accidental features. They are constitutive of what we are. The <em>imago Dei</em> means that personhood is irreducibly relational, oriented toward truth, and ordered toward the good.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          The human person is marked both by glory and fragility. Capable of reason, but finite. Endowed with dignity, yet prone to distortion. Called to truth, but vulnerable to falsehood. This double character — what Pascal called the grandeur and misery of the human condition — is not a problem to be solved. It is a condition to be understood.
+        </p>
+
+        <p style="margin-bottom: 1rem;">
+          Now, I know that Professor Nguyen has argued powerfully that the self is <em>relationships</em> — that personal identity is not a fixed essence but the totality of one's connections with nature, society, and one's own thinking. He invokes Yoneda's Lemma from category theory: two entities are isomorphic if and only if all their relationships are isomorphic. He even suggests — and this is his most provocative move — that human desires may not truly be "ours" at all, but the disguised imperatives of DNA pursuing its own replication, like bacteria manipulating a mouse into the jaws of a cat. Consciousness, on this view, is something like The Matrix: a subjective illusion crafted by genes to keep the living machine compliant.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          A Christian Personalist hears this and recognizes more than one might expect. We, too, reject the Cartesian fantasy of the isolated, self-transparent ego. The <em>imago Dei</em> is irreducibly relational — personhood is constituted <em>in and through</em> relationship, not in splendid isolation. Luther's anthropology places the human being always <em>coram Deo</em>, before the face of God — never self-sufficient, always receiving. So far, so convergent.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          But here is where I must press. If the self is <em>entirely</em> constituted by relationships and has no abiding center — who is the moral agent? Who bears responsibility? Who repents? And if consciousness is an illusion crafted by DNA, then Professor Nguyen's own book is also an illusion crafted by DNA. His scientific reasoning, his Buddhist insight, his appeal to wisdom — all become mere epiphenomena of molecular replication. This is the classic self-defeat of thoroughgoing eliminativism. A Christian anthropology avoids it by grounding human rational capacity in the <em>Logos</em> — the divine reason that makes human reason possible and genuine. The person is relational but irreducible. Constituted by relationships, yes. <em>Reducible</em> to them, no.
+        </p>
+
+        <!-- Three Perspectives on Human Nature -->
+        <details style="margin: 2rem 0; border-radius: 4px; padding: 1.5rem 2rem; background: rgba(201,168,76,0.06); border-left: 3px solid #c9a84c; cursor: pointer;">
+          <summary style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #c9a84c; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            Three Perspectives on Human Nature
+            <span style="font-family: sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #a8a29e;">Explore</span>
+          </summary>
+          <div style="margin-top: 1rem; font-size: 1.05rem; line-height: 1.85; opacity: 0.85;">
+            <p style="margin-bottom: 0.75rem;">McGrath suggests a striking exercise in colligation. Consider three insights about human beings, drawn from three different epistemic communities:</p>
+            <p style="margin-bottom: 0.75rem;"><strong style="color: #faf5ee;">From evolutionary biology:</strong> Human beings are genetically predisposed to act in selfish ways, even if that occasionally expresses itself in seemingly altruistic modes of behaviour.</p>
+            <p style="margin-bottom: 0.75rem;"><strong style="color: #faf5ee;">From cultural anthropology:</strong> Human beings are predisposed to use narratives to recall the past, preserve identity, and construct systems of meaning.</p>
+            <p style="margin-bottom: 0.75rem;"><strong style="color: #faf5ee;">From Christian theology:</strong> Human beings are sinful, alienated from God and their true destiny, and stand in need of salvation.</p>
+            <p style="margin-bottom: 0.75rem;">These three can be placed in isolated compartments — or they can be woven together. The scientific narrative of selfish genes and the theological narrative of sin are not the same thing. But they rhyme. They describe different levels of the same complex creature. And the anthropological insight about narrative explains <em>how</em> we hold such complexity together — through the stories we tell about who we are.</p>
+            <p>Now imagine adding a fourth voice: <strong style="color: #faf5ee;">From Buddhist philosophy:</strong> Human beings are trapped in <em>saṃsāra</em>, driven by <em>taṇhā</em> (craving), and in need of <em>nibbāna</em> (liberation). This, too, rhymes — without being identical. The colligation expands. The picture deepens.</p>
+          </div>
+        </details>
+
+        <figure class="pull-quote" style="margin: 2.5rem 0; padding: 1.5rem 0; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; line-height: 1.6; font-style: italic; color: #c9a84c; text-align: center; border-top: 1px solid rgba(201,168,76,0.3); border-bottom: 1px solid rgba(201,168,76,0.3);">
+          Knowledge is not only power. It is vocation.
+        </figure>
+
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #c9a84c; margin-top: 2.5rem; margin-bottom: 1rem;">Knowledge as Ethical Calling</h3>
+
+        <p style="margin-bottom: 1rem;">
+          To say knowledge is vocation means that inquiry is a calling ordered toward the good. The scientist is not merely a technician of facts. The scientist is a moral agent whose work participates in the shaping of the world. And because of that, questions of virtue are not optional extras.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          We are very skilled now at asking, "Can this be optimized?" Less skilled at asking, "What is this for?" Even less skilled at asking, "What kind of person will this make us?" And often almost incapable of asking, "What if the efficient answer is not the human answer?"
+        </p>
+        <p style="margin-bottom: 1rem;">
+          A Christian perspective presses these questions because it does not see the human being as raw material for endless redesign. The person is not an upgradeable device. Not merely an instrument of productivity. Not a problem for engineering to solve. The person has dignity that exceeds utility. And that dignity is not earned by performance. It is received as gift — in the same way that existence itself is received as gift.
+        </p>
+
+        <!-- The AI Test -->
+        <details style="margin: 2rem 0; border-radius: 4px; padding: 1.5rem 2rem; background: rgba(201,168,76,0.06); border-left: 3px solid #c9a84c; cursor: pointer;">
+          <summary style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #c9a84c; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            The AI Test
+            <span style="font-family: sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #a8a29e;">Explore</span>
+          </summary>
+          <div style="margin-top: 1rem; font-size: 1.05rem; line-height: 1.85; opacity: 0.85;">
+            <p style="margin-bottom: 0.75rem;">If science is just very sophisticated pattern-matching, then AI can do science. Perhaps better than we can. And the human knower becomes a quaint historical predecessor — the horse before the automobile.</p>
+            <p style="margin-bottom: 0.75rem;">But if science requires not only computation but <strong style="color: #faf5ee;">understanding</strong> — if it presupposes a <em>knower</em>, a person capable of truth, of self-correction, of asking "why?" and meaning it — then we are dealing with something irreducible.</p>
+            <p style="margin-bottom: 0.75rem;">A calculator does not know mathematics. A chatbot does not know language. A diagnostic algorithm does not know the patient. Processing, no matter how rapid or complex, is not the same as understanding. As Richard Dawkins himself conceded — with uncharacteristic humility — the human mind is an instrument evolved to cope with medium-sized objects at medium speeds in Africa. It was not designed to investigate the deep structure of reality. And yet it does. That fact alone should give us pause.</p>
+            <p>The Buddhist tradition insists that the person is not a fixed, isolated substance to be replicated. The Christian tradition insists that the person is not a biological machine to be surpassed. Both insights are needed now — perhaps more than ever — in a world increasingly tempted to believe that anything computable can be replaced.</p>
+          </div>
+        </details>
+
+        <p style="margin-bottom: 1rem;">
+          A Christian anthropology says: the knower is not an algorithm. The knower is a person — finite, embodied, morally accountable, oriented toward truth as a good, capable of wonder and guilt and sacrifice and love. None of these are computable. And that is why the rise of AI does not make the question of human nature less important. It makes it the most urgent question of our time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ACT IV: The Limits of Science ========== -->
+  <section id="act-iv" style="background: #faf5ee; border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15);">
+    <div style="max-width: 48rem; margin: 0 auto; padding: 3rem 1rem;">
+      <div style="font-family: 'Lora', serif; color: #44403c; font-size: 1rem; line-height: 1.9;">
+        <p style="font-family: sans-serif; color: #a85c32; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem;">Act IV</p>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 600; color: #1c1917; margin-bottom: 1.5rem;">The Limits of Science — and the Anatomy of Scientism</h2>
+
+        <p style="margin-bottom: 1rem;">
+          Whenever someone says "the limits of science," some people become nervous, as if a bishop is about to confiscate the laboratory.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          That is not my point. To speak of the limits of science is not to weaken science. It is to <strong>clarify its excellence</strong>.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          Science is magnificent at studying measurable patterns, causal regularities, empirical relations, repeatable phenomena. No serious Christian thinker should deny that. Christianity has, like every tradition, enough real problems without inventing new ones.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          But science cannot tell us why something rather than nothing exists. It cannot tell us whether human beings possess intrinsic dignity. It cannot tell us why we ought to sacrifice for justice rather than calculate for advantage. And it cannot finally tell us what knowledge is <em>for</em>.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          These are not anti-scientific questions. They are <em>trans-scientific</em> questions. Questions that arise because we are more than calculators of data. We are beings who ask about meaning, value, purpose, suffering, hope, transcendence.
+        </p>
+
+        <figure class="pull-quote" style="margin: 2.5rem 0; padding: 1.5rem 2rem; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; line-height: 1.6; font-style: italic; color: #a85c32; background: linear-gradient(135deg, #faf5ee, #faf6ee); border-left: 4px solid #a85c32; border-radius: 0 0.75rem 0.75rem 0;">
+          A microscope is a marvelous instrument. It is less helpful for reading Dostoevsky. And if one tries to use it for that purpose, the fault lies not in Dostoevsky.
+        </figure>
+
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #3d8b8b; margin-top: 2.5rem; margin-bottom: 1rem;">The Three Impulses of Scientism</h3>
+
+        <p style="margin-bottom: 1rem;">
+          When science moves from method to metaphysics, from disciplined inquiry to the claim that only measurable realities are real, we enter the territory of <em>scientism</em>. Scientism is not science. It is bad philosophy built on the prestige of science. The philosopher Ian Kidd identifies three distinct impulses behind it:
+        </p>
+
+        <!-- Imperialist, Salvific, Absolutist -->
+        <details style="margin: 2rem 0; border-radius: 4px; padding: 1.5rem 2rem; background: rgba(61,139,139,0.06); border-left: 3px solid #3d8b8b; cursor: pointer;">
+          <summary style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #3d8b8b; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            Imperialist, Salvific, Absolutist
+            <span style="font-family: sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #78716c;">Explore</span>
+          </summary>
+          <div style="margin-top: 1rem; font-size: 1.05rem; line-height: 1.85; opacity: 0.85;">
+            <p style="margin-bottom: 0.75rem;"><strong>The imperialist urge</strong> — a compulsion to extend scientific concepts and methods into areas where their competency is uncalibrated and almost certainly problematic. Ethics, aesthetics, metaphysics, theology all become "pre-scientific" rather than <em>differently rational</em>.</p>
+            <p style="margin-bottom: 0.75rem;"><strong>The salvific urge</strong> — an insistence that science, or what certain people take to be science, can satisfy our ethical, spiritual, and existential needs. The white coat replaces the cassock; the laboratory becomes the temple.</p>
+            <p style="margin-bottom: 0.75rem;"><strong>The absolutist urge</strong> — a compulsion to assign to science the exclusive task of providing complete, totalizing accounts of life, the universe, and everything.</p>
+            <p style="margin-bottom: 0.75rem;">All three impulses share a common flaw: they make <em>philosophical claims about science</em> that cannot themselves be verified scientifically. Scientism is trapped in a vicious circle — it must assume its own authority in order to confirm it. As Edward Feser puts it: to break out of this circle you would need to get <em>outside</em> science altogether — and the very existence of that extra-scientific vantage point would falsify the claim that science alone gives us rational access to reality.</p>
+            <p>The philosopher Mary Midgley cuts to the heart of it: most of the important questions in human life demand multiple conceptual toolboxes used together. If a single perspective on reality is allowed to become normative, the outcome is inevitably a "bizarrely restrictive view of meaning."</p>
+          </div>
+        </details>
+
+        <p style="margin-bottom: 1rem;">
+          This matters very directly for our conversation. Professor Nguyen argues, as a working hypothesis, that the brain is a Turing machine and consciousness is the body's "operating system." He is careful to call this an approximation. And in a genuinely illuminating passage, he acknowledges Gödel's incompleteness theorem — that "wanting to explain everything by reason is impossible" — and appeals to meditation and emotion as complements to rational inquiry. But a deep tension runs through his argument: if consciousness evolved not for <em>truth</em> but for <em>appropriateness</em> — not to reflect reality faithfully, but to model it adaptively — then what is the epistemic status of the Buddhist claim to <em>wisdom</em>? If the brain's model of reality "need not be truthful, only appropriate," then how do we distinguish genuine insight from useful illusion? Scientism says: only the measurable is real. But a thoroughgoing neural constructivism may end up saying something equally restrictive: only the adaptive is knowable. Both risk closing the door on truth — on the possibility that the human mind can reach beyond survival toward something worth knowing for its own sake.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          But human life has many doors.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          Christianity does not come to science as an enemy. Nor as a rival explanatory mechanism. It comes, ideally, as a larger horizon within which science can flourish — without pretending to be God. The deeper issue is not whether science is good or bad. It is whether our account of reality is rich enough to orient scientific power toward wisdom rather than destruction, toward service rather than domination, toward reverence rather than arrogance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ACT V: Mystery & the Trans-Rational ========== -->
+  <section id="act-v" style="background: #0f1419; color: rgba(250,245,238,0.85);">
+    <div style="max-width: 48rem; margin: 0 auto; padding: 3rem 1rem;">
+      <div style="font-family: 'Lora', serif; font-size: 1rem; line-height: 1.9;">
+        <p style="font-family: sans-serif; color: #c9a84c; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem;">Act V</p>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 600; color: #faf5ee; margin-bottom: 1.5rem;">Mystery: The Trans-Rational</h2>
+
+        <p style="margin-bottom: 1rem;">
+          There is a word that makes many modern intellectuals uneasy: <em>mystery</em>. We tend to hear it as a polite name for irrationality — a fog thrown up to conceal the absence of argument. I want to recover the word from that misunderstanding.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          The theologian Rudolf Otto distinguished carefully between the <em>irrational</em> and the <em>non-rational</em>. The numinous — his term for the awe-inducing dimension of reality — is not a failure of reasoning. It is something that overwhelms and saturates our rational capacities. It is <em>trans</em>-rational: not below reason, but beyond its reach. By holding the rational and the non-rational elements of religious experience together in creative tension, Otto avoided reducing religion to the tidy spirituality of the Enlightenment.
+        </p>
+
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #c9a84c; margin-top: 2.5rem; margin-bottom: 1rem;">Awe, Vastness, and the Limits of the Mind</h3>
+
+        <p style="margin-bottom: 1rem;">
+          Recent psychological research has confirmed something ancient traditions already knew: the experience of <em>awe</em> arises from the mind's fundamental inability to accommodate vastness. When we stand before the night sky, or a mountain range, or an intellectual system of enormous scope — something happens. The mind stumbles. It cannot take it all in. And in that stumbling, something opens.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          The physicist Richard Feynman spoke of the imagination being "stretched to the utmost, not to imagine things which are not really there, but just to comprehend those things which <em>are</em> there." This is mystery in its most rigorous form: not a refusal to think, but an encounter with something too deep, too vast, too layered for any single framework to contain.
+        </p>
+
+        <figure class="pull-quote" style="margin: 2.5rem 0; padding: 1.5rem 0; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; line-height: 1.6; font-style: italic; color: #c9a84c; text-align: center; border-top: 1px solid rgba(201,168,76,0.3); border-bottom: 1px solid rgba(201,168,76,0.3);">
+          Should we not mistrust the jaunty assurance with which each generation believes it has at last got the concepts with which to make sense of the world?<br><span style="font-size: 0.65em; font-style: normal; letter-spacing: 1px; color: #a8a29e;">— ALFRED NORTH WHITEHEAD</span>
+        </figure>
+
+        <p style="margin-bottom: 1rem;">
+          Max Weber warned of what he called the <em>stahlhartes Gehäuse</em> — a shell as hard as steel — the prison created when rationalism confines human existence to systems based purely on efficiency, calculation, and control. The concept of mystery, properly understood, is precisely what cracks that shell open. It does not legitimate the irrational. It liberates us from the tyranny of treating only the provable as real.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          The Italian philosopher Giambattista Vico pushed this further: the human mind can fully grasp only what human beings have themselves constructed — the world of culture, institutions, art. When it attempts to comprehend nature in its totality, or God, it is reaching beyond its own creations. Both the natural scientist and the theologian are therefore in the same humbling position: both study a reality they did not make and cannot fully master.
+        </p>
+
+        <!-- Shared Territory: The Apophatic and Śūnyatā -->
+        <details style="margin: 2rem 0; border-radius: 4px; padding: 1.5rem 2rem; background: rgba(201,168,76,0.06); border-left: 3px solid #c9a84c; cursor: pointer;">
+          <summary style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #c9a84c; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            Shared Territory: The Apophatic and Śūnyatā
+            <span style="font-family: sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #a8a29e;">Explore</span>
+          </summary>
+          <div style="margin-top: 1rem; font-size: 1.05rem; line-height: 1.85; opacity: 0.85;">
+            <p style="margin-bottom: 0.75rem;">Here is where I think our traditions meet on genuinely shared ground. Christianity has a profound <em>apophatic</em> tradition — the <em>via negativa</em> — which insists that God is ultimately beyond all human categories, that our most truthful speech about God must be disciplined by the awareness that God exceeds every concept. Gregory of Nyssa, writing in the fourth century, argued that the soul's journey toward God is an ever-deepening entry into divine darkness — not the darkness of ignorance, but the darkness of superabundant light that overwhelms our creaturely capacity for sight. Pseudo-Dionysius pushed this further: God is beyond being, beyond goodness, beyond every name we can give. Meister Eckhart spoke of "the God beyond God." The <em>theologia negativa</em> is not theological laziness. It is the discipline of refusing to let our concepts become idols.</p>
+            <p style="margin-bottom: 0.75rem;">Buddhism's analysis of <em>śūnyatā</em> — emptiness — and the <em>prajñāpāramitā</em> literature's insistence that ultimate reality is beyond conceptual grasping represent, if I may say so, a structurally parallel recognition. Both traditions say: be careful with your categories. Reality is always more than your concepts. Cling too tightly to your formulations, and they become idols rather than windows.</p>
+            <p style="margin-bottom: 0.75rem;">This is not the same claim. The Christian apophatic tradition says God <em>exceeds</em> our categories; the Buddhist tradition is making a different metaphysical point about the nature of all phenomena. But the <em>epistemic humility</em> they cultivate is remarkably convergent. Both resist the reduction of reality to whatever the current conceptual apparatus can handle.</p>
+            <p style="margin-bottom: 0.75rem;">Professor Nguyen's treatment of the <em>emptiness of emptiness</em> — <em>śūnyatā-śūnyatā</em> — is particularly striking here. He presents Nagarjuna as refusing both ontology <em>and</em> epistemology: emptiness is not a thing that exists, nor a theory about knowing, but a "method of contemplation that is meta-ontological and meta-epistemological." This is philosophically sophisticated — and it invites a question: if emptiness dissolves both the knower and the known, what remains? The Christian answer is not "nothing" but <em>superabundant being</em> — a God who exceeds our categories not because God is <em>less</em> than what we can think, but because God is <em>more</em>. That is a genuine and deep difference. But both traditions are, in their very different ways, pointing toward the same boundary of human conceptual capacity.</p>
+            <p>And both, I would suggest, offer a powerful corrective to the scientific hubris of our age.</p>
+          </div>
+        </details>
+
+        <p style="margin-bottom: 1rem;">
+          Mystery, then, is not the enemy of reason. It is its horizon. It is where reason becomes aware of its own finitude — and, in that very awareness, grows. The scientist who feels awe before the complexity of a living cell, the mystic who feels overwhelmed in prayer, the philosopher who discovers that every answer generates new questions — all of them are touching the same boundary. And the appropriate response to that boundary is not embarrassment, but receptivity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CLOSING ========== -->
+  <section id="closing" style="background: #0f1419; color: rgba(232,224,212,0.88);">
+    <div style="max-width: 48rem; margin: 0 auto; padding: 3rem 1rem;">
+      <div style="font-family: 'Lora', serif; font-size: 1rem; line-height: 1.9;">
+        <p style="font-family: sans-serif; color: #a85c32; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem;">Closing</p>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 600; color: #faf5ee; margin-bottom: 1.5rem;">Gathering the Threads — and an Honest Question</h2>
+
+        <!-- Four Pillars Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 2.5rem 0;">
+          <div style="padding: 1.5rem; border-radius: 4px; border: 1px solid rgba(201,168,76,0.15); background: rgba(201,168,76,0.03);">
+            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; color: #c9a84c; margin-bottom: 0.5rem;">01</p>
+            <h5 style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: #faf5ee; margin-bottom: 0.5rem;">Created</h5>
+            <p style="font-size: 0.95rem; line-height: 1.7; color: #a8a29e;">The world is real, intelligible, ordered, and open to investigation — because it comes from Logos, not chaos.</p>
+          </div>
+          <div style="padding: 1.5rem; border-radius: 4px; border: 1px solid rgba(201,168,76,0.15); background: rgba(201,168,76,0.03);">
+            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; color: #c9a84c; margin-bottom: 0.5rem;">02</p>
+            <h5 style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: #faf5ee; margin-bottom: 0.5rem;">Contingent</h5>
+            <p style="font-size: 0.95rem; line-height: 1.7; color: #a8a29e;">Observation, humility, and empirical inquiry matter — because the world could have been otherwise.</p>
+          </div>
+          <div style="padding: 1.5rem; border-radius: 4px; border: 1px solid rgba(201,168,76,0.15); background: rgba(201,168,76,0.03);">
+            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; color: #c9a84c; margin-bottom: 0.5rem;">03</p>
+            <h5 style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: #faf5ee; margin-bottom: 0.5rem;">Personal</h5>
+            <p style="font-size: 0.95rem; line-height: 1.7; color: #a8a29e;">Science is not only a technical but also an ethical enterprise — because the knower is a moral agent, not an algorithm.</p>
+          </div>
+          <div style="padding: 1.5rem; border-radius: 4px; border: 1px solid rgba(201,168,76,0.15); background: rgba(201,168,76,0.03);">
+            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; color: #c9a84c; margin-bottom: 0.5rem;">04</p>
+            <h5 style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: #faf5ee; margin-bottom: 0.5rem;">Limited &amp; Open</h5>
+            <p style="font-size: 0.95rem; line-height: 1.7; color: #a8a29e;">Science must live in conversation with philosophy, ethics, and theology — because reality has strata that no single method can exhaust.</p>
+          </div>
+        </div>
+
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #c9a84c; margin-top: 2.5rem; margin-bottom: 1rem;">From Information to Wisdom</h3>
+
+        <p style="margin-bottom: 1rem;">
+          E. O. Wilson once observed that we are drowning in information while starving for wisdom. He was right about the diagnosis, even if I would quarrel with his prescription. Wisdom is not more information, better organized. Wisdom, as McGrath argues, is a <em>deeper rationality</em> — the integration of insights and their application to real life. It is about colligating what we know and grasping the coherence-making, meaning-generating properties of the whole. It is what Aristotle called <em>phronesis</em>, what the medieval tradition called <em>sapientia</em>, and what I suspect your tradition, too, recognizes as something very different from the mere accumulation of data.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          The Christian vision I am describing is not a license for domination. It is, at its best, an invitation to humility. If reality is gift, not possession… if truth is something we receive before we master it… if the person is sacred beyond utility… then both science and religion are called away from arrogance.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          For all the profound differences between Buddhist and Christian metaphysics — and they are real, and they matter — both traditions can unsettle the modern ego. Both can remind us that we are not sovereign. Both can call us to attentiveness, self-critique, discipline, and a more humane way of knowing.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          Real dialogue is not created by pretending differences do not exist. It is created by bringing differences into speech without hostility. This is why our joint research project — exploring intersections between Buddhism, Christianity, and natural science in the age of AI — matters so profoundly. We arrive at resistance to the reduction of the person from different philosophical starting points, but we arrive at it nonetheless.
+        </p>
+
+        <!-- Closing Question -->
+        <div style="margin: 2.5rem 0; padding: 2.5rem; text-align: center; border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; background: rgba(201,168,76,0.03);">
+          <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: #c9a84c; margin-bottom: 1.25rem;">A question for my colleagues</p>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; line-height: 1.6; color: rgba(232,224,212,0.9);">
+            Professor Nguyen has argued that the self is constituted by relationships, that consciousness is an operating system empowered by DNA, and that our deepest desires may not truly be our own. If all of this is so — if there is no substantial, enduring self, and if consciousness models reality for adaptive survival rather than for truth — then what grounds the scientist's responsibility for the truthfulness of their findings? What sustains the moral continuity of inquiry? And what, ultimately, is the difference between wisdom and a very convincing illusion?
+          </p>
+        </div>
+
+        <p style="margin-bottom: 1rem;">
+          Our crisis today is not only a crisis of technology. It is a crisis of wisdom. We have methods of astonishing power, and thinner and thinner accounts of what power is for.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          From a Christian perspective, the answer begins here: the world is not absurd; it is created. Nature is not divine; it is gift. Truth is not merely useful; it is worth serving. And the human person is not a disposable instrument in the machinery of progress, but a being called to know, to love, and to act responsibly within a world that we did not make.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          <strong style="color: #faf5ee;">That is why science matters. And also why science is not enough.</strong>
+        </p>
+
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #c9a84c; margin-top: 2.5rem; margin-bottom: 1rem;">What Happens to Love?</h3>
+
+        <p style="margin-bottom: 1rem;">
+          Perhaps the deepest question Nguyen's book raises for a Christian is this: what happens to love? His account of the self as relational, impermanent, and ultimately illusory is intellectually compelling — but it has no place for <em>love</em> as a constitutive reality. If the self is an illusion crafted by DNA, then love is too — just another adaptive strategy, a dopamine-mediated mechanism for bonding that happens to promote genetic survival. But if love is <em>real</em> — if the mother's love for her child is not merely a neurochemical survival mechanism but a genuine participation in something transcendent — then reality cannot be exhausted by compositionality and impermanence.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          Love points to a dimension of reality that is <em>relational but also personal, temporal but also eternal, vulnerable but also unconditional</em>. The Christian claim is that this dimension is grounded in the love of a triune God — a God who is, in God's own being, an eternal communion of persons. The Buddhist will not accept this grounding. But the <em>phenomenon</em> of love — its irreducibility, its capacity to <em>create</em> personhood (as a mother's love creates the child's sense of self before the child can even recognize it) — is shared human experience. And it is, perhaps, the best starting point for a conversation between two friends who have thought deeply about what is real.
+        </p>
+
+        <figure class="pull-quote" style="margin: 2.5rem 0; padding: 1.5rem 0; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; line-height: 1.6; font-style: italic; color: #c9a84c; text-align: center; border-top: 1px solid rgba(201,168,76,0.3); border-bottom: none;">
+          We are climbing the same mountain from different sides.<br>I am glad we are calling out to each other across the ridge.
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation footer -->
+  <section style="background: #faf5ee; border-top: 1px solid #e7e5e4; padding: 2rem 1rem; text-align: center;">
+    <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+      <a href={`${base}glossary`} style="color: #c9a84c; font-family: sans-serif; font-size: 0.9rem; text-decoration: none;">Key Terms →</a>
+      <a href={`${base}further-reading`} style="color: #c9a84c; font-family: sans-serif; font-size: 0.9rem; text-decoration: none;">Further Reading →</a>
+      <a href={`${base}about`} style="color: #c9a84c; font-family: sans-serif; font-size: 0.9rem; text-decoration: none;">About the Project →</a>
+    </div>
+  </section>
+
+</BaseLayout>

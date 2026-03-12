@@ -1,0 +1,27 @@
+{
+  "name": "science-faith-dialogue",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Science, Creation, Contingency, and the Human Person — An Interactive Scholarly Resource for Buddhism-Christianity Dialogue. Erasmus+ KA171 project, ELTF CU (Bratislava) & TNTI VNU (Hanoi).",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@tailwindcss/vite": "^4.2.0",
+    "astro": "^5.17.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwindcss": "^4.2.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  }
+}
