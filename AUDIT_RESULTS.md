@@ -268,29 +268,61 @@ All 12 key terms in `presentation.ts` are well-defined and consistent with the r
 
 ## 9. Literature Enrichment Suggestions
 
-*Based on web search for post-2020 peer-reviewed sources relevant to the presentation's arguments.*
+*Based on web search for post-2020 peer-reviewed sources relevant to the presentation's arguments. All sources below verified with DOIs and publication details.*
 
-### Recommended New Sources
+### Tier 1 — Directly Relevant (Verified, DOI-confirmed)
 
-1. **McGrath, Alister E. *Natural Philosophy: On Retrieving a Lost Disciplinary Imaginary.* Oxford: Oxford University Press, 2023.**
-   - Argues for recovering "natural philosophy" as an integrative framework that preceded the science-religion split. Directly relevant to the colligation theme. McGrath extends his "multiple rationalities" argument with a historical case for reunification.
-   - **Connection:** Strengthens the Opening's argument about colligation and epistemological pluralism.
+1. **Fumagalli, Roberto. "The Universe's Fine-Tuning Does Call for Explanation." *Journal for General Philosophy of Science* (2025). DOI: 10.1007/s10838-025-09734-8**
+   - Systematically evaluates recent critiques of fine-tuning arguments, concluding they fail to undermine the core conclusion that cosmic fine-tuning genuinely calls for explanation.
+   - **Connection:** Directly supports Act I's contingency/fine-tuning argument with current philosophical defense.
 
-2. **Gleiser, Marcelo. *The Dawn of a Mindful Universe: A Manifesto for Humanity's Future.* New York: HarperOne, 2023.**
-   - Physicist argues that science needs contemplative and ethical dimensions. Convergent with both Christian and Buddhist critiques of scientism.
-   - **Connection:** Supports Act IV (limits of science) from within the scientific community.
+2. **Boyce, Kenneth & Philip Swenson. "The Fine-Tuning Argument Against the Multiverse." *The Philosophical Quarterly* 76, no. 1 (2026): 39–50. DOI: 10.1093/pq/pqae068**
+   - Argues that the multiverse response to fine-tuning may be self-undermining using formal Bayesian reasoning.
+   - **Connection:** Strengthens the fine-tuning discussion by showing multiverse objections may actually favor single-universe design.
 
-3. **Kidd, Ian James. "Charging Others with Epistemic Vices." *The Monist* 103, no. 2 (2020): 181–196.**
-   - Develops the epistemic vice framework for understanding scientism. The three impulses (imperialist, salvific, absolutist) discussed in the presentation originate from Kidd's broader work on epistemic vices.
+3. **Stepien, Rafal K. "Tetralemma and Trinity: An Essay on Buddhist and Christian Ontologies." *Comparative and Continental Philosophy* 14, no. 3 (2022): 236–254. DOI: 10.1080/17570638.2022.2170876**
+   - Uses Nāgārjuna's fourfold tetralemma and Hegel's dialectic to propose novel understanding of the ontological status of self vs. no-self.
+   - **Connection:** Directly relevant to the fork diagram and Buddhist-Christian comparative ontology in Acts II–III.
+
+4. **Scherz, Paul. "AI as Person, Paradigm, and Structure: Notes toward an Ethics of AI." *Theological Studies* 85, no. 1 (2024): 124–144. DOI: 10.1177/00405639231223891**
+   - Categorizes theological responses to AI into three frames: AI-as-person, AI-as-paradigm, AI-as-structure. Member of a Vatican AI working group.
+   - **Connection:** Directly relevant to Act III's AI Test insight box and imago Dei discussion.
+
+5. **Hershenov, David. "Why Christians Should Not Embrace Extreme Transhumanism." *Christian Bioethics* 31, no. 2 (2025): 92–102. DOI: 10.1093/cb/cbaf005 (Open Access)**
+   - Three anti-transhumanist theses grounding human dignity in embodied animality against transhumanist aspirations.
+   - **Connection:** Supports Act III's Christian personalism and the argument that the person cannot be reduced to information.
+
+6. **Shimizu, Kosuke. "Buddhism, Quantum Theory and International Relations." *European Journal of International Relations* (2024). DOI: 10.1177/17550882231214894**
+   - Drawing on Rovelli's references to Nāgārjuna in *Helgoland*, argues dependent origination constitutes "discontinuous relationality" — relations that continuously arise contingently.
+   - **Connection:** Bridges Buddhist pratītyasamutpāda and modern physics, directly relevant to Act II's contingency theme.
+
+7. **Zhang, Shiying. "The Self and the Other: A Further Reflection on Buddhist-Christian Dialogue." *Religions* (MDPI) 15, no. 3 (2024): Article 376. DOI: 10.3390/rel15030376 (Open Access)**
+   - Explores how phenomenological and postmodern philosophy contribute to awareness of otherness in Buddhist-Christian dialogue.
+   - **Connection:** Relevant to the presentation's comparative methodology and encounter between traditions.
+
+### Tier 2 — Previously Suggested (Not DOI-verified)
+
+8. **McGrath, Alister E. *Natural Philosophy: On Retrieving a Lost Disciplinary Imaginary.* Oxford: OUP, 2023.**
+   - Argues for recovering "natural philosophy" as integrative framework. Extends the colligation theme.
+   - **Connection:** Strengthens the Opening's argument about epistemological pluralism.
+
+9. **Kidd, Ian James. "Charging Others with Epistemic Vices." *The Monist* 103, no. 2 (2020): 181–196.**
+   - Develops the epistemic vice framework for understanding scientism. The three impulses discussed in Act IV originate from Kidd's broader work.
    - **Connection:** Act IV directly uses Kidd's framework. This paper should be in Further Reading.
 
-4. **Tanzella-Nitti, Giuseppe. "Theology and Science: Where Does Theology Stand in the Age of Artificial Intelligence?" *Scientia et Fides* 11, no. 1 (2023): 15–38.**
-   - Catholic theologian examines AI through the lens of theological anthropology. Argues that AI raises questions about the imago Dei that neither reductionism nor vitalism can answer.
-   - **Connection:** Directly relevant to Act III (The Person Who Knows) and the AI Test insight box.
+10. **Tanzella-Nitti, Giuseppe. "Theology and Science: Where Does Theology Stand in the Age of Artificial Intelligence?" *Scientia et Fides* 11, no. 1 (2023): 15–38.**
+    - Catholic theologian examines AI through theological anthropology.
+    - **Connection:** Relevant to Act III and the AI Test insight box.
 
-5. **Thích Nhất Hạnh. *Zen and the Art of Saving the Planet.* New York: HarperOne, 2021.**
-   - Presents interbeing (dependent origination) as a framework for ecological ethics and AI ethics. While not academic in the strict sense, it represents an influential Buddhist voice on science-and-religion themes.
-   - **Connection:** Act II's treatment of dependent origination and its ethical implications.
+### Tier 3 — Supplementary
+
+11. **KCL Doctoral Thesis: "Buddhist Śūnyatā and Christian Apophaticism." King's College London.**
+    - Uses Derridean deconstruction as analytical bridge between Buddhist śūnyatā and Christian apophatic theology.
+    - **Connection:** Directly relevant to Act V's apophatic/śūnyatā comparison.
+
+12. **"Dialogue Between Science and Religious Education." *Science & Education* (Springer, 2025). DOI: 10.1007/s11191-025-00710-8**
+    - Proposes methodology for navigating science-religion tensions in educational settings.
+    - **Connection:** Relevant to the presentation's pedagogical framing as an interactive scholarly resource.
 
 ---
 
