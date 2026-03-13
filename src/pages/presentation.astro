@@ -5,6 +5,11 @@ import FineTuningExplorer from '../components/FineTuningExplorer';
 import FrogFable from '../components/FrogFable';
 import ImagoDeiCards from '../components/ImagoDeiCards';
 import ScientismRadar from '../components/ScientismRadar';
+import ScienceReligionTimeline from '../components/ScienceReligionTimeline';
+import RealityLevels from '../components/RealityLevels';
+import ChristianityBuddhismComparisonMap from '../components/ChristianityBuddhismComparisonMap';
+import ForkDiagram from '../components/ForkDiagram';
+import ApophaticComparison from '../components/ApophaticComparison';
 import { keyTerms, persons, fineTuningConstants, imagoDeiUnderstandings } from '../data/presentation';
 
 const base = import.meta.env.BASE_URL;
@@ -154,6 +159,8 @@ const base = import.meta.env.BASE_URL;
           <p><strong>Fifth:</strong> Where do we find the limits of science — and what lies beyond them that is not irrational, but <em>trans-</em>rational?</p>
 </InsightBox>
 
+      <ScienceReligionTimeline client:visible />
+
     </div>
   </section>
 
@@ -256,6 +263,9 @@ const base = import.meta.env.BASE_URL;
         <p style="margin-bottom: 1rem;">
           That, from a Christian point of view, is not a humiliation. It is almost a spiritual discipline.
         </p>
+
+        <RealityLevels client:visible />
+
       </div>
     </div>
   </section>
@@ -308,25 +318,7 @@ const base = import.meta.env.BASE_URL;
           But here, I think, a real and important difference emerges. And I want to name it honestly, because real dialogue is built on candor, not on polite evasions.
         </p>
 
-        <!-- Fork Diagram -->
-        <div style="margin: 2.5rem 0; padding: 2rem 0; text-align: center;">
-          <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; color: #78716c; margin-bottom: 1.5rem;">Both traditions reject self-sufficient independence. But they diverge on what grounds interdependence…</p>
-          <div class="fork-diagram">
-            <div class="fork-diagram__left" style="text-align: right; padding: 1.5rem;">
-              <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #3d8b8b; margin-bottom: 0.75rem;">Dependent Origination</h4>
-              <p style="font-size: 1rem; line-height: 1.75; color: #78716c;">Phenomena arise in mutual conditioning. The network of interdependence is itself the fundamental reality. Nothing stands outside the web. No transcendent ground is posited. The question "Why is there a web at all?" is dissolved, not answered.</p>
-            </div>
-            <div class="fork-diagram__connector">
-              <div style="width: 9px; height: 9px; border-radius: 50%; background: #3d8b8b; border: 1px solid rgba(61,139,139,0.4);"></div>
-              <div style="width: 1px; height: 90px; background: linear-gradient(to bottom, #3d8b8b, #d6d3d1, #c9a84c);"></div>
-              <div style="width: 9px; height: 9px; border-radius: 50%; background: #c9a84c; border: 1px solid rgba(201,168,76,0.4);"></div>
-            </div>
-            <div class="fork-diagram__right" style="text-align: left; padding: 1.5rem;">
-              <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #c9a84c; margin-bottom: 0.75rem;">Creation</h4>
-              <p style="font-size: 1rem; line-height: 1.75; color: #78716c;">Creatures are genuinely interdependent, but the web itself is grounded in a transcendent Source beyond the web. The web does not explain why there is a web at all. And persons within the web possess a given nature and vocation that are not reducible to the web's processes.</p>
-            </div>
-          </div>
-        </div>
+        <ForkDiagram client:visible />
 
         <p style="margin-bottom: 1rem;">
           That is not a refutation. It is a genuine fork in the road. And I think both paths deserve to be walked honestly, without either side pretending the fork is not there.
@@ -344,6 +336,8 @@ const base = import.meta.env.BASE_URL;
             <p style="margin-bottom: 0.75rem;">Colligation preserves the distinctiveness of each tradition. It does not resolve the methodological asymmetry between disciplines. It recognizes that each pearl on the string retains its own identity — and that the string reveals a coherence none could produce alone.</p>
             <p>And critically, colligation is <em>a matter of choice</em>. It reflects the personal or communal epistemic conclusions of thinkers who find the larger picture compelling — not a publicly unassailable proof. Both of us are standing within our traditions, making a wager on coherence. That is not a weakness. It is the condition of all deep thought.</p>
 </InsightBox>
+
+        <ChristianityBuddhismComparisonMap client:visible />
 
         <p style="margin-bottom: 1rem;">
           The Christian account gives very strong weight to the reality and integrity of created beings. Not isolated substances sealed off from one another — no. But real beings nonetheless, with given natures, genuine causal powers, and — in the case of human persons — a distinctive vocation and dignity.
@@ -551,6 +545,8 @@ const base = import.meta.env.BASE_URL;
             <p style="margin-bottom: 0.75rem;">Professor Nguyen's treatment of the <em>emptiness of emptiness</em> — <em>śūnyatā-śūnyatā</em> — is particularly striking here. He presents Nagarjuna as refusing both ontology <em>and</em> epistemology: emptiness is not a thing that exists, nor a theory about knowing, but a "method of contemplation that is meta-ontological and meta-epistemological." This is philosophically sophisticated — and it invites a question: if emptiness dissolves both the knower and the known, what remains? The Christian answer is not "nothing" but <em>superabundant being</em> — a God who exceeds our categories not because God is <em>less</em> than what we can think, but because God is <em>more</em>. That is a genuine and deep difference. But both traditions are, in their very different ways, pointing toward the same boundary of human conceptual capacity.</p>
             <p>And both, I would suggest, offer a powerful corrective to the scientific hubris of our age.</p>
 </InsightBox>
+
+        <ApophaticComparison client:visible />
 
         <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #3d8b8b; margin-bottom: 1.5rem;">
           <a href={`${base}convergences#apophatic-sunyata`} style="color: #3d8b8b; text-decoration: none;">

@@ -47,7 +47,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body class="min-h-screen flex flex-col" style="font-family: 'Lora', serif;">
     <!-- Skip to content -->
-    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-amber-600 focus:text-white focus:rounded">Skip to content</a>
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-gold-600 focus:text-white focus:rounded">Skip to content</a>
 
     <!-- Navigation -->
     <nav class="sticky top-0 z-50 backdrop-blur-sm border-b print:hidden" style="background: rgba(15,20,25,0.95); border-color: rgba(201,168,76,0.2);">
@@ -67,37 +67,37 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           <!-- Desktop Navigation -->
           <div class="hidden md:flex items-center gap-6">
             <a href={base}
-               class:list={["text-sm transition-colors", activeSection === "home" ? "text-amber-400" : "text-stone-300 hover:text-amber-400"]}
+               class:list={["text-sm transition-colors", activeSection === "home" ? "text-gold-400" : "text-stone-300 hover:text-gold-400"]}
                style="font-family: sans-serif; letter-spacing: 0.03em;">
               Home
             </a>
             <a href={`${base}presentation`}
-               class:list={["text-sm transition-colors", activeSection === "presentation" ? "text-amber-400" : "text-stone-300 hover:text-amber-400"]}
+               class:list={["text-sm transition-colors", activeSection === "presentation" ? "text-gold-400" : "text-stone-300 hover:text-gold-400"]}
                style="font-family: sans-serif; letter-spacing: 0.03em;">
               Presentation
             </a>
             <a href={`${base}glossary`}
-               class:list={["text-sm transition-colors", activeSection === "glossary" ? "text-amber-400" : "text-stone-300 hover:text-amber-400"]}
+               class:list={["text-sm transition-colors", activeSection === "glossary" ? "text-gold-400" : "text-stone-300 hover:text-gold-400"]}
                style="font-family: sans-serif; letter-spacing: 0.03em;">
               Glossary
             </a>
             <a href={`${base}scholars`}
-               class:list={["text-sm transition-colors", activeSection === "scholars" ? "text-amber-400" : "text-stone-300 hover:text-amber-400"]}
+               class:list={["text-sm transition-colors", activeSection === "scholars" ? "text-gold-400" : "text-stone-300 hover:text-gold-400"]}
                style="font-family: sans-serif; letter-spacing: 0.03em;">
               Scholars
             </a>
             <a href={`${base}convergences`}
-               class:list={["text-sm transition-colors", activeSection === "convergences" ? "text-amber-400" : "text-stone-300 hover:text-amber-400"]}
+               class:list={["text-sm transition-colors", activeSection === "convergences" ? "text-gold-400" : "text-stone-300 hover:text-gold-400"]}
                style="font-family: sans-serif; letter-spacing: 0.03em;">
               Convergences
             </a>
             <a href={`${base}further-reading`}
-               class:list={["text-sm transition-colors", activeSection === "further-reading" ? "text-amber-400" : "text-stone-300 hover:text-amber-400"]}
+               class:list={["text-sm transition-colors", activeSection === "further-reading" ? "text-gold-400" : "text-stone-300 hover:text-gold-400"]}
                style="font-family: sans-serif; letter-spacing: 0.03em;">
               Reading
             </a>
             <a href={`${base}about`}
-               class:list={["text-sm transition-colors", activeSection === "about" ? "text-amber-400" : "text-stone-300 hover:text-amber-400"]}
+               class:list={["text-sm transition-colors", activeSection === "about" ? "text-gold-400" : "text-stone-300 hover:text-gold-400"]}
                style="font-family: sans-serif; letter-spacing: 0.03em;">
               About
             </a>
