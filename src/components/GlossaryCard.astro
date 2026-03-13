@@ -22,6 +22,9 @@ const borderColor = traditionColors[term.tradition] ?? '#78716c';
 
 <div
   id={term.id}
+  data-glossary-term={term.term}
+  data-glossary-def={term.definition}
+  data-glossary-script={term.originalScript || ''}
   style={`background: white; border-radius: 0.75rem; padding: 1.25rem; border: 1px solid #e7e5e4; border-left: 3px solid ${borderColor};`}
 >
   <!-- Term name + original script -->

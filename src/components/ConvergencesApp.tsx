@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import type { Axis, EntryType } from '../data/convergences';
 import { entries } from '../data/convergences';
+import { buildTermGlossaryMap } from '../data/crosslinks';
 import AxisFilter from './AxisFilter';
 import ConvergenceSummary from './ConvergenceSummary';
 import ConvergenceCard from './ConvergenceCard';
@@ -12,6 +13,7 @@ interface Props {
 export default function ConvergencesApp({ baseUrl }: Props) {
   const [activeAxis, setActiveAxis] = useState<Axis | 'all'>('all');
   const [activeType, setActiveType] = useState<EntryType | 'all'>('all');
+  const termGlossaryMap = useMemo(() => buildTermGlossaryMap(), []);
 
   const filtered = entries.filter(e =>
     (activeAxis === 'all' || e.axis === activeAxis) &&
@@ -106,7 +108,7 @@ export default function ConvergencesApp({ baseUrl }: Props) {
           </p>
         )}
         {filtered.map((entry) => (
-          <ConvergenceCard key={entry.id} entry={entry} baseUrl={baseUrl} />
+          <ConvergenceCard key={entry.id} entry={entry} baseUrl={baseUrl} termGlossaryMap={termGlossaryMap} />
         ))}
       </section>
     </div>

@@ -5,9 +5,11 @@ import { typeColors, axisLabels } from '../data/convergences';
 interface Props {
   entry: ConvergenceDivergence;
   baseUrl: string;
+  /** Map of convergence keyTerm string → glossary entry ID for cross-linking */
+  termGlossaryMap?: Record<string, string>;
 }
 
-export default function ConvergenceCard({ entry, baseUrl }: Props) {
+export default function ConvergenceCard({ entry, baseUrl, termGlossaryMap = {} }: Props) {
   const [expanded, setExpanded] = useState(false);
   const color = typeColors[entry.type];
   const panelId = `analysis-${entry.id}`;
@@ -92,18 +94,27 @@ export default function ConvergenceCard({ entry, baseUrl }: Props) {
           )}
           {entry.christianPerspective.keyTerms.length > 0 && (
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25rem' }}>
-              {entry.christianPerspective.keyTerms.map((term) => (
-                <span key={term} style={{
+              {entry.christianPerspective.keyTerms.map((term) => {
+                const glossaryId = termGlossaryMap[term];
+                const pillStyle = {
                   fontSize: '0.6rem',
                   fontFamily: 'var(--font-mono)',
                   padding: '0.1rem 0.4rem',
                   borderRadius: '9999px',
                   background: 'rgba(201,168,76,0.1)',
                   color: 'var(--color-gold-400)',
-                }}>
-                  {term}
-                </span>
-              ))}
+                  textDecoration: 'none' as const,
+                };
+                return glossaryId ? (
+                  <a key={term} href={`${baseUrl}glossary#${glossaryId}`} style={pillStyle}>
+                    {term}
+                  </a>
+                ) : (
+                  <span key={term} style={pillStyle}>
+                    {term}
+                  </span>
+                );
+              })}
             </div>
           )}
         </div>
@@ -133,18 +144,27 @@ export default function ConvergenceCard({ entry, baseUrl }: Props) {
           )}
           {entry.buddhistPerspective.keyTerms.length > 0 && (
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25rem' }}>
-              {entry.buddhistPerspective.keyTerms.map((term) => (
-                <span key={term} style={{
+              {entry.buddhistPerspective.keyTerms.map((term) => {
+                const glossaryId = termGlossaryMap[term];
+                const pillStyle = {
                   fontSize: '0.6rem',
                   fontFamily: 'var(--font-mono)',
                   padding: '0.1rem 0.4rem',
                   borderRadius: '9999px',
                   background: 'rgba(61,139,139,0.1)',
                   color: 'var(--color-teal-500)',
-                }}>
-                  {term}
-                </span>
-              ))}
+                  textDecoration: 'none' as const,
+                };
+                return glossaryId ? (
+                  <a key={term} href={`${baseUrl}glossary#${glossaryId}`} style={pillStyle}>
+                    {term}
+                  </a>
+                ) : (
+                  <span key={term} style={pillStyle}>
+                    {term}
+                  </span>
+                );
+              })}
             </div>
           )}
         </div>
