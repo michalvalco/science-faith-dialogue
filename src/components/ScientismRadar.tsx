@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useCallback } from 'react';
 
 interface Impulse {
   id: string;
@@ -44,6 +44,20 @@ const emojiMap: Record<string, string> = {
 
 export default function ScientismRadar() {
   const [activeId, setActiveId] = useState<string | null>(null);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  const handleTabKeyDown = useCallback((e: React.KeyboardEvent, index: number) => {
+    let nextIndex: number | null = null;
+    if (e.key === 'ArrowRight') nextIndex = (index + 1) % impulses.length;
+    else if (e.key === 'ArrowLeft') nextIndex = (index - 1 + impulses.length) % impulses.length;
+    else if (e.key === 'Home') nextIndex = 0;
+    else if (e.key === 'End') nextIndex = impulses.length - 1;
+    if (nextIndex !== null) {
+      e.preventDefault();
+      setActiveId(impulses[nextIndex].id);
+      tabRefs.current[nextIndex]?.focus();
+    }
+  }, []);
 
   return (
     <div style={{
@@ -79,19 +93,22 @@ export default function ScientismRadar() {
           borderTop: '1px solid var(--color-dark-50)',
         }}
       >
-        {impulses.map((imp) => {
+        {impulses.map((imp, index) => {
           const isActive = activeId === imp.id;
           const tabId = `sci-tab-${imp.id}`;
           const panelId = `sci-panel-${imp.id}`;
+          const isFocusable = isActive || (activeId === null && index === 0);
           return (
             <button
               key={imp.id}
+              ref={(el) => { tabRefs.current[index] = el; }}
               id={tabId}
               role="tab"
               aria-selected={isActive}
-              aria-controls={panelId}
-              tabIndex={isActive ? 0 : -1}
+              aria-controls={isActive ? panelId : undefined}
+              tabIndex={isFocusable ? 0 : -1}
               onClick={() => setActiveId(isActive ? null : imp.id)}
+              onKeyDown={(e) => handleTabKeyDown(e, index)}
               style={{
                 padding: '1.25rem 1rem',
                 background: isActive ? `color-mix(in srgb, ${imp.color} 6%, transparent)` : 'transparent',

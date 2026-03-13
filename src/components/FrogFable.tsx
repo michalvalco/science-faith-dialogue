@@ -93,7 +93,7 @@ export default function FrogFable() {
               key={b.id}
               onClick={() => setActiveId(isActive ? null : b.id)}
               aria-expanded={isActive}
-              aria-controls={panelId}
+              aria-controls={isActive ? panelId : undefined}
               style={{
                 padding: '0.5rem 0.75rem',
                 fontFamily: 'var(--font-sans)',
