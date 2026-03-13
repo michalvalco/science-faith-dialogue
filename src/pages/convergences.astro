@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ConvergencesApp from '../components/ConvergencesApp';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Convergences & Divergences" activeSection="convergences">
+
+  <!-- Hero -->
+  <section style="background: #0f1419; padding: 3.5rem 1rem 2.5rem; border-bottom: 1px solid rgba(201,168,76,0.15);">
+    <div style="max-width: 48rem; margin: 0 auto; text-align: center;">
+      <h1 style="font-family: 'Cormorant Garamond', serif; color: #faf5ee; font-size: 2.25rem; font-weight: 600; line-height: 1.2; margin-bottom: 0.5rem;">
+        Convergences & Divergences
+      </h1>
+      <p style="font-family: 'Cormorant Garamond', serif; color: #c9a84c; font-size: 1.1rem; font-weight: 400; margin-bottom: 1.5rem;">
+        Buddhism and Christianity in Scholarly Dialogue
+      </p>
+      <p style="font-size: 0.85rem; color: #9aa3b0; line-height: 1.7; max-width: 38rem; margin: 0 auto;">
+        Following McGrath's method of <em>colligation</em> — bringing together insights from across intellectual traditions without reducing any one to another — this page maps genuine convergences, honest divergences, and productive tensions between Buddhist and Christian philosophy. Each tradition retains its distinctive identity. We are not syncretizing; we are mapping where the traditions meet, where they honestly differ, and where their tensions open space for further inquiry.
+      </p>
+    </div>
+  </section>
+
+  <!-- React app: summary + filters + cards -->
+  <div style="background: #0f1419; min-height: 60vh;">
+    <ConvergencesApp client:load baseUrl={base} />
+  </div>
+
+  <!-- Footer links -->
+  <section style="background: #1a2332; padding: 2rem 1rem; border-top: 1px solid rgba(201,168,76,0.1);">
+    <div style="max-width: 48rem; margin: 0 auto; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+      <a href={`${base}presentation`} style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #c9a84c; text-decoration: none;">
+        ← Back to Presentation
+      </a>
+      <a href={`${base}further-reading`} style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #3d8b8b; text-decoration: none;">
+        Further Reading →
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
