@@ -1,0 +1,82 @@
+---
+/**
+ * ScholarCard — card component for the Scholars gallery.
+ * Displays a scholar's bio, key ideas, optional quote, and external links.
+ */
+import type { Person } from '../data/types';
+import { scholarTraditionColors } from '../data/types';
+
+interface Props {
+  person: Person;
+}
+
+const { person } = Astro.props;
+
+const borderColor = scholarTraditionColors[person.tradition] ?? '#78716c';
+---
+
+<div
+  id={person.id}
+  style={`background: white; border-radius: 0.75rem; padding: 1.5rem; border: 1px solid #e7e5e4; border-left: 3px solid ${borderColor};`}
+>
+  <!-- Name + dates -->
+  <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.25rem; flex-wrap: wrap;">
+    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #1c1917;">
+      {person.name}
+    </h3>
+    <span style="font-size: 0.8rem; color: #a8a29e; font-family: sans-serif;">
+      {person.dates}
+    </span>
+  </div>
+
+  <!-- Role -->
+  <p style="font-size: 0.8rem; color: #78716c; font-family: sans-serif; margin-bottom: 0.75rem;">
+    {person.role}
+  </p>
+
+  <!-- Contribution -->
+  <p style="font-size: 0.85rem; color: #57534e; line-height: 1.6; margin-bottom: 0.75rem;">
+    {person.contribution}
+  </p>
+
+  <!-- Key ideas -->
+  {person.keyIdeas.length > 0 && (
+    <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.75rem;">
+      {person.keyIdeas.map((idea) => (
+        <span style={`font-size: 0.7rem; font-family: sans-serif; padding: 0.2rem 0.5rem; border-radius: 9999px; background: ${borderColor}12; color: ${borderColor}; border: 1px solid ${borderColor}30;`}>
+          {idea}
+        </span>
+      ))}
+    </div>
+  )}
+
+  <!-- Quote -->
+  {person.quote && (
+    <blockquote style={`margin: 0 0 0.75rem; padding: 0.75rem 1rem; border-left: 3px solid ${borderColor}; background: #faf5ee; border-radius: 0 0.375rem 0.375rem 0;`}>
+      <p style="font-size: 0.8rem; color: #44403c; line-height: 1.6; font-style: italic; margin-bottom: 0.25rem;">
+        "{person.quote.text}"
+      </p>
+      <cite style="font-size: 0.7rem; color: #a8a29e; font-family: sans-serif; font-style: normal;">
+        — {person.quote.source}
+      </cite>
+    </blockquote>
+  )}
+
+  <!-- External links -->
+  {(person.wikiUrl || person.webUrl) && (
+    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+      {person.wikiUrl && (
+        <a href={person.wikiUrl} target="_blank" rel="noopener noreferrer" style="font-size: 0.75rem; font-family: sans-serif; color: #3d8b8b; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Wikipedia
+        </a>
+      )}
+      {person.webUrl && (
+        <a href={person.webUrl} target="_blank" rel="noopener noreferrer" style="font-size: 0.75rem; font-family: sans-serif; color: #c9a84c; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          Website
+        </a>
+      )}
+    </div>
+  )}
+</div>
