@@ -206,11 +206,11 @@ export default function ConvergenceCard({ entry, baseUrl, termGlossaryMap = {} }
           id={panelId}
           role={expanded ? 'region' : undefined}
           aria-labelledby={expanded ? `btn-${entry.id}` : undefined}
+          tabIndex={expanded ? 0 : undefined}
           style={{
             maxHeight: expanded ? '60rem' : '0',
             overflowY: expanded ? 'auto' : 'hidden',
             transition: 'max-height 0.3s ease',
-            ...(expanded ? { tabIndex: 0 } : {}),
           }}
         >
           <div style={{ padding: '0 1.5rem 1.25rem' }}>

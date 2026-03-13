@@ -22,7 +22,7 @@ export default function GlossarySearch({ allTerms }: Props) {
 
   const matchCount = useMemo(() => {
     if (!query.trim()) return null;
-    const q = stripDiacritics(query);
+    const q = stripDiacritics(query.trim());
     return allTerms.filter(
       (t) =>
         stripDiacritics(t.term).includes(q) ||
