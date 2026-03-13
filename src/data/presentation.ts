@@ -170,7 +170,7 @@ export const keyTerms: KeyTerm[] = [
   },
   {
     id: 'agape',
-    term: 'Agape',
+    term: 'Agapē',
     originalScript: 'ἀγάπη',
     language: 'Greek',
     definition: 'Self-giving, unconditional love. The distinctively Christian word for God\'s love and the love that believers are called to exercise toward all persons. Contrasted with eros (desire) and philia (friendship).',
@@ -523,15 +523,6 @@ export const keyTerms: KeyTerm[] = [
   },
 
   // ===== ADDITIONAL TERMS (referenced in Convergences & Divergences) =====
-  {
-    id: 'agape',
-    term: 'Agapē',
-    originalScript: 'ἀγάπη',
-    language: 'Greek',
-    definition: 'Self-giving love. In Christian theology, the love that God is and gives — unconditional, other-directed, creative. Distinguished from eros (desire) and philia (friendship).',
-    tradition: 'Christian',
-    sourceRef: 'Closing'
-  },
   {
     id: 'perichoresis',
     term: 'Perichoresis',
@@ -1512,17 +1503,6 @@ export const persons: Person[] = [
     keyIdeas: ['Bodhisattva ideal', 'Compassion', 'Exchange of self and other'],
     quote: { text: 'All the suffering in the world arises from seeking happiness for oneself; all the happiness in the world arises from seeking happiness for others.', source: 'Bodhicaryāvatāra VIII.129' },
     wikiUrl: 'https://en.wikipedia.org/wiki/%C5%9A%C4%81ntideva',
-  },
-  {
-    id: 'dogen',
-    name: 'Dōgen',
-    dates: '1200–1253',
-    role: 'Zen master, philosopher',
-    tradition: 'Buddhist',
-    contribution: 'Founder of the Sōtō school of Zen. His Shōbōgenzō is one of the most profound philosophical works in East Asian Buddhism, exploring the nature of time, being, and practice.',
-    keyIdeas: ['Shikantaza (just sitting)', 'Being-time', 'Practice-realization'],
-    quote: { text: 'To study the Buddha Way is to study the self. To study the self is to forget the self.', source: 'Genjōkōan' },
-    wikiUrl: 'https://en.wikipedia.org/wiki/D%C5%8Dgen',
   },
   {
     id: 'masao-abe',

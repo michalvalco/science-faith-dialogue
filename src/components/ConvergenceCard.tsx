@@ -173,6 +173,7 @@ export default function ConvergenceCard({ entry, baseUrl, termGlossaryMap = {} }
       {/* Analysis toggle */}
       <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <button
+          id={`btn-${entry.id}`}
           onClick={() => setExpanded(!expanded)}
           aria-expanded={expanded}
           aria-controls={expanded ? panelId : undefined}
@@ -209,6 +210,7 @@ export default function ConvergenceCard({ entry, baseUrl, termGlossaryMap = {} }
             maxHeight: expanded ? '60rem' : '0',
             overflowY: expanded ? 'auto' : 'hidden',
             transition: 'max-height 0.3s ease',
+            ...(expanded ? { tabIndex: 0 } : {}),
           }}
         >
           <div style={{ padding: '0 1.5rem 1.25rem' }}>

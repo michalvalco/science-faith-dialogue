@@ -12,17 +12,22 @@ interface Props {
   allTerms: Term[];
 }
 
+/** Strip diacritics/combining marks for accent-insensitive matching */
+function stripDiacritics(s: string): string {
+  return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
+
 export default function GlossarySearch({ allTerms }: Props) {
   const [query, setQuery] = useState('');
 
   const matchCount = useMemo(() => {
     if (!query.trim()) return null;
-    const q = query.toLowerCase();
+    const q = stripDiacritics(query);
     return allTerms.filter(
       (t) =>
-        t.term.toLowerCase().includes(q) ||
-        t.definition.toLowerCase().includes(q) ||
-        (t.originalScript && t.originalScript.toLowerCase().includes(q))
+        stripDiacritics(t.term).includes(q) ||
+        stripDiacritics(t.definition).includes(q) ||
+        (t.originalScript && stripDiacritics(t.originalScript).includes(q))
     ).length;
   }, [query, allTerms]);
 
@@ -40,16 +45,16 @@ export default function GlossarySearch({ allTerms }: Props) {
           onChange={(e) => {
             setQuery(e.target.value);
             // Toggle visibility of all glossary cards via DOM
-            const q = e.target.value.toLowerCase().trim();
+            const q = stripDiacritics(e.target.value.trim());
             const cards = document.querySelectorAll<HTMLElement>('[data-glossary-term]');
             cards.forEach((card) => {
               if (!q) {
                 card.style.display = '';
                 return;
               }
-              const termName = (card.getAttribute('data-glossary-term') || '').toLowerCase();
-              const termDef = (card.getAttribute('data-glossary-def') || '').toLowerCase();
-              const termScript = (card.getAttribute('data-glossary-script') || '').toLowerCase();
+              const termName = stripDiacritics(card.getAttribute('data-glossary-term') || '');
+              const termDef = stripDiacritics(card.getAttribute('data-glossary-def') || '');
+              const termScript = stripDiacritics(card.getAttribute('data-glossary-script') || '');
               const match = termName.includes(q) || termDef.includes(q) || termScript.includes(q);
               card.style.display = match ? '' : 'none';
             });

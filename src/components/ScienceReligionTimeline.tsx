@@ -35,19 +35,19 @@ const events: TimelineEvent[] = [
     category: 'buddhism',
   },
   {
-    id: 'augustine',
-    year: 400,
-    yearDisplay: 'c. 354–430',
-    title: 'Augustine of Hippo',
-    description: 'Developed the theology of creation ex nihilo and the correspondence understanding of the imago Dei — the human mind reflecting the rationality of its Creator.',
-    category: 'theology',
-  },
-  {
     id: 'gregory-nyssa',
     year: 380,
     yearDisplay: 'c. 335–395',
     title: 'Gregory of Nyssa',
     description: 'Pioneered apophatic theology: the soul\'s journey toward God is an ever-deepening entry into divine darkness — not ignorance, but superabundant light.',
+    category: 'theology',
+  },
+  {
+    id: 'augustine',
+    year: 400,
+    yearDisplay: 'c. 354–430',
+    title: 'Augustine of Hippo',
+    description: 'Developed the theology of creation ex nihilo and the correspondence understanding of the imago Dei — the human mind reflecting the rationality of its Creator.',
     category: 'theology',
   },
   {
