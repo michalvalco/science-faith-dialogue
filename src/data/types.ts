@@ -23,13 +23,13 @@ export const traditions: TraditionMeta[] = [
   { key: 'Christian', label: 'Christian Theology & Philosophy', color: '#c9a84c', icon: '✦' },
   { key: 'Buddhist', label: 'Buddhist Philosophy', color: '#3d8b8b', icon: '☸' },
   { key: 'Philosophical', label: 'Philosophy of Science & General Philosophy', color: '#78716c', icon: '◇' },
-  { key: 'Scientific', label: 'Scientific Concepts', color: '#78716c', icon: '◈' },
   { key: 'Shared', label: 'Shared & Bridging Concepts', color: '#a85c32', icon: '⊕' },
 ];
 
-export const traditionColors: Record<KeyTerm['tradition'], string> = Object.fromEntries(
-  traditions.map(t => [t.key, t.color])
-) as Record<KeyTerm['tradition'], string>;
+export const traditionColors: Record<KeyTerm['tradition'], string> = {
+  ...Object.fromEntries(traditions.map(t => [t.key, t.color])),
+  Scientific: '#78716c',  // used by Nguyen specialist terms, not a separate glossary category
+} as Record<KeyTerm['tradition'], string>;
 
 export type ScholarTradition = 'Christian' | 'Buddhist' | 'Philosophical';
 

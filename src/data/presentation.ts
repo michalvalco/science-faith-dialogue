@@ -630,7 +630,7 @@ export const keyTerms: KeyTerm[] = [
     id: 'fine-tuning',
     term: 'Fine-Tuning',
     definition: 'The observation that the fundamental constants and initial conditions of the universe fall within extraordinarily narrow ranges that permit the existence of complex structures and life. Small changes would result in a universe hostile to any form of organized complexity.',
-    tradition: 'Scientific',
+    tradition: 'Philosophical',
     sourceRef: 'Act I'
   },
   {
