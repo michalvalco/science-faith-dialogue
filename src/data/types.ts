@@ -12,6 +12,25 @@ export interface KeyTerm {
   sourceRef?: string;            // Location reference: Act (e.g. 'Act I'), chapter (e.g. 'Ch. 1'), or section (e.g. 'Preface')
 }
 
+export interface TraditionMeta {
+  key: KeyTerm['tradition'];
+  label: string;
+  color: string;
+  icon: string;
+}
+
+export const traditions: TraditionMeta[] = [
+  { key: 'Christian', label: 'Christian Theology & Philosophy', color: '#c9a84c', icon: '✦' },
+  { key: 'Buddhist', label: 'Buddhist Philosophy', color: '#3d8b8b', icon: '☸' },
+  { key: 'Philosophical', label: 'Philosophy of Science & General Philosophy', color: '#78716c', icon: '◇' },
+  { key: 'Scientific', label: 'Scientific Concepts', color: '#78716c', icon: '◈' },
+  { key: 'Shared', label: 'Shared & Bridging Concepts', color: '#a85c32', icon: '⊕' },
+];
+
+export const traditionColors: Record<KeyTerm['tradition'], string> = Object.fromEntries(
+  traditions.map(t => [t.key, t.color])
+) as Record<KeyTerm['tradition'], string>;
+
 export interface Person {
   id: string;
   name: string;
