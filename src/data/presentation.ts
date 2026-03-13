@@ -112,6 +112,415 @@ export const keyTerms: KeyTerm[] = [
     tradition: 'Philosophical',
     sourceRef: 'Act V'
   },
+
+  // ===== CHRISTIAN THEOLOGY & PHILOSOPHY (expanded) =====
+  {
+    id: 'creatio-ex-nihilo',
+    term: 'Creatio ex Nihilo',
+    originalScript: 'creatio ex nihilo',
+    language: 'Latin',
+    definition: 'Creation out of nothing. The doctrine that God created the universe without pre-existing materials — the world is not an emanation from God\'s being but a free, contingent act of divine will.',
+    tradition: 'Christian',
+    sourceRef: 'Act I'
+  },
+  {
+    id: 'trinity',
+    term: 'Trinity',
+    originalScript: 'Trinitas',
+    language: 'Latin',
+    definition: 'The Christian doctrine that the one God exists as three co-equal persons — Father, Son, and Holy Spirit — in an eternal communion of love. The relational character of God grounds the relational character of creation.',
+    tradition: 'Christian',
+    sourceRef: 'Act III'
+  },
+  {
+    id: 'coram-deo',
+    term: 'Coram Deo',
+    originalScript: 'coram Deo',
+    language: 'Latin',
+    definition: 'Before the face of God. The Reformation conviction that all of human life — work, thought, science, art — is lived in the presence and under the authority of God. Nothing is "secular" in the modern sense.',
+    tradition: 'Christian',
+    sourceRef: 'Act I'
+  },
+  {
+    id: 'sola-gratia',
+    term: 'Sola Gratia / Sola Fide',
+    originalScript: 'sola gratia / sola fide',
+    language: 'Latin',
+    definition: 'By grace alone / by faith alone. Central Reformation principles affirming that salvation comes through God\'s unmerited favour received by trust — not by human works or merit.',
+    tradition: 'Christian',
+    sourceRef: 'Closing'
+  },
+  {
+    id: 'kenosis',
+    term: 'Kenosis',
+    originalScript: 'κένωσις',
+    language: 'Greek',
+    definition: 'Self-emptying. From Philippians 2:7 — Christ "emptied himself" of divine prerogatives to become human. In dialogue with Buddhism, kenosis offers a structural parallel to śūnyatā, though rooted in a personal act of love rather than an ontological principle.',
+    tradition: 'Christian',
+    sourceRef: 'Act V'
+  },
+  {
+    id: 'theosis',
+    term: 'Theosis',
+    originalScript: 'θέωσις',
+    language: 'Greek',
+    definition: 'Deification or divinization. The Eastern Christian teaching that the goal of human life is participation in the divine nature (2 Peter 1:4). Not absorption but relational union — the person remains distinct while being transformed by grace.',
+    tradition: 'Christian',
+    sourceRef: 'Act III'
+  },
+  {
+    id: 'agape',
+    term: 'Agape',
+    originalScript: 'ἀγάπη',
+    language: 'Greek',
+    definition: 'Self-giving, unconditional love. The distinctively Christian word for God\'s love and the love that believers are called to exercise toward all persons. Contrasted with eros (desire) and philia (friendship).',
+    tradition: 'Christian',
+    sourceRef: 'Closing'
+  },
+  {
+    id: 'phronesis',
+    term: 'Phronesis',
+    originalScript: 'φρόνησις',
+    language: 'Greek',
+    definition: 'Practical wisdom. Aristotle\'s concept of the capacity for right judgement in particular situations — knowing the right thing to do in context. Adopted by Christian moral theology as a virtue essential for ethical discernment.',
+    tradition: 'Christian',
+    sourceRef: 'Act IV'
+  },
+  {
+    id: 'analogia-entis',
+    term: 'Analogia Entis',
+    originalScript: 'analogia entis',
+    language: 'Latin',
+    definition: 'Analogy of being. The principle that language about God speaks neither univocally nor equivocally but analogically — creation bears a genuine but limited likeness to its Creator. Grounds the possibility of natural theology.',
+    tradition: 'Christian',
+    sourceRef: 'Act V'
+  },
+  {
+    id: 'kataphatic',
+    term: 'Kataphatic Theology',
+    originalScript: 'καταφατικός',
+    language: 'Greek',
+    definition: 'Positive or affirmative theology — describing God by saying what God is (good, wise, loving). Complements apophatic theology. Together they form the classical Christian dialectic of knowing and unknowing.',
+    tradition: 'Christian',
+    sourceRef: 'Act V'
+  },
+  {
+    id: 'eschatology',
+    term: 'Eschatology',
+    originalScript: 'ἔσχατος',
+    language: 'Greek',
+    definition: 'The study of "last things" — death, judgement, the consummation of history. In the science-faith dialogue, eschatology raises the question of whether the universe\'s physical future (heat death, Big Crunch) is its final story.',
+    tradition: 'Christian',
+    sourceRef: 'Closing'
+  },
+  {
+    id: 'providence',
+    term: 'Providence',
+    originalScript: 'providentia',
+    language: 'Latin',
+    definition: 'The doctrine that God sustains, orders, and guides creation toward its intended purposes. Distinguished from deism (God sets the clock and leaves) and occasionalism (God is the only real cause).',
+    tradition: 'Christian',
+    sourceRef: 'Act I'
+  },
+  {
+    id: 'incarnation',
+    term: 'Incarnation',
+    originalScript: 'incarnatio',
+    language: 'Latin',
+    definition: 'The doctrine that the eternal Logos (John 1:14) "became flesh" in Jesus of Nazareth — uniting divine and human natures in one person. The most radical affirmation of the material world in Christian theology.',
+    tradition: 'Christian',
+    sourceRef: 'Act III'
+  },
+  {
+    id: 'natural-theology',
+    term: 'Natural Theology',
+    originalScript: 'theologia naturalis',
+    language: 'Latin',
+    definition: 'Theology pursued through reason and observation of nature, without appeal to special revelation. Polkinghorne\'s "new natural theology" does not prove God but shows how theism makes the best sense of the order and fine-tuning of the universe.',
+    tradition: 'Christian',
+    sourceRef: 'Act II'
+  },
+  {
+    id: 'general-special-revelation',
+    term: 'General / Special Revelation',
+    definition: 'General revelation: God\'s self-disclosure through creation, conscience, and reason — accessible to all. Special revelation: God\'s self-disclosure through Scripture, prophets, and supremely in Christ — accessible through the community of faith.',
+    tradition: 'Christian',
+    sourceRef: 'Act I'
+  },
+  {
+    id: 'theologia-crucis',
+    term: 'Theologia Crucis',
+    originalScript: 'theologia crucis',
+    language: 'Latin',
+    definition: 'Luther\'s "theology of the cross" — God is revealed not in glory and power but in suffering and hiddenness. A critique of any theology (or scientism) that claims direct, unmediated access to ultimate reality.',
+    tradition: 'Christian',
+    sourceRef: 'Act V'
+  },
+
+  // ===== BUDDHIST PHILOSOPHY (expanded) =====
+  {
+    id: 'dukkha',
+    term: 'Dukkha',
+    originalScript: 'दुःख',
+    language: 'Sanskrit',
+    definition: 'Suffering, unsatisfactoriness, dis-ease. The first Noble Truth. Not only acute pain but the pervasive sense that conditioned existence cannot fully satisfy — because all compounded things are impermanent.',
+    tradition: 'Buddhist',
+    sourceRef: 'Act II'
+  },
+  {
+    id: 'nibbana',
+    term: 'Nibbāna / Nirvāṇa',
+    originalScript: 'निर्वाण',
+    language: 'Pali/Sanskrit',
+    definition: 'The "blowing out" of the fires of greed, hatred, and delusion. The unconditioned state beyond saṃsāra. Not annihilation but the cessation of craving and the suffering it generates.',
+    tradition: 'Buddhist',
+    sourceRef: 'Act II'
+  },
+  {
+    id: 'anicca',
+    term: 'Anicca',
+    originalScript: 'अनिच्च',
+    language: 'Pali',
+    definition: 'Impermanence. One of the three marks of existence. All conditioned phenomena — physical, mental, relational — are in constant flux. Nothing possesses a fixed, enduring essence.',
+    tradition: 'Buddhist',
+    sourceRef: 'Act II'
+  },
+  {
+    id: 'tanha',
+    term: 'Taṇhā',
+    originalScript: 'तण्हा',
+    language: 'Pali',
+    definition: 'Craving, thirst. The origin of suffering (Second Noble Truth). Three forms: craving for sensual pleasure, craving for existence, and craving for non-existence.',
+    tradition: 'Buddhist',
+    sourceRef: 'Act II'
+  },
+  {
+    id: 'samsara',
+    term: 'Saṃsāra',
+    originalScript: 'संसार',
+    language: 'Sanskrit',
+    definition: 'The cycle of birth, death, and rebirth driven by karma and craving. In Mahāyāna thought, saṃsāra and nirvāṇa are not ultimately separate — the realization of emptiness transforms saṃsāra into nirvāṇa.',
+    tradition: 'Buddhist',
+    sourceRef: 'Act II'
+  },
+  {
+    id: 'prajnaparamita',
+    term: 'Prajñāpāramitā',
+    originalScript: 'प्रज्ञापारमिता',
+    language: 'Sanskrit',
+    definition: 'The "perfection of wisdom" — the highest of the six perfections (pāramitā) in Mahāyāna Buddhism. The direct, non-conceptual insight into the emptiness of all phenomena. Enshrined in the Heart Sūtra: "Form is emptiness; emptiness is form."',
+    tradition: 'Buddhist',
+    sourceRef: 'Act V'
+  },
+  {
+    id: 'madhyamaka',
+    term: 'Madhyamaka',
+    originalScript: 'मध्यमक',
+    language: 'Sanskrit',
+    definition: 'The "Middle Way" school of Mahāyāna philosophy founded by Nāgārjuna. Avoids both eternalism (things have fixed essences) and nihilism (nothing exists). All phenomena exist conventionally but are empty of inherent nature.',
+    tradition: 'Buddhist',
+    sourceRef: 'Act II'
+  },
+  {
+    id: 'dharma',
+    term: 'Dharma',
+    originalScript: 'धर्म',
+    language: 'Sanskrit',
+    definition: 'A multivalent term: (1) the Buddha\'s teaching; (2) cosmic law or truth; (3) all phenomena or constituents of reality (dharmas, plural). Context determines meaning.',
+    tradition: 'Buddhist',
+    sourceRef: 'Act II'
+  },
+  {
+    id: 'brahmavihara',
+    term: 'Brahmavihāra',
+    originalScript: 'ब्रह्मविहार',
+    language: 'Sanskrit',
+    definition: 'The four "sublime abodes" or "immeasurables": loving-kindness (mettā), compassion (karuṇā), sympathetic joy (muditā), and equanimity (upekkhā). The emotional and ethical foundation of Buddhist practice.',
+    tradition: 'Buddhist',
+    sourceRef: 'Closing'
+  },
+  {
+    id: 'bodhisattva',
+    term: 'Bodhisattva',
+    originalScript: 'बोधिसत्त्व',
+    language: 'Sanskrit',
+    definition: 'A being who, out of compassion, postpones final nirvāṇa to help all sentient beings achieve liberation. The Mahāyāna ideal — contrasted with the arhat ideal of early Buddhism.',
+    tradition: 'Buddhist',
+    sourceRef: 'Closing'
+  },
+  {
+    id: 'upaya',
+    term: 'Upāya',
+    originalScript: 'उपाय',
+    language: 'Sanskrit',
+    definition: 'Skilful means. The pedagogical principle that the Buddha adapts his teaching to the capacity and situation of the hearer. Different formulations may appear contradictory but serve the same liberative purpose.',
+    tradition: 'Buddhist',
+    sourceRef: 'Act IV'
+  },
+  {
+    id: 'vipassana',
+    term: 'Vipassanā',
+    originalScript: 'विपस्सना',
+    language: 'Pali',
+    definition: 'Insight meditation. A practice of sustained, non-reactive attention to the arising and passing of mental and physical phenomena — cultivating direct experiential knowledge of impermanence, suffering, and no-self.',
+    tradition: 'Buddhist',
+    sourceRef: 'Act V'
+  },
+  {
+    id: 'interbeing',
+    term: 'Interbeing',
+    definition: 'Thích Nhất Hạnh\'s English rendering of the Vietnamese tiếp hiện. All things "inter-are" — a sheet of paper contains the cloud, the rain, the logger, the sun. A contemporary expression of pratītyasamutpāda.',
+    tradition: 'Buddhist',
+    sourceRef: 'Act II'
+  },
+  {
+    id: 'skandha',
+    term: 'Skandha',
+    originalScript: 'स्कन्ध',
+    language: 'Sanskrit',
+    definition: 'The five aggregates that constitute a "person": form (rūpa), sensation (vedanā), perception (saññā), mental formations (saṅkhāra), and consciousness (viññāṇa). None is the self; together they give rise to the illusion of a unified self.',
+    tradition: 'Buddhist',
+    sourceRef: 'Act III'
+  },
+
+  // ===== PHILOSOPHY OF SCIENCE & GENERAL PHILOSOPHY (expanded) =====
+  {
+    id: 'epistemology',
+    term: 'Epistemology',
+    originalScript: 'ἐπιστήμη',
+    language: 'Greek',
+    definition: 'The study of knowledge — its nature, sources, scope, and limits. Central question: how do we know what we know? In the science-faith dialogue, the key issue is whether science is the only valid source of knowledge.',
+    tradition: 'Philosophical',
+    sourceRef: 'Opening'
+  },
+  {
+    id: 'ontology',
+    term: 'Ontology',
+    originalScript: 'ὄν',
+    language: 'Greek',
+    definition: 'The study of being — what exists, and what are the fundamental categories of reality? Ontological questions underlie every science-faith debate: is matter all there is, or are there non-physical realities?',
+    tradition: 'Philosophical',
+    sourceRef: 'Opening'
+  },
+  {
+    id: 'empiricism',
+    term: 'Empiricism',
+    definition: 'The philosophical position that knowledge derives primarily from sensory experience and observation. Modern science is empirical in method, but empiricism as a total philosophy (nothing exists beyond what can be observed) slides into scientism.',
+    tradition: 'Philosophical',
+    sourceRef: 'Act IV'
+  },
+  {
+    id: 'reductionism',
+    term: 'Reductionism',
+    definition: 'The view that complex phenomena can be fully explained by reducing them to simpler, more fundamental components. Methodological reductionism (a research strategy) is distinct from ontological reductionism (a metaphysical claim that only the smallest parts are "really real").',
+    tradition: 'Philosophical',
+    sourceRef: 'Act IV'
+  },
+  {
+    id: 'emergentism',
+    term: 'Emergentism',
+    definition: 'The view that complex systems exhibit properties and behaviours that cannot be predicted from or reduced to their component parts. Consciousness, life, and meaning may be emergent — real but irreducible.',
+    tradition: 'Philosophical',
+    sourceRef: 'Act IV'
+  },
+  {
+    id: 'falsifiability',
+    term: 'Falsifiability',
+    definition: 'Karl Popper\'s criterion of demarcation: a theory is scientific if and only if it is in principle capable of being shown false by observation. Popper used this to distinguish science from pseudoscience and metaphysics — not to claim that metaphysics is meaningless.',
+    tradition: 'Philosophical',
+    sourceRef: 'Act IV'
+  },
+  {
+    id: 'paradigm-shift',
+    term: 'Paradigm Shift',
+    definition: 'Thomas Kuhn\'s concept (The Structure of Scientific Revolutions, 1962): scientific progress is not purely cumulative but involves revolutionary breaks where the entire framework of assumptions changes. Ptolemy → Copernicus, Newton → Einstein.',
+    tradition: 'Philosophical',
+    sourceRef: 'Act IV'
+  },
+  {
+    id: 'epistemological-pluralism',
+    term: 'Epistemological Pluralism',
+    definition: 'The recognition that different domains of reality may require different methods of investigation. McGrath\'s "multiple situated rationalities" — science, theology, ethics, and aesthetics each have legitimate but distinct ways of knowing.',
+    tradition: 'Philosophical',
+    sourceRef: 'Opening'
+  },
+  {
+    id: 'metaquestion',
+    term: 'Metaquestion',
+    definition: 'John Polkinghorne\'s term for questions that arise naturally from scientific inquiry but cannot be answered by science alone. "Why is there something rather than nothing?" "Why is the universe intelligible?" "Why is mathematics so unreasonably effective?"',
+    tradition: 'Philosophical',
+    sourceRef: 'Act I'
+  },
+  {
+    id: 'phenomenology',
+    term: 'Phenomenology',
+    originalScript: 'φαινόμενον',
+    language: 'Greek',
+    definition: 'The philosophical method of investigating the structures of conscious experience as they present themselves — bracketing assumptions about external reality. Founded by Husserl, developed by Heidegger, Merleau-Ponty, and others.',
+    tradition: 'Philosophical',
+    sourceRef: 'Act V'
+  },
+  {
+    id: 'hermeneutics',
+    term: 'Hermeneutics',
+    originalScript: 'ἑρμηνεία',
+    language: 'Greek',
+    definition: 'The theory and practice of interpretation. Originally applied to biblical texts, now extended to all understanding. Gadamer: all knowledge involves a "fusion of horizons" between interpreter and subject matter.',
+    tradition: 'Philosophical',
+    sourceRef: 'Opening'
+  },
+
+  // ===== SHARED / BRIDGING CONCEPTS (expanded) =====
+  {
+    id: 'mystery',
+    term: 'Mystery (Trans-rational)',
+    originalScript: 'μυστήριον',
+    language: 'Greek',
+    definition: 'That which exceeds rational comprehension without being irrational. Both Christian (mysterium tremendum) and Buddhist (the limits of conceptual thought) traditions recognize dimensions of reality that surpass discursive reason.',
+    tradition: 'Shared',
+    sourceRef: 'Act V'
+  },
+  {
+    id: 'contemplation',
+    term: 'Contemplation',
+    originalScript: 'θεωρία / bhāvanā',
+    language: 'Greek/Pali',
+    definition: 'A mode of knowing through sustained, receptive attention rather than discursive analysis. Christian contemplative prayer (theoria) and Buddhist meditation (bhāvanā) both cultivate this non-grasping awareness.',
+    tradition: 'Shared',
+    sourceRef: 'Act V'
+  },
+  {
+    id: 'asceticism',
+    term: 'Asceticism',
+    originalScript: 'ἄσκησις',
+    language: 'Greek',
+    definition: 'Disciplined practice of self-restraint for spiritual growth. Both Christian monasticism and Buddhist renunciation involve voluntary simplification of life as a path to deeper insight and freedom.',
+    tradition: 'Shared',
+    sourceRef: 'Act V'
+  },
+  {
+    id: 'teleology',
+    term: 'Teleology',
+    originalScript: 'τέλος',
+    language: 'Greek',
+    definition: 'The study of purpose, design, or final causes. Is the universe directed toward an end (telos)? Christianity affirms divine purpose; Buddhism generally does not posit a cosmic designer but recognizes the directionality of the path to liberation.',
+    tradition: 'Shared',
+    sourceRef: 'Act I'
+  },
+  {
+    id: 'cosmological-argument',
+    term: 'Cosmological Argument',
+    definition: 'A family of arguments for God\'s existence from the existence of the universe: Why is there something rather than nothing? The argument from contingency (Leibniz) and the kalām cosmological argument (Craig) are prominent versions discussed in the science-faith dialogue.',
+    tradition: 'Shared',
+    sourceRef: 'Act I'
+  },
+  {
+    id: 'anthropic-principle',
+    term: 'Anthropic Principle',
+    definition: 'The observation that the fundamental constants of the universe are "fine-tuned" within narrow ranges that permit the emergence of life and conscious observers. The weak version is observational; the strong version is sometimes taken as evidence of design.',
+    tradition: 'Shared',
+    sourceRef: 'Act II'
+  },
 ];
 
 // ===== NGUYEN HOANG HAI — THE EMPTINESS OF EVERYTHING (2025) =====
