@@ -31,7 +31,7 @@ export const traditionColors: Record<KeyTerm['tradition'], string> = Object.from
   traditions.map(t => [t.key, t.color])
 ) as Record<KeyTerm['tradition'], string>;
 
-export type ScholarTradition = 'Christian' | 'Buddhist' | 'Philosophical' | 'Scientific';
+export type ScholarTradition = 'Christian' | 'Buddhist' | 'Philosophical';
 
 export interface ScholarTraditionMeta {
   key: ScholarTradition;
