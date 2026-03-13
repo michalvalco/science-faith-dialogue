@@ -41,7 +41,7 @@ export default function ImagoDeiCards({ understandings }: Props) {
               key={u.id}
               onClick={() => setActiveId(isActive ? null : u.id)}
               aria-expanded={isActive}
-              aria-controls={detailsId}
+              aria-controls={isActive ? detailsId : undefined}
               style={{
                 background: isActive
                   ? 'color-mix(in srgb, var(--color-gold-400) 10%, transparent)'

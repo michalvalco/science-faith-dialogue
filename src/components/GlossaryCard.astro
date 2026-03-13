@@ -5,6 +5,7 @@
  * consistent rendering, styling, and a11y across all glossary entries.
  */
 import type { KeyTerm } from '../data/types';
+import { traditionColors } from '../data/types';
 
 interface Props {
   term: KeyTerm;
@@ -15,14 +16,6 @@ interface Props {
 }
 
 const { term, showTradition = false, showRefBadge = false } = Astro.props;
-
-const traditionColors: Record<KeyTerm['tradition'], string> = {
-  Christian: '#c9a84c',
-  Buddhist: '#3d8b8b',
-  Shared: '#a85c32',
-  Philosophical: '#78716c',
-  Scientific: '#78716c',
-};
 
 const borderColor = traditionColors[term.tradition] ?? '#78716c';
 ---

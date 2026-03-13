@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import type { FineTuningConstant } from '../data/types';
 
 interface Props {
@@ -7,6 +7,20 @@ interface Props {
 
 export default function FineTuningExplorer({ constants }: Props) {
   const [activeId, setActiveId] = useState(constants[0]?.id ?? '');
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  const handleTabKeyDown = useCallback((e: React.KeyboardEvent, index: number) => {
+    let nextIndex: number | null = null;
+    if (e.key === 'ArrowRight') nextIndex = (index + 1) % constants.length;
+    else if (e.key === 'ArrowLeft') nextIndex = (index - 1 + constants.length) % constants.length;
+    else if (e.key === 'Home') nextIndex = 0;
+    else if (e.key === 'End') nextIndex = constants.length - 1;
+    if (nextIndex !== null) {
+      e.preventDefault();
+      setActiveId(constants[nextIndex].id);
+      tabRefs.current[nextIndex]?.focus();
+    }
+  }, [constants]);
 
   const active = constants.find((c) => c.id === activeId) ?? constants[0];
 
@@ -48,19 +62,21 @@ export default function FineTuningExplorer({ constants }: Props) {
           overflowX: 'auto',
         }}
       >
-        {constants.map((c) => {
+        {constants.map((c, index) => {
           const isActive = c.id === activeId;
           const tabId = `ft-tab-${c.id}`;
           const panelId = `ft-panel-${c.id}`;
           return (
             <button
               key={c.id}
+              ref={(el) => { tabRefs.current[index] = el; }}
               id={tabId}
               role="tab"
               aria-selected={isActive}
-              aria-controls={panelId}
+              aria-controls={isActive ? panelId : undefined}
               tabIndex={isActive ? 0 : -1}
               onClick={() => setActiveId(c.id)}
+              onKeyDown={(e) => handleTabKeyDown(e, index)}
               style={{
                 padding: '0.75rem 1rem',
                 fontFamily: 'var(--font-sans)',
