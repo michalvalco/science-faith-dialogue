@@ -18,7 +18,7 @@ export default function ConvergencesApp({ baseUrl }: Props) {
     (activeType === 'all' || e.type === activeType)
   );
 
-  // Handle URL hash on mount — scroll to and highlight a specific entry
+  // Handle URL hash on mount — scroll to a specific entry
   useEffect(() => {
     const hash = window.location.hash.slice(1);
     if (hash) {
@@ -46,16 +46,16 @@ export default function ConvergencesApp({ baseUrl }: Props) {
       {/* Summary visualization */}
       <section style={{
         padding: '2rem 1rem',
-        background: 'var(--bg-section-alt)',
+        background: 'var(--color-dark-950)',
         borderTop: '1px solid rgba(201,168,76,0.1)',
         borderBottom: '1px solid rgba(201,168,76,0.1)',
       }}>
         <p style={{
-          fontFamily: 'var(--mono)',
+          fontFamily: 'var(--font-mono)',
           fontSize: '0.65rem',
           textTransform: 'uppercase',
           letterSpacing: '0.15em',
-          color: 'var(--text-muted)',
+          color: 'var(--color-dark-300)',
           textAlign: 'center',
           marginBottom: '1rem',
         }}>
@@ -97,8 +97,8 @@ export default function ConvergencesApp({ baseUrl }: Props) {
         {filtered.length === 0 && (
           <p style={{
             textAlign: 'center',
-            color: 'var(--text-muted)',
-            fontFamily: 'var(--serif-body)',
+            color: 'var(--color-dark-300)',
+            fontFamily: 'var(--font-serif)',
             fontSize: '0.95rem',
             padding: '3rem 0',
           }}>

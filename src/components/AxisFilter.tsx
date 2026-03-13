@@ -42,7 +42,7 @@ export default function AxisFilter({ activeAxis, activeType, onAxisChange, onTyp
                 fontSize: '0.7rem',
                 letterSpacing: '0.03em',
                 border: 'none',
-                borderBottom: isActive ? '2px solid var(--gold)' : '2px solid transparent',
+                borderBottom: isActive ? '2px solid var(--color-gold-400)' : '2px solid transparent',
                 background: isActive ? 'rgba(201,168,76,0.08)' : 'transparent',
                 color: isActive ? '#c9a84c' : '#9aa3b0',
                 cursor: 'pointer',

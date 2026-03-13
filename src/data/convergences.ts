@@ -63,9 +63,9 @@ export const axisDescriptions: Record<Axis, string> = {
 };
 
 export const typeColors: Record<EntryType, { accent: string; label: string }> = {
-  convergence: { accent: 'var(--teal)', label: 'Convergence' },
-  divergence: { accent: 'var(--rust)', label: 'Divergence' },
-  opportunity: { accent: 'var(--gold)', label: 'Opportunity' },
+  convergence: { accent: 'var(--color-teal-500)', label: 'Convergence' },
+  divergence: { accent: 'var(--color-rust-500)', label: 'Divergence' },
+  opportunity: { accent: 'var(--color-gold-400)', label: 'Opportunity' },
 };
 
 // ─── Data ────────────────────────────────────────────────────────────────────

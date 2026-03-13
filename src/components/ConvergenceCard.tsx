@@ -16,13 +16,11 @@ export default function ConvergenceCard({ entry, baseUrl }: Props) {
     <div
       id={entry.id}
       style={{
-        background: 'var(--bg-deep)',
         borderRadius: '0.75rem',
-        borderLeft: `4px solid ${color.accent}`,
         border: '1px solid rgba(255,255,255,0.06)',
-        borderLeftWidth: '4px',
-        borderLeftColor: color.accent,
+        borderLeft: `4px solid ${color.accent}`,
         overflow: 'hidden',
+        background: 'var(--color-dark-900)',
       }}
     >
       {/* Header: type badge + axis + title */}
@@ -30,7 +28,7 @@ export default function ConvergenceCard({ entry, baseUrl }: Props) {
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
           <span style={{
             fontSize: '0.65rem',
-            fontFamily: 'var(--mono)',
+            fontFamily: 'var(--font-mono)',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
             padding: '0.2rem 0.5rem',
@@ -43,19 +41,19 @@ export default function ConvergenceCard({ entry, baseUrl }: Props) {
           </span>
           <span style={{
             fontSize: '0.65rem',
-            fontFamily: 'var(--mono)',
+            fontFamily: 'var(--font-mono)',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
-            color: 'var(--text-muted-light)',
+            color: 'var(--color-dark-100)',
           }}>
             {axisLabels[entry.axis]}
           </span>
         </div>
         <h3 style={{
-          fontFamily: 'var(--serif-display)',
+          fontFamily: 'var(--font-display)',
           fontSize: '1.25rem',
           fontWeight: 600,
-          color: 'var(--text-light)',
+          color: 'var(--color-warm-200)',
           lineHeight: 1.3,
         }}>
           {entry.title}
@@ -75,20 +73,20 @@ export default function ConvergenceCard({ entry, baseUrl }: Props) {
           borderRight: '1px solid rgba(255,255,255,0.04)',
         }}>
           <p style={{
-            fontFamily: 'var(--mono)',
+            fontFamily: 'var(--font-mono)',
             fontSize: '0.65rem',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
-            color: 'var(--gold)',
+            color: 'var(--color-gold-400)',
             marginBottom: '0.5rem',
           }}>
             {entry.christianPerspective.label}
           </p>
-          <p style={{ fontSize: '0.85rem', color: 'var(--text-muted-light)', lineHeight: 1.65, marginBottom: '0.75rem' }}>
+          <p style={{ fontSize: '0.85rem', color: 'var(--color-dark-100)', lineHeight: 1.65, marginBottom: '0.75rem' }}>
             {entry.christianPerspective.description}
           </p>
           {entry.christianPerspective.keyThinkers.length > 0 && (
-            <p style={{ fontSize: '0.7rem', fontFamily: 'var(--mono)', color: 'var(--text-muted)', marginBottom: '0.35rem' }}>
+            <p style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: 'var(--color-dark-300)', marginBottom: '0.35rem' }}>
               {entry.christianPerspective.keyThinkers.join(' · ')}
             </p>
           )}
@@ -97,11 +95,11 @@ export default function ConvergenceCard({ entry, baseUrl }: Props) {
               {entry.christianPerspective.keyTerms.map((term) => (
                 <span key={term} style={{
                   fontSize: '0.6rem',
-                  fontFamily: 'var(--mono)',
+                  fontFamily: 'var(--font-mono)',
                   padding: '0.1rem 0.4rem',
                   borderRadius: '9999px',
                   background: 'rgba(201,168,76,0.1)',
-                  color: 'var(--gold)',
+                  color: 'var(--color-gold-400)',
                 }}>
                   {term}
                 </span>
@@ -116,20 +114,20 @@ export default function ConvergenceCard({ entry, baseUrl }: Props) {
           borderTop: '1px solid rgba(61,139,139,0.15)',
         }}>
           <p style={{
-            fontFamily: 'var(--mono)',
+            fontFamily: 'var(--font-mono)',
             fontSize: '0.65rem',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
-            color: 'var(--teal)',
+            color: 'var(--color-teal-500)',
             marginBottom: '0.5rem',
           }}>
             {entry.buddhistPerspective.label}
           </p>
-          <p style={{ fontSize: '0.85rem', color: 'var(--text-muted-light)', lineHeight: 1.65, marginBottom: '0.75rem' }}>
+          <p style={{ fontSize: '0.85rem', color: 'var(--color-dark-100)', lineHeight: 1.65, marginBottom: '0.75rem' }}>
             {entry.buddhistPerspective.description}
           </p>
           {entry.buddhistPerspective.keyThinkers.length > 0 && (
-            <p style={{ fontSize: '0.7rem', fontFamily: 'var(--mono)', color: 'var(--text-muted)', marginBottom: '0.35rem' }}>
+            <p style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: 'var(--color-dark-300)', marginBottom: '0.35rem' }}>
               {entry.buddhistPerspective.keyThinkers.join(' · ')}
             </p>
           )}
@@ -138,11 +136,11 @@ export default function ConvergenceCard({ entry, baseUrl }: Props) {
               {entry.buddhistPerspective.keyTerms.map((term) => (
                 <span key={term} style={{
                   fontSize: '0.6rem',
-                  fontFamily: 'var(--mono)',
+                  fontFamily: 'var(--font-mono)',
                   padding: '0.1rem 0.4rem',
                   borderRadius: '9999px',
                   background: 'rgba(61,139,139,0.1)',
-                  color: 'var(--teal)',
+                  color: 'var(--color-teal-500)',
                 }}>
                   {term}
                 </span>
@@ -167,7 +165,7 @@ export default function ConvergenceCard({ entry, baseUrl }: Props) {
             background: 'transparent',
             border: 'none',
             cursor: 'pointer',
-            fontFamily: 'var(--mono)',
+            fontFamily: 'var(--font-mono)',
             fontSize: '0.7rem',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
@@ -185,18 +183,20 @@ export default function ConvergenceCard({ entry, baseUrl }: Props) {
         </button>
         <div
           id={panelId}
+          role={expanded ? 'region' : undefined}
+          aria-labelledby={expanded ? `btn-${entry.id}` : undefined}
           style={{
-            maxHeight: expanded ? '30rem' : '0',
-            overflow: 'hidden',
+            maxHeight: expanded ? '60rem' : '0',
+            overflowY: expanded ? 'auto' : 'hidden',
             transition: 'max-height 0.3s ease',
           }}
         >
           <div style={{ padding: '0 1.5rem 1.25rem' }}>
             <p style={{
               fontSize: '0.9rem',
-              color: 'var(--text-light)',
+              color: 'var(--color-warm-200)',
               lineHeight: 1.7,
-              fontFamily: 'var(--serif-body)',
+              fontFamily: 'var(--font-serif)',
               fontStyle: 'italic',
             }}>
               {entry.analysis}
@@ -217,7 +217,7 @@ export default function ConvergenceCard({ entry, baseUrl }: Props) {
       }}>
         <div style={{ flex: 1, minWidth: '200px' }}>
           {entry.sources.map((src, i) => (
-            <p key={i} style={{ fontSize: '0.65rem', fontFamily: 'var(--mono)', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+            <p key={i} style={{ fontSize: '0.65rem', fontFamily: 'var(--font-mono)', color: 'var(--color-dark-300)', lineHeight: 1.5 }}>
               {src}
             </p>
           ))}
@@ -227,7 +227,7 @@ export default function ConvergenceCard({ entry, baseUrl }: Props) {
             href={`${baseUrl}presentation#${entry.relatedAct.toLowerCase().replace(/\s+/g, '-')}`}
             style={{
               fontSize: '0.7rem',
-              fontFamily: 'var(--mono)',
+              fontFamily: 'var(--font-mono)',
               color: color.accent,
               textDecoration: 'none',
               whiteSpace: 'nowrap',
