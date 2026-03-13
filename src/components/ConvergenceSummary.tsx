@@ -51,9 +51,20 @@ export default function ConvergenceSummary({ onCellClick }: Props) {
             <tr
               key={axis}
               onClick={() => onCellClick(axis)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  onCellClick(axis);
+                }
+              }}
+              tabIndex={0}
+              role="button"
+              aria-label={`Filter by ${axisLabels[axis]}`}
               style={{ cursor: 'pointer', transition: 'background 0.15s' }}
               onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(201,168,76,0.05)'; }}
               onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}
+              onFocus={(e) => { e.currentTarget.style.background = 'rgba(201,168,76,0.05)'; }}
+              onBlur={(e) => { e.currentTarget.style.background = 'transparent'; }}
             >
               <td style={{
                 padding: '0.6rem 0.75rem',
