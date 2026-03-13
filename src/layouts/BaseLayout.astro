@@ -86,6 +86,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
                style="font-family: sans-serif; letter-spacing: 0.03em;">
               Scholars
             </a>
+            <a href={`${base}convergences`}
+               class:list={["text-sm transition-colors", activeSection === "convergences" ? "text-amber-400" : "text-stone-300 hover:text-amber-400"]}
+               style="font-family: sans-serif; letter-spacing: 0.03em;">
+              Convergences
+            </a>
             <a href={`${base}further-reading`}
                class:list={["text-sm transition-colors", activeSection === "further-reading" ? "text-amber-400" : "text-stone-300 hover:text-amber-400"]}
                style="font-family: sans-serif; letter-spacing: 0.03em;">
@@ -114,6 +119,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           <a href={`${base}presentation`} class="block px-3 py-2 text-sm rounded" style="color: #d6d3d1; font-family: sans-serif;">Presentation</a>
           <a href={`${base}glossary`} class="block px-3 py-2 text-sm rounded" style="color: #d6d3d1; font-family: sans-serif;">Glossary</a>
           <a href={`${base}scholars`} class="block px-3 py-2 text-sm rounded" style="color: #d6d3d1; font-family: sans-serif;">Scholars</a>
+          <a href={`${base}convergences`} class="block px-3 py-2 text-sm rounded" style="color: #d6d3d1; font-family: sans-serif;">Convergences</a>
           <a href={`${base}further-reading`} class="block px-3 py-2 text-sm rounded" style="color: #d6d3d1; font-family: sans-serif;">Further Reading</a>
           <a href={`${base}about`} class="block px-3 py-2 text-sm rounded" style="color: #d6d3d1; font-family: sans-serif;">About the Project</a>
         </div>
