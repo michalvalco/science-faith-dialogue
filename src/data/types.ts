@@ -31,14 +31,36 @@ export const traditionColors: Record<KeyTerm['tradition'], string> = Object.from
   traditions.map(t => [t.key, t.color])
 ) as Record<KeyTerm['tradition'], string>;
 
+export type ScholarTradition = 'Christian' | 'Buddhist' | 'Philosophical' | 'Scientific';
+
+export interface ScholarTraditionMeta {
+  key: ScholarTradition;
+  label: string;
+  color: string;
+  icon: string;
+}
+
+export const scholarTraditions: ScholarTraditionMeta[] = [
+  { key: 'Christian', label: 'Christian Theology & Philosophy', color: '#c9a84c', icon: '✦' },
+  { key: 'Buddhist', label: 'Buddhist Philosophy', color: '#3d8b8b', icon: '☸' },
+  { key: 'Philosophical', label: 'Philosophy & Science', color: '#78716c', icon: '◇' },
+];
+
+export const scholarTraditionColors: Record<ScholarTradition, string> = Object.fromEntries(
+  scholarTraditions.map(t => [t.key, t.color])
+) as Record<ScholarTradition, string>;
+
 export interface Person {
   id: string;
   name: string;
   dates: string;
   role: string;
-  tradition: string;
+  tradition: ScholarTradition;
   contribution: string;
-  imageUrl?: string;
+  keyIdeas: string[];
+  quote?: { text: string; source: string };
+  wikiUrl?: string;
+  webUrl?: string;
 }
 
 export interface TimelineEvent {
