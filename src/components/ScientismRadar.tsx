@@ -79,10 +79,12 @@ export default function ScientismRadar() {
       >
         {impulses.map((imp) => {
           const isActive = activeId === imp.id;
+          const btnId = `sci-btn-${imp.id}`;
           const panelId = `sci-panel-${imp.id}`;
           return (
             <button
               key={imp.id}
+              id={btnId}
               aria-expanded={isActive}
               aria-controls={isActive ? panelId : undefined}
               onClick={() => setActiveId(isActive ? null : imp.id)}
@@ -131,6 +133,8 @@ export default function ScientismRadar() {
       {activeId && (
         <div
           id={`sci-panel-${activeId}`}
+          role="region"
+          aria-labelledby={`sci-btn-${activeId}`}
           style={{
             padding: '1.25rem',
             borderTop: '1px solid var(--color-dark-50)',
