@@ -1,8 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import GlossaryCard from '../components/GlossaryCard.astro';
+import GlossarySearch from '../components/GlossarySearch';
 import { keyTerms, nguyenTerms } from '../data/presentation';
 import { traditions } from '../data/types';
+
+const allTermsForSearch = [...keyTerms, ...nguyenTerms].map(t => ({
+  id: t.id,
+  term: t.term,
+  originalScript: t.originalScript,
+  definition: t.definition,
+  tradition: t.tradition,
+}));
 
 const grouped = traditions.map(t => ({
   ...t,
@@ -24,8 +33,10 @@ const totalNguyen = nguyenTerms.length;
     </div>
   </section>
 
+  <GlossarySearch client:load allTerms={allTermsForSearch} />
+
   <!-- Category quick-jump nav -->
-  <nav aria-label="Glossary categories" style="max-width: 56rem; margin: 0 auto; padding: 1.5rem 1rem 0;">
+  <nav aria-label="Glossary categories" data-glossary-section style="max-width: 56rem; margin: 0 auto; padding: 1.5rem 1rem 0;">
     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
       {grouped.map(g => (
         <a
@@ -62,7 +73,7 @@ const totalNguyen = nguyenTerms.length;
 
   <!-- General Glossary — grouped by tradition -->
   {grouped.map(g => (
-    <section id={`cat-${g.key.toLowerCase()}`} style="max-width: 56rem; margin: 0 auto; padding: 2.5rem 1rem 0.5rem;">
+    <section id={`cat-${g.key.toLowerCase()}`} data-glossary-section style="max-width: 56rem; margin: 0 auto; padding: 2.5rem 1rem 0.5rem;">
       <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
         <span style={`display: inline-block; width: 4px; height: 1.75rem; border-radius: 2px; background: ${g.color};`}></span>
         <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #1c1917;">
@@ -81,12 +92,12 @@ const totalNguyen = nguyenTerms.length;
   ))}
 
   <!-- Divider -->
-  <div style="max-width: 56rem; margin: 0 auto; padding: 2rem 1rem 0;">
+  <div data-glossary-section style="max-width: 56rem; margin: 0 auto; padding: 2rem 1rem 0;">
     <hr style="border: none; border-top: 2px solid #3d8b8b; opacity: 0.3;" />
   </div>
 
   <!-- Nguyen Hoang Hai Section -->
-  <section id="cat-nguyen" style="max-width: 56rem; margin: 0 auto; padding: 1.5rem 1rem 3rem;">
+  <section id="cat-nguyen" data-glossary-section style="max-width: 56rem; margin: 0 auto; padding: 1.5rem 1rem 3rem;">
     <div style="margin-bottom: 1.5rem;">
       <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: #1c1917; margin-bottom: 0.25rem;">
         Nguyen Hoang Hai — <em>The Emptiness of Everything</em> (2025)

@@ -1052,14 +1052,6 @@
   details > summary { list-style: none; font-weight: 600; }
   details > summary::-webkit-details-marker { display: none; }
 
-  [data-accordion-content],
-  [data-expandable] {
-    display: block !important;
-    max-height: none !important;
-    overflow: visible !important;
-    opacity: 1 !important;
-  }
-
   button:not(.print-keep),
   .sticky, .video-embed, [data-play-btn], .no-print {
     display: none !important;
