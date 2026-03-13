@@ -55,10 +55,10 @@ export function convergencesForScholar(personName: string): Array<{
   title: string;
   type: string;
 }> {
-  // Extract last name for fuzzy matching
-  const nameParts = personName.split(' ');
+  // Extract last name for fuzzy matching, stripping common suffixes
+  const suffixes = new Set(['jr.', 'jr', 'sr.', 'sr', 'ii', 'iii', 'iv']);
+  const nameParts = personName.split(' ').filter(p => !suffixes.has(p.toLowerCase()));
   const lastName = nameParts[nameParts.length - 1];
-  // Also handle cases like "von Rad" where last name is compound
   const shortNames = [lastName, personName];
   // Add first name for single-name thinkers like "Aristotle"
   if (nameParts.length === 1) {
