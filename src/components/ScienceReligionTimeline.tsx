@@ -124,9 +124,9 @@ const events: TimelineEvent[] = [
   },
   {
     id: 'nguyen',
-    year: 2024,
-    yearDisplay: '2024',
-    title: 'Nguyen: The Emptiness of Everything',
+    year: 2025,
+    yearDisplay: '2025',
+    title: 'Nguyen Hoang Hai: The Emptiness of Everything',
     description: 'Applied dependent origination and śūnyatā systematically to modern science — from quarks to consciousness — arguing that compositionality and impermanence reveal emptiness.',
     category: 'buddhism',
   },
@@ -150,10 +150,10 @@ export default function ScienceReligionTimeline() {
   return (
     <div style={{
       margin: '2.5rem 0',
-      border: '1px solid color-mix(in srgb, var(--color-gold-400) 20%, transparent)',
+      border: '1px solid rgba(201,168,76,0.25)',
       borderRadius: '0.5rem',
       overflow: 'hidden',
-      background: 'color-mix(in srgb, var(--color-gold-400) 3%, transparent)',
+      background: '#0f1419',
     }}>
       <div style={{ padding: '1.25rem 1.25rem 0.75rem' }}>
         <p style={{
@@ -191,9 +191,9 @@ export default function ScienceReligionTimeline() {
                 fontSize: '0.65rem',
                 textTransform: 'uppercase',
                 letterSpacing: '0.08em',
-                border: `1px solid ${isActive ? color : 'color-mix(in srgb, var(--color-warm-200) 15%, transparent)'}`,
+                border: `1px solid ${isActive ? color : 'rgba(250,245,238,0.15)'}`,
                 borderRadius: '9999px',
-                background: isActive ? `color-mix(in srgb, ${color} 12%, transparent)` : 'transparent',
+                background: isActive ? 'rgba(255,255,255,0.06)' : 'transparent',
                 color: isActive ? color : 'var(--color-dark-300)',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
@@ -233,7 +233,7 @@ export default function ScienceReligionTimeline() {
                   <div style={{
                     width: '1px',
                     flex: 1,
-                    background: 'color-mix(in srgb, var(--color-warm-200) 15%, transparent)',
+                    background: 'rgba(250,245,238,0.15)',
                   }} />
                 )}
               </div>

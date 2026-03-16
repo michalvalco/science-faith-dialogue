@@ -1435,7 +1435,7 @@ export const persons: Person[] = [
   {
     id: 'moltmann',
     name: 'Jürgen Moltmann',
-    dates: 'b. 1926',
+    dates: '1926–2025',
     role: 'Systematic theologian',
     tradition: 'Christian',
     contribution: 'Developed a theology of hope centred on eschatology and the future of creation. His work on the Trinity, the suffering of God, and ecological theology has shaped contemporary Christian thought.',
