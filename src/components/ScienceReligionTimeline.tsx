@@ -194,7 +194,7 @@ export default function ScienceReligionTimeline() {
                 border: `1px solid ${isActive ? color : 'rgba(250,245,238,0.15)'}`,
                 borderRadius: '9999px',
                 background: isActive ? 'rgba(255,255,255,0.06)' : 'transparent',
-                color: isActive ? color : 'var(--color-dark-300)',
+                color: isActive ? color : 'var(--color-dark-200)',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
               }}

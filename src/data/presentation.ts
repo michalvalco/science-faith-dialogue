@@ -183,7 +183,7 @@ export const keyTerms: KeyTerm[] = [
     originalScript: 'φρόνησις',
     language: 'Greek',
     definition: 'Practical wisdom. Aristotle\'s concept of the capacity for right judgement in particular situations — knowing the right thing to do in context. Adopted by Christian moral theology as a virtue essential for ethical discernment.',
-    tradition: 'Christian',
+    tradition: 'Shared',
     sourceRef: 'Act IV'
   },
   {
@@ -571,7 +571,7 @@ export const keyTerms: KeyTerm[] = [
   {
     id: 'metta',
     term: 'Mettā',
-    originalScript: 'मैत्री',
+    originalScript: 'මෙත්තා',
     language: 'Pali',
     definition: 'Loving-kindness. One of the four brahmavihāras (sublime states). The active wish for the well-being and happiness of all sentient beings without exception.',
     tradition: 'Buddhist',
@@ -598,7 +598,7 @@ export const keyTerms: KeyTerm[] = [
   {
     id: 'saddha',
     term: 'Saddhā',
-    originalScript: 'श्रद्धा',
+    originalScript: 'සද්ධා',
     language: 'Pali',
     definition: 'Faith, confidence, trust. In Buddhism, not blind belief but a reasoned confidence in the Dharma based on experience and investigation — as the Buddha said, "come and see" (ehipassiko).',
     tradition: 'Buddhist',
@@ -1435,7 +1435,7 @@ export const persons: Person[] = [
   {
     id: 'moltmann',
     name: 'Jürgen Moltmann',
-    dates: '1926–2025',
+    dates: '1926–2024',
     role: 'Systematic theologian',
     tradition: 'Christian',
     contribution: 'Developed a theology of hope centred on eschatology and the future of creation. His work on the Trinity, the suffering of God, and ecological theology has shaped contemporary Christian thought.',
