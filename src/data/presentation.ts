@@ -1159,6 +1159,16 @@ export const persons: Person[] = [
     quote: { text: 'The ultimate question for a responsible man to ask is not how he is to extricate himself heroically from the affair, but how the coming generation shall continue to live.', source: 'Letters and Papers from Prison (1944)' },
     wikiUrl: 'https://en.wikipedia.org/wiki/Dietrich_Bonhoeffer',
   },
+  {
+    id: 'jaki',
+    name: 'Stanley L. Jaki',
+    dates: '1924–2009',
+    role: 'Physicist, philosopher, theologian',
+    tradition: 'Christian',
+    contribution: 'Argued that modern science was "stillborn" in every major civilisation except the Christian West, because the doctrine of creation supplied the necessary belief in a rational, contingent order accessible to human inquiry.',
+    keyIdeas: ['Science and creation doctrine', 'Stillbirths of science', 'Realism in physics'],
+    wikiUrl: 'https://en.wikipedia.org/wiki/Stanley_Jaki',
+  },
 
   // ===== BUDDHIST PHILOSOPHY =====
   {
@@ -1377,19 +1387,9 @@ export const persons: Person[] = [
   },
 
   {
-    id: 'jaki',
-    name: 'Stanley L. Jaki',
-    dates: '1924–2009',
-    role: 'Physicist, philosopher, theologian',
-    tradition: 'Christian',
-    contribution: 'Argued that modern science was "stillborn" in every major civilisation except the Christian West, because the doctrine of creation supplied the necessary belief in a rational, contingent order accessible to human inquiry.',
-    keyIdeas: ['Science and creation doctrine', 'Stillbirths of science', 'Realism in physics'],
-    wikiUrl: 'https://en.wikipedia.org/wiki/Stanley_Jaki',
-  },
-  {
     id: 'harrison',
     name: 'Peter Harrison',
-    dates: '1955–',
+    dates: 'b. 1955',
     role: 'Historian of science and religion',
     tradition: 'Philosophical',
     contribution: 'Demonstrated that the modern categories "science" and "religion" are relatively recent inventions and that earlier conceptions of natural philosophy and theology were intertwined in ways the conflict narrative obscures.',
