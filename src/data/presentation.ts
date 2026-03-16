@@ -1376,6 +1376,27 @@ export const persons: Person[] = [
     webUrl: 'https://www.nottingham.ac.uk/humanities/departments/philosophy/people/ian.kidd',
   },
 
+  {
+    id: 'jaki',
+    name: 'Stanley L. Jaki',
+    dates: '1924–2009',
+    role: 'Physicist, philosopher, theologian',
+    tradition: 'Christian',
+    contribution: 'Argued that modern science was "stillborn" in every major civilisation except the Christian West, because the doctrine of creation supplied the necessary belief in a rational, contingent order accessible to human inquiry.',
+    keyIdeas: ['Science and creation doctrine', 'Stillbirths of science', 'Realism in physics'],
+    wikiUrl: 'https://en.wikipedia.org/wiki/Stanley_Jaki',
+  },
+  {
+    id: 'harrison',
+    name: 'Peter Harrison',
+    dates: '1955–',
+    role: 'Historian of science and religion',
+    tradition: 'Philosophical',
+    contribution: 'Demonstrated that the modern categories "science" and "religion" are relatively recent inventions and that earlier conceptions of natural philosophy and theology were intertwined in ways the conflict narrative obscures.',
+    keyIdeas: ['Territories of science and religion', 'Historical construction of categories', 'Fall and natural knowledge'],
+    wikiUrl: 'https://en.wikipedia.org/wiki/Peter_Harrison_(historian)',
+  },
+
   // ===== ADDITIONAL SCHOLARS (referenced in Convergences & Divergences) =====
   {
     id: 'siddhartha-gautama',
