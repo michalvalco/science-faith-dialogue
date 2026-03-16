@@ -203,7 +203,7 @@ export const entries: ConvergenceDivergence[] = [
     buddhistPerspective: {
       label: 'No-self as critique of ego-construction',
       description: 'The Buddhist analysis of the five skandhas shows the "self" to be a composite with no permanent substrate. Nguyen extends this into a Buddhist-Marxist critique of neoliberal individualism: the illusion of autonomous selfhood fuels consumerism, environmental destruction, and the dopamine-overload culture.',
-      keyThinkers: ['Nguyen Hoang Hai', 'Thich Nhat Hanh'],
+      keyThinkers: ['Nguyen Hoang Hai', 'Thích Nhất Hạnh'],
       keyTerms: ['anattā', 'five skandhas', 'interdependence'],
     },
     analysis: 'Here the two traditions converge with remarkable force — and the convergence has immediate practical implications for our joint work on AI and technology. Both reject the atomized individual of Western liberal modernity. Both see consumerist self-construction as a pathology. Both call for a recovery of human interconnectedness. This is a shared platform for ethical engagement with AI, transhumanism, and the digital fragmentation of human community. Of utmost importance, then, is that we leverage this convergence not merely as an academic finding but as a genuine basis for collaborative ethics.',
@@ -349,6 +349,7 @@ export const entries: ConvergenceDivergence[] = [
       'Ives (ed.), Divine Emptiness and Historical Fullness (1995)',
       'Botz-Bornstein, "Kenosis, Dynamic Śūnyatā and Weak Thought" in Asian Philosophy 25.4 (2015)',
     ],
+    relatedAct: 'Act V',
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -370,7 +371,7 @@ export const entries: ConvergenceDivergence[] = [
     buddhistPerspective: {
       label: 'Karuṇā (compassion) and mettā (loving-kindness)',
       description: 'Mahāyāna Buddhism places karuṇā — the active wish for all beings to be free from suffering — at the centre of the ethical life. The Bodhisattva relinquishes personal nirvāṇa for the sake of all sentient beings. Combined with mettā (loving-kindness), muditā (sympathetic joy), and upekkhā (equanimity), compassion forms the core of Buddhist ethical practice.',
-      keyThinkers: ['Śāntideva', 'Thich Nhat Hanh', 'Makransky'],
+      keyThinkers: ['Śāntideva', 'Thích Nhất Hạnh', 'Makransky'],
       keyTerms: ['karuṇā', 'mettā', 'Bodhisattva vow', 'brahmavihāras'],
     },
     analysis: 'The phenomenological similarity is real and striking. Both traditions demand the relinquishing of self-centred interests. Both hold self-surrendering love as the highest ethical reality. Both produce saints and bodhisattvas whose lives are recognizably, movingly similar. And yet — the metaphysical grounding differs. Christian agapē flows from a personal God who loved first; Buddhist karuṇā arises from the realization of interdependence and the dissolution of ego-boundaries. One is participation in divine love; the other is the natural expression of seeing clearly. Both produce compassionate action. The question is whether the action can be sustained — ultimately, across generations, against systemic evil — without a ground that transcends the process itself.',
@@ -421,8 +422,8 @@ export const entries: ConvergenceDivergence[] = [
     },
     buddhistPerspective: {
       label: 'Dependent origination and environmental ethics',
-      description: 'Nguyen\'s application of dependent origination to ecological questions shows that environmental destruction follows necessarily from the illusion of separateness. If all things are interdependent, then harming the environment is harming oneself. Engaged Buddhism (Thich Nhat Hanh) has made this practical through mindfulness-based ecological activism.',
-      keyThinkers: ['Nguyen Hoang Hai', 'Thich Nhat Hanh'],
+      description: 'Nguyen\'s application of dependent origination to ecological questions shows that environmental destruction follows necessarily from the illusion of separateness. If all things are interdependent, then harming the environment is harming oneself. Engaged Buddhism (Thích Nhất Hạnh) has made this practical through mindfulness-based ecological activism.',
+      keyThinkers: ['Nguyen Hoang Hai', 'Thích Nhất Hạnh'],
       keyTerms: ['interdependence', 'engaged Buddhism', 'ecosystems'],
     },
     analysis: 'Of all the convergences, this may be the most immediately urgent. We are not facing an ecological crisis because our science is bad — our science is extraordinarily good. We are facing it because our metaphysics is too thin. Both traditions offer resources for a richer account: reality is not a collection of exploitable resources but a web of interdependent relationships that demand respect, care, and restraint. This, in turn, has far-reaching implications for how we approach AI-driven resource optimization, biotechnology, and the commodification of nature.',
@@ -505,7 +506,7 @@ export const entries: ConvergenceDivergence[] = [
     buddhistPerspective: {
       label: 'Meditation as insight practice',
       description: 'Buddhist vipassanā, śamatha, and Zen zazen are designed to train the mind to perceive reality more clearly — without the distortions of craving, aversion, and delusion. Makransky\'s Sustainable Compassion Training adapts Tibetan practices for cross-traditional accessibility, demonstrating that contemplative epistemology can translate across traditions.',
-      keyThinkers: ['Makransky', 'Thich Nhat Hanh', 'Dōgen'],
+      keyThinkers: ['Makransky', 'Thích Nhất Hạnh', 'Dōgen'],
       keyTerms: ['vipassanā', 'śamatha', 'zazen', 'mindfulness'],
     },
     analysis: 'Both traditions insist that some truths cannot be merely thought; they must be practiced into. This is a genuinely shared epistemological commitment — and it distinguishes both traditions from the Enlightenment assumption that reason alone suffices. Makransky\'s remarkable career at Boston College — as both a professor of comparative theology and an ordained Tibetan Buddhist Lama — embodies the possibility of rigorous contemplative practice alongside serious interreligious scholarship. His Sustainable Compassion Training model is explicitly designed to be accessible across traditions. This is not syncretism; it is the recognition that contemplative practice, like scientific observation, operates at a level that can be shared across metanarratives.',
@@ -513,7 +514,7 @@ export const entries: ConvergenceDivergence[] = [
       'Makransky and Condon, How Compassion Works (2025)',
       'Makransky, Awakening Through Love (2007)',
     ],
-    relatedAct: 'Act IV',
+    relatedAct: 'Act V',
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -599,6 +600,7 @@ export const entries: ConvergenceDivergence[] = [
       'Thompson, Waking, Dreaming, Being (2015)',
       'Nguyen Reading Notes, Section C',
     ],
+    relatedAct: 'Act III',
   },
 
   {
@@ -625,6 +627,7 @@ export const entries: ConvergenceDivergence[] = [
       'KA171 Partnership Questionnaire (VNU Hanoi)',
       'Valčo, TNTI lecture (2026)',
     ],
+    relatedAct: 'Closing',
   },
 ];
 
